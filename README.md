@@ -64,21 +64,21 @@ const apiKey = process.env.TIRDAD_API_KEY ?? "YOUR_API_KEY";
 const serverURL =
   process.env.TIRDAD_API_HOST ?? "https://api.tirdad.ai/v1";
 
-const flexPrice = new Tirdad({
+const tirdad = new Tirdad({
   serverURL,
   apiKeyAuth: apiKey,
 });
 
 async function main() {
   const externalId = `customer-${Date.now()}`;
-  const customer = await flexPrice.customers.createCustomer({
+  const customer = await tirdad.customers.createCustomer({
     externalId,
     email: "user@example.com",
     name: "Example Customer",
   });
   console.log(customer);
 
-  const eventResult = await flexPrice.events.ingestEvent({
+  const eventResult = await tirdad.events.ingestEvent({
     eventName: "Sample Event",
     externalCustomerId: externalId,
     properties: { source: "ts_sdk", environment: "test" },
@@ -111,12 +111,12 @@ import { Tirdad } from "@tirdad-ai/sdk";
 const serverURL =
   process.env.TIRDAD_API_HOST ?? "https://api.tirdad.ai/v1";
 
-const flexPrice = new Tirdad({
+const tirdad = new Tirdad({
   serverURL,
   apiKeyAuth: process.env.TIRDAD_API_KEY!,
 });
 
-const result = await flexPrice.events.ingestEvent({
+const result = await tirdad.events.ingestEvent({
   eventName: "usage",
   externalCustomerId: "cust_123",
   properties: { units: 10 },

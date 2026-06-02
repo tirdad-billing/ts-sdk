@@ -2,7 +2,7 @@
 
 {
   "name": "@tirdad-ai/sdk",
-  "version": "2.1.13",
+  "version": "2.1.14",
   "exports": {
     ".": "./src/index.ts",    
     "./sdk/models": "./src/sdk/models/index.ts",
