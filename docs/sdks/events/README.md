@@ -1,0 +1,648 @@
+# Events
+
+## Overview
+
+### Available Operations
+
+* [getEvent](#getevent) - Get event
+* [getHuggingfaceInferenceData](#gethuggingfaceinferencedata) - Get Hugging Face inference data
+* [getUsageAnalytics](#getusageanalytics) - Get usage analytics
+* [getUsageByMeter](#getusagebymeter) - Get usage by meter
+* [getUsageStatistics](#getusagestatistics) - Get usage statistics
+* [ingestEvent](#ingestevent) - Ingest event
+* [ingestEventsBulk](#ingesteventsbulk) - Bulk ingest events
+* [listRawEvents](#listrawevents) - List raw events
+
+## getEvent
+
+Use when debugging a specific event (e.g. why it failed or how it was aggregated). Includes processing status and debug info.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getEvent" method="get" path="/events/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.events.getEvent("<id>");
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { eventsGetEvent } from "@tirdad-ai/sdk/funcs/eventsGetEvent.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await eventsGetEvent(tirdad, "<id>");
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("eventsGetEvent failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Event ID                                                                                                                                                                       |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.GetEventByIDResponse](../../sdk/models/geteventbyidresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 404                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## getHuggingfaceInferenceData
+
+Use when fetching Hugging Face inference usage or billing data (e.g. for HF-specific reporting or reconciliation).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHuggingfaceInferenceData" method="post" path="/events/huggingface-inference" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.events.getHuggingfaceInferenceData();
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { eventsGetHuggingfaceInferenceData } from "@tirdad-ai/sdk/funcs/eventsGetHuggingfaceInferenceData.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await eventsGetHuggingfaceInferenceData(tirdad);
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("eventsGetHuggingfaceInferenceData failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.GetHuggingFaceBillingDataResponse](../../sdk/models/gethuggingfacebillingdataresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## getUsageAnalytics
+
+Use when building analytics views (e.g. usage by feature or customer over time). Supports filtering, grouping, and time-series breakdown.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getUsageAnalytics" method="post" path="/events/analytics" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.events.getUsageAnalytics({});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { eventsGetUsageAnalytics } from "@tirdad-ai/sdk/funcs/eventsGetUsageAnalytics.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await eventsGetUsageAnalytics(tirdad, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("eventsGetUsageAnalytics failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [models.GetUsageAnalyticsRequest](../../sdk/models/getusageanalyticsrequest.md)                                                                                                | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.GetUsageAnalyticsResponse](../../sdk/models/getusageanalyticsresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## getUsageByMeter
+
+Use when showing usage for a specific meter (e.g. dashboard or overage check). Supports time range, filters, and grouping by customer or subscription.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getUsageByMeter" method="post" path="/events/usage/meter" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.events.getUsageByMeter({
+    billingAnchor: new Date("2024-03-05T14:30:45Z"),
+    customerId: "customer456",
+    endTime: new Date("2024-12-09T00:00:00Z"),
+    externalCustomerId: "user_5",
+    meterId: "123",
+    startTime: new Date("2024-11-09T00:00:00Z"),
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { eventsGetUsageByMeter } from "@tirdad-ai/sdk/funcs/eventsGetUsageByMeter.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await eventsGetUsageByMeter(tirdad, {
+    billingAnchor: new Date("2024-03-05T14:30:45Z"),
+    customerId: "customer456",
+    endTime: new Date("2024-12-09T00:00:00Z"),
+    externalCustomerId: "user_5",
+    meterId: "123",
+    startTime: new Date("2024-11-09T00:00:00Z"),
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("eventsGetUsageByMeter failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [models.GetUsageByMeterRequest](../../sdk/models/getusagebymeterrequest.md)                                                                                                    | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.GetUsageResponse](../../sdk/models/getusageresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400, 404                   | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## getUsageStatistics
+
+Use when building usage reports or dashboards across events. Supports filters and grouping; defaults to last 7 days if no range provided.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getUsageStatistics" method="post" path="/events/usage" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.events.getUsageStatistics({
+    aggregationType: "COUNT_UNIQUE",
+    billingAnchor: new Date("2024-03-05T14:30:45.123456789Z"),
+    customerId: "customer456",
+    endTime: new Date("2024-03-20T00:00:00Z"),
+    eventName: "api_request",
+    externalCustomerId: "customer456",
+    propertyName: "request_size",
+    startTime: new Date("2024-03-13T00:00:00Z"),
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { eventsGetUsageStatistics } from "@tirdad-ai/sdk/funcs/eventsGetUsageStatistics.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await eventsGetUsageStatistics(tirdad, {
+    aggregationType: "COUNT_UNIQUE",
+    billingAnchor: new Date("2024-03-05T14:30:45.123456789Z"),
+    customerId: "customer456",
+    endTime: new Date("2024-03-20T00:00:00Z"),
+    eventName: "api_request",
+    externalCustomerId: "customer456",
+    propertyName: "request_size",
+    startTime: new Date("2024-03-13T00:00:00Z"),
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("eventsGetUsageStatistics failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [models.GetUsageRequest](../../sdk/models/getusagerequest.md)                                                                                                                  | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.GetUsageResponse](../../sdk/models/getusageresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## ingestEvent
+
+Use when sending a single usage event from your app (e.g. one API call or one GB stored). Events are processed asynchronously; returns 202 with event_id.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="ingestEvent" method="post" path="/events" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.events.ingestEvent({
+    customerId: "customer456",
+    eventId: "event123",
+    eventName: "api_request",
+    externalCustomerId: "customer456",
+    properties: {
+      ""response_status"": "200}",
+      "{"request_size"": "100",
+    },
+    source: "api",
+    timestamp: "2024-03-20T15:04:05Z",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { eventsIngestEvent } from "@tirdad-ai/sdk/funcs/eventsIngestEvent.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await eventsIngestEvent(tirdad, {
+    customerId: "customer456",
+    eventId: "event123",
+    eventName: "api_request",
+    externalCustomerId: "customer456",
+    properties: {
+      ""response_status"": "200}",
+      "{"request_size"": "100",
+    },
+    source: "api",
+    timestamp: "2024-03-20T15:04:05Z",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("eventsIngestEvent failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [models.IngestEventRequest](../../sdk/models/ingesteventrequest.md)                                                                                                            | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[{ [k: string]: string }](../../models/.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## ingestEventsBulk
+
+Use when batching usage events (e.g. backfill or high-volume ingestion). More efficient than single event calls; returns 202 when accepted.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="ingestEventsBulk" method="post" path="/events/bulk" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.events.ingestEventsBulk({
+    events: [],
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { eventsIngestEventsBulk } from "@tirdad-ai/sdk/funcs/eventsIngestEventsBulk.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await eventsIngestEventsBulk(tirdad, {
+    events: [],
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("eventsIngestEventsBulk failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [models.BulkIngestEventRequest](../../sdk/models/bulkingesteventrequest.md)                                                                                                    | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[{ [k: string]: string }](../../models/.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## listRawEvents
+
+Use when debugging ingestion or exporting raw event data (e.g. support or audit). Returns a paginated list; supports time range and sorting.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listRawEvents" method="post" path="/events/query" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.events.listRawEvents({
+    endTime: new Date("2024-12-09T00:00:00Z"),
+    order: "desc",
+    sort: "timestamp",
+    startTime: new Date("2024-11-09T00:00:00Z"),
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { eventsListRawEvents } from "@tirdad-ai/sdk/funcs/eventsListRawEvents.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await eventsListRawEvents(tirdad, {
+    endTime: new Date("2024-12-09T00:00:00Z"),
+    order: "desc",
+    sort: "timestamp",
+    startTime: new Date("2024-11-09T00:00:00Z"),
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("eventsListRawEvents failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [models.GetEventsRequest](../../sdk/models/geteventsrequest.md)                                                                                                                | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.GetEventsResponse](../../sdk/models/geteventsresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |

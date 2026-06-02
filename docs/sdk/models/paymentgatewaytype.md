@@ -1,0 +1,15 @@
+# PaymentGatewayType
+
+## Example Usage
+
+```typescript
+import { PaymentGatewayType } from "@tirdad-ai/sdk/sdk/models";
+
+let value: PaymentGatewayType = "moyasar";
+```
+
+## Values
+
+```typescript
+"stripe" | "razorpay" | "nomod" | "moyasar" | "paddle" | "whop"
+```

@@ -1,0 +1,94 @@
+configVersion: 2.0.0
+generation:
+  sdkClassName: Tirdad
+  usageSnippets:
+    optionalPropertyRendering: withExample
+    sdkInitStyle: constructor
+  fixes:
+    nameResolutionDec2023: true
+    nameResolutionFeb2025: true
+    parameterOrderingFeb2024: true
+    requestResponseComponentNamesFeb2024: true
+    securityFeb2025: true
+    sharedErrorComponentsApr2025: true
+    sharedNestedComponentsJan2026: true
+    nameOverrideFeb2026: true
+  auth:
+    oAuth2ClientCredentialsEnabled: false
+    oAuth2PasswordEnabled: false
+    hoistGlobalSecurity: true
+  schemas:
+    allOfMergeStrategy: deepMerge
+  requestBodyFieldName: body
+  versioningStrategy: semantic
+  persistentEdits: {}
+  tests:
+    generateTests: true
+    generateNewTests: false
+    skipResponseBodyAssertions: false
+typescript:
+  version: 2.1.12
+  acceptHeaderEnum: true
+  additionalDependencies:
+    dependencies: {}
+    devDependencies: {}
+    peerDependencies: {}
+  additionalPackageJSON:
+    engines:
+      node: '>=18'
+    exports:
+      .: ./dist/index.js
+    sideEffects: false
+    type: module
+  additionalScripts: {}
+  alwaysIncludeInboundAndOutbound: false
+  author: Tirdad
+  baseErrorName: TirdadError
+  clientServerStatusCodesAsErrors: true
+  constFieldsAlwaysOptional: false
+  defaultErrorName: SDKError
+  enableCustomCodeRegions: false
+  enableMCPServer: false
+  enableReactQuery: false
+  enumFormat: union
+  exportZodModelNamespace: false
+  fixEnumNameSanitization: false
+  flatAdditionalProperties: false
+  flattenGlobalSecurity: true
+  flatteningOrder: parameters-first
+  formStringArrayEncodeMode: encoded-string
+  forwardCompatibleEnumsByDefault: true
+  forwardCompatibleUnionsByDefault: tagged-only
+  generateExamples: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: sdk/models
+      errors: sdk/models
+      operations: sdk/models
+      shared: sdk/models
+      webhooks: sdk/models
+  inferUnionDiscriminators: true
+  inputModelSuffix: Input
+  jsonpath: legacy
+  laxMode: lax
+  legacyFileNaming: true
+  maxMethodParams: 4
+  methodArguments: infer-optional-args
+  modelPropertyCasing: camel
+  moduleFormat: esm
+  multipartArrayFormat: legacy
+  outputModelSuffix: Output
+  packageName: '@tirdad-ai/sdk'
+  preApplyUnionDiscriminators: true
+  preserveModelFieldNames: false
+  privateIdentifierPrefix: '#'
+  responseFormat: flat
+  sseFlatResponse: false
+  templateVersion: v2
+  unionStrategy: populated-fields
+  usageSDKInitImports: []
+  useIndexModules: true
+  useOxlint: false
+  useTsgo: false
+  zodVersion: v3

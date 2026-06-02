@@ -1,0 +1,374 @@
+# TaxAssociations
+
+## Overview
+
+### Available Operations
+
+* [createTaxAssociation](#createtaxassociation) - Create Tax Association
+* [deleteTaxAssociation](#deletetaxassociation) - Delete tax association
+* [getTaxAssociation](#gettaxassociation) - Get Tax Association
+* [listTaxAssociations](#listtaxassociations) - List tax associations
+* [updateTaxAssociation](#updatetaxassociation) - Update tax association
+
+## createTaxAssociation
+
+Use when linking a tax rate to an entity (e.g. customer, product, or region) so that rate applies on invoices.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createTaxAssociation" method="post" path="/taxes/associations" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.taxAssociations.createTaxAssociation({
+    taxRateCode: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { taxAssociationsCreateTaxAssociation } from "@tirdad-ai/sdk/funcs/taxAssociationsCreateTaxAssociation.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await taxAssociationsCreateTaxAssociation(tirdad, {
+    taxRateCode: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxAssociationsCreateTaxAssociation failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [models.CreateTaxAssociationRequest](../../sdk/models/createtaxassociationrequest.md)                                                                                          | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.TaxAssociationResponse](../../sdk/models/taxassociationresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## deleteTaxAssociation
+
+Use when removing a tax association (e.g. entity no longer subject to that rate).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="deleteTaxAssociation" method="delete" path="/taxes/associations/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.taxAssociations.deleteTaxAssociation("<id>");
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { taxAssociationsDeleteTaxAssociation } from "@tirdad-ai/sdk/funcs/taxAssociationsDeleteTaxAssociation.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await taxAssociationsDeleteTaxAssociation(tirdad, "<id>");
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxAssociationsDeleteTaxAssociation failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Tax Config ID                                                                                                                                                                  |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.TaxAssociationResponse](../../sdk/models/taxassociationresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## getTaxAssociation
+
+Use when you need to load a single tax association (e.g. for display or editing).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getTaxAssociation" method="get" path="/taxes/associations/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.taxAssociations.getTaxAssociation("<id>");
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { taxAssociationsGetTaxAssociation } from "@tirdad-ai/sdk/funcs/taxAssociationsGetTaxAssociation.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await taxAssociationsGetTaxAssociation(tirdad, "<id>");
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxAssociationsGetTaxAssociation failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Tax Config ID                                                                                                                                                                  |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.TaxAssociationResponse](../../sdk/models/taxassociationresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## listTaxAssociations
+
+Use when listing tax associations (e.g. tax config or audit). Returns list with optional filtering.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listTaxAssociations" method="get" path="/taxes/associations" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.taxAssociations.listTaxAssociations();
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { taxAssociationsListTaxAssociations } from "@tirdad-ai/sdk/funcs/taxAssociationsListTaxAssociations.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await taxAssociationsListTaxAssociations(tirdad);
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxAssociationsListTaxAssociations failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `entityType`                                                                                                                                                                   | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | Entity Type                                                                                                                                                                    |
+| `entityId`                                                                                                                                                                     | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | Entity ID                                                                                                                                                                      |
+| `externalCustomerId`                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | External Customer ID                                                                                                                                                           |
+| `taxRateId`                                                                                                                                                                    | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | Tax Rate ID                                                                                                                                                                    |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.ListTaxAssociationsResponse](../../sdk/models/listtaxassociationsresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## updateTaxAssociation
+
+Use when changing a tax association (e.g. switch rate or entity). Request body contains the fields to update.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateTaxAssociation" method="put" path="/taxes/associations/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.taxAssociations.updateTaxAssociation("<id>", {});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { taxAssociationsUpdateTaxAssociation } from "@tirdad-ai/sdk/funcs/taxAssociationsUpdateTaxAssociation.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await taxAssociationsUpdateTaxAssociation(tirdad, "<id>", {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxAssociationsUpdateTaxAssociation failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Tax Config ID                                                                                                                                                                  |
+| `body`                                                                                                                                                                         | [models.TaxAssociationUpdateRequest](../../sdk/models/taxassociationupdaterequest.md)                                                                                          | :heavy_check_mark:                                                                                                                                                             | Tax Config Request                                                                                                                                                             |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.TaxAssociationResponse](../../sdk/models/taxassociationresponse.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |

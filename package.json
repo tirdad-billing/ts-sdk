@@ -1,0 +1,55 @@
+{
+  "name": "@tirdad-ai/sdk",
+  "version": "2.1.12",
+  "author": "Tirdad",
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./esm/index.d.ts",
+      "default": "./esm/index.js"
+    },
+    "./package.json": "./package.json",
+    "./types": {
+      "source": "./src/types/index.ts",
+      "types": "./esm/types/index.d.ts",
+      "default": "./esm/types/index.js"
+    },
+    "./sdk/models": {
+      "source": "./src/sdk/models/index.ts",
+      "types": "./esm/sdk/models/index.d.ts",
+      "default": "./esm/sdk/models/index.js"
+    },
+    "./*.js": {
+      "source": "./src/*.ts",
+      "types": "./esm/*.d.ts",
+      "default": "./esm/*.js"
+    },
+    "./*": {
+      "source": "./src/*.ts",
+      "types": "./esm/*.d.ts",
+      "default": "./esm/*.js"
+    }
+  },
+  "sideEffects": false,
+  "type": "module",
+  "main": "./esm/index.js",
+  "scripts": {
+    "lint": "eslint --cache --max-warnings=0 src",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "eslint": "^9.26.0",
+    "globals": "^15.14.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.26.0"
+  },
+  "dependencies": {
+    "zod": "^3.25.0 || ^4.0.0"
+  }
+}
