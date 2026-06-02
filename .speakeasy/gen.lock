@@ -5,13 +5,13 @@ management:
   docVersion: "1.0"
   speakeasyVersion: 1.770.0
   generationVersion: 2.893.0
-  releaseVersion: 2.1.13
-  configChecksum: d5395595c5a0bd3f017308d5d06eb9e0
+  releaseVersion: 2.1.15
+  configChecksum: 91f208362da5b006c986b3b9819a91a5
   published: true
 persistentEdits:
-  generation_id: 21c03606-5075-45d6-bd78-6fa5865e1191
-  pristine_commit_hash: dbcf4e5deab499787d450bd7197d0ec0c4152f27
-  pristine_tree_hash: 38a0d4fe99f52e4483b4ed854666dc91aab6f848
+  generation_id: 43d05a69-8b18-49b8-8b9a-58669774c430
+  pristine_commit_hash: 2be4c490c9bb773bec793d42fa9cbb555601594b
+  pristine_tree_hash: 4bbd2b35de307319d0e1d5283e669fd7d3146da6
 features:
   typescript:
     additionalDependencies: 0.1.0
@@ -2447,12 +2447,12 @@ trackedFiles:
     pristine_git_object: e90b1cb6f59047d078d6990f3d9e0c0cfa3b3157
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:ef2dcc30384827ba92000e9a63f6c3dc9562f2c1
-    pristine_git_object: 3bb864d40e85fb6544b3282e1387a0906d5c329f
+    last_write_checksum: sha1:0a0dc4c2189795895af829edc0c6803947f274af
+    pristine_git_object: 553015a3d3c7363f935ca489807c2df0fa8cda88
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:5b59dcdfde6b2217bf76449be7e94c425246ec9e
-    pristine_git_object: 5d0118cf6962f7c10c9fbe0e12210f0db9c105a5
+    last_write_checksum: sha1:8518655bf60d8958cb50fb886e9959309feadff1
+    pristine_git_object: bf85504b570dddc7a9d07ddcc46fa64859e13c07
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:fb25a91b06ec26c1245d17f7e5903578aef39362
@@ -3371,8 +3371,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:10f3500a0ff5d940895d73138f700d5e96dddcf9
-    pristine_git_object: 43d8fb3f757e6d7c4eec60f13af3a47f18c506df
+    last_write_checksum: sha1:1ff889ae0fb07ff7949a67127f51c7f518af6538
+    pristine_git_object: bbeed88f32abbf8b50187a88cca017057c841231
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
