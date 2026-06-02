@@ -1,0 +1,18 @@
+# CancelSubscriptionScheduleRequest
+
+## Example Usage
+
+```typescript
+import { CancelSubscriptionScheduleRequest } from "@tirdad-ai/sdk/sdk/models";
+
+let value: CancelSubscriptionScheduleRequest = {
+  scheduleId: "<id>",
+};
+```
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `scheduleId`                                                                | *string*                                                                    | :heavy_check_mark:                                                          | Schedule ID (optional if using request body)                                |
+| `body`                                                                      | [models.CancelScheduleRequest](../../sdk/models/cancel-schedule-request.md) | :heavy_minus_sign:                                                          | Cancel request (optional if using path parameter)                           |

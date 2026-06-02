@@ -76,7 +76,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCreditNoteCreated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsCreditNoteCreated.js";
+import { webhookEventsPostWebhookEventsCreditNoteCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-credit-note-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -107,7 +107,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoCreditNoteWebhookPayload](../../sdk/models/webhookdtocreditnotewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoCreditNoteWebhookPayload](../../sdk/models/webhook-dto-credit-note-webhook-payload.md)\>**
 
 ### Errors
 
@@ -144,7 +144,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCreditNoteUpdated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsCreditNoteUpdated.js";
+import { webhookEventsPostWebhookEventsCreditNoteUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-credit-note-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -175,7 +175,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoCreditNoteWebhookPayload](../../sdk/models/webhookdtocreditnotewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoCreditNoteWebhookPayload](../../sdk/models/webhook-dto-credit-note-webhook-payload.md)\>**
 
 ### Errors
 
@@ -212,7 +212,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCustomerCreated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsCustomerCreated.js";
+import { webhookEventsPostWebhookEventsCustomerCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-customer-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -243,7 +243,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoCustomerWebhookPayload](../../sdk/models/webhookdtocustomerwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoCustomerWebhookPayload](../../sdk/models/webhook-dto-customer-webhook-payload.md)\>**
 
 ### Errors
 
@@ -280,7 +280,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCustomerDeleted } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsCustomerDeleted.js";
+import { webhookEventsPostWebhookEventsCustomerDeleted } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-customer-deleted.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -311,7 +311,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoCustomerWebhookPayload](../../sdk/models/webhookdtocustomerwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoCustomerWebhookPayload](../../sdk/models/webhook-dto-customer-webhook-payload.md)\>**
 
 ### Errors
 
@@ -348,7 +348,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCustomerUpdated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsCustomerUpdated.js";
+import { webhookEventsPostWebhookEventsCustomerUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-customer-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -379,7 +379,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoCustomerWebhookPayload](../../sdk/models/webhookdtocustomerwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoCustomerWebhookPayload](../../sdk/models/webhook-dto-customer-webhook-payload.md)\>**
 
 ### Errors
 
@@ -416,7 +416,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsEntitlementCreated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsEntitlementCreated.js";
+import { webhookEventsPostWebhookEventsEntitlementCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-entitlement-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoEntitlementWebhookPayload](../../sdk/models/webhookdtoentitlementwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoEntitlementWebhookPayload](../../sdk/models/webhook-dto-entitlement-webhook-payload.md)\>**
 
 ### Errors
 
@@ -484,7 +484,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsEntitlementDeleted } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsEntitlementDeleted.js";
+import { webhookEventsPostWebhookEventsEntitlementDeleted } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-entitlement-deleted.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -515,7 +515,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoEntitlementWebhookPayload](../../sdk/models/webhookdtoentitlementwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoEntitlementWebhookPayload](../../sdk/models/webhook-dto-entitlement-webhook-payload.md)\>**
 
 ### Errors
 
@@ -552,7 +552,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsEntitlementUpdated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsEntitlementUpdated.js";
+import { webhookEventsPostWebhookEventsEntitlementUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-entitlement-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -583,7 +583,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoEntitlementWebhookPayload](../../sdk/models/webhookdtoentitlementwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoEntitlementWebhookPayload](../../sdk/models/webhook-dto-entitlement-webhook-payload.md)\>**
 
 ### Errors
 
@@ -620,7 +620,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsFeatureCreated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsFeatureCreated.js";
+import { webhookEventsPostWebhookEventsFeatureCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-feature-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -651,7 +651,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoFeatureWebhookPayload](../../sdk/models/webhookdtofeaturewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoFeatureWebhookPayload](../../sdk/models/webhook-dto-feature-webhook-payload.md)\>**
 
 ### Errors
 
@@ -688,7 +688,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsFeatureDeleted } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsFeatureDeleted.js";
+import { webhookEventsPostWebhookEventsFeatureDeleted } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-feature-deleted.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -719,7 +719,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoFeatureWebhookPayload](../../sdk/models/webhookdtofeaturewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoFeatureWebhookPayload](../../sdk/models/webhook-dto-feature-webhook-payload.md)\>**
 
 ### Errors
 
@@ -756,7 +756,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsFeatureUpdated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsFeatureUpdated.js";
+import { webhookEventsPostWebhookEventsFeatureUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-feature-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -787,7 +787,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoFeatureWebhookPayload](../../sdk/models/webhookdtofeaturewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoFeatureWebhookPayload](../../sdk/models/webhook-dto-feature-webhook-payload.md)\>**
 
 ### Errors
 
@@ -824,7 +824,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsFeatureWalletBalanceAlert } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsFeatureWalletBalanceAlert.js";
+import { webhookEventsPostWebhookEventsFeatureWalletBalanceAlert } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-feature-wallet-balance-alert.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -855,7 +855,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoAlertWebhookPayload](../../sdk/models/webhookdtoalertwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoAlertWebhookPayload](../../sdk/models/webhook-dto-alert-webhook-payload.md)\>**
 
 ### Errors
 
@@ -892,7 +892,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceCommunicationTriggered } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsInvoiceCommunicationTriggered.js";
+import { webhookEventsPostWebhookEventsInvoiceCommunicationTriggered } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-communication-triggered.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -923,7 +923,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoCommunicationWebhookPayload](../../sdk/models/webhookdtocommunicationwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoCommunicationWebhookPayload](../../sdk/models/webhook-dto-communication-webhook-payload.md)\>**
 
 ### Errors
 
@@ -960,7 +960,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoicePaymentOverdue } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsInvoicePaymentOverdue.js";
+import { webhookEventsPostWebhookEventsInvoicePaymentOverdue } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-payment-overdue.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -991,7 +991,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoInvoiceWebhookPayload](../../sdk/models/webhookdtoinvoicewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoInvoiceWebhookPayload](../../sdk/models/webhook-dto-invoice-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1028,7 +1028,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceUpdate } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsInvoiceUpdate.js";
+import { webhookEventsPostWebhookEventsInvoiceUpdate } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-update.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1059,7 +1059,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoInvoiceWebhookPayload](../../sdk/models/webhookdtoinvoicewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoInvoiceWebhookPayload](../../sdk/models/webhook-dto-invoice-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1096,7 +1096,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceUpdateFinalized } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsInvoiceUpdateFinalized.js";
+import { webhookEventsPostWebhookEventsInvoiceUpdateFinalized } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-update-finalized.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1127,7 +1127,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoInvoiceWebhookPayload](../../sdk/models/webhookdtoinvoicewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoInvoiceWebhookPayload](../../sdk/models/webhook-dto-invoice-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1164,7 +1164,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceUpdatePayment } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsInvoiceUpdatePayment.js";
+import { webhookEventsPostWebhookEventsInvoiceUpdatePayment } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-update-payment.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1195,7 +1195,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoInvoiceWebhookPayload](../../sdk/models/webhookdtoinvoicewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoInvoiceWebhookPayload](../../sdk/models/webhook-dto-invoice-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1232,7 +1232,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceUpdateVoided } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsInvoiceUpdateVoided.js";
+import { webhookEventsPostWebhookEventsInvoiceUpdateVoided } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-update-voided.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1263,7 +1263,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoInvoiceWebhookPayload](../../sdk/models/webhookdtoinvoicewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoInvoiceWebhookPayload](../../sdk/models/webhook-dto-invoice-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1300,7 +1300,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsPaymentCreated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsPaymentCreated.js";
+import { webhookEventsPostWebhookEventsPaymentCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-payment-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1331,7 +1331,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoPaymentWebhookPayload](../../sdk/models/webhookdtopaymentwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoPaymentWebhookPayload](../../sdk/models/webhook-dto-payment-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1368,7 +1368,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsPaymentFailed } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsPaymentFailed.js";
+import { webhookEventsPostWebhookEventsPaymentFailed } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-payment-failed.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1399,7 +1399,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoPaymentWebhookPayload](../../sdk/models/webhookdtopaymentwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoPaymentWebhookPayload](../../sdk/models/webhook-dto-payment-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1436,7 +1436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsPaymentPending } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsPaymentPending.js";
+import { webhookEventsPostWebhookEventsPaymentPending } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-payment-pending.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1467,7 +1467,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoPaymentWebhookPayload](../../sdk/models/webhookdtopaymentwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoPaymentWebhookPayload](../../sdk/models/webhook-dto-payment-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1504,7 +1504,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsPaymentSuccess } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsPaymentSuccess.js";
+import { webhookEventsPostWebhookEventsPaymentSuccess } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-payment-success.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1535,7 +1535,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoPaymentWebhookPayload](../../sdk/models/webhookdtopaymentwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoPaymentWebhookPayload](../../sdk/models/webhook-dto-payment-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1572,7 +1572,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsPaymentUpdated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsPaymentUpdated.js";
+import { webhookEventsPostWebhookEventsPaymentUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-payment-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1603,7 +1603,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoPaymentWebhookPayload](../../sdk/models/webhookdtopaymentwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoPaymentWebhookPayload](../../sdk/models/webhook-dto-payment-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1640,7 +1640,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionActivated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsSubscriptionActivated.js";
+import { webhookEventsPostWebhookEventsSubscriptionActivated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-activated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1671,7 +1671,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhookdtosubscriptionwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhook-dto-subscription-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1708,7 +1708,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionCancelled } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsSubscriptionCancelled.js";
+import { webhookEventsPostWebhookEventsSubscriptionCancelled } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-cancelled.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1739,7 +1739,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhookdtosubscriptionwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhook-dto-subscription-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1776,7 +1776,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionCreated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsSubscriptionCreated.js";
+import { webhookEventsPostWebhookEventsSubscriptionCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1807,7 +1807,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhookdtosubscriptionwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhook-dto-subscription-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1844,7 +1844,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionDraftCreated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsSubscriptionDraftCreated.js";
+import { webhookEventsPostWebhookEventsSubscriptionDraftCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-draft-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1875,7 +1875,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhookdtosubscriptionwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhook-dto-subscription-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1912,7 +1912,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionPaused } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsSubscriptionPaused.js";
+import { webhookEventsPostWebhookEventsSubscriptionPaused } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-paused.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1943,7 +1943,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhookdtosubscriptionwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhook-dto-subscription-webhook-payload.md)\>**
 
 ### Errors
 
@@ -1980,7 +1980,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionPhaseCreated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsSubscriptionPhaseCreated.js";
+import { webhookEventsPostWebhookEventsSubscriptionPhaseCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-phase-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2011,7 +2011,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoSubscriptionPhaseWebhookPayload](../../sdk/models/webhookdtosubscriptionphasewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoSubscriptionPhaseWebhookPayload](../../sdk/models/webhook-dto-subscription-phase-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2048,7 +2048,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionPhaseDeleted } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsSubscriptionPhaseDeleted.js";
+import { webhookEventsPostWebhookEventsSubscriptionPhaseDeleted } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-phase-deleted.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2079,7 +2079,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoSubscriptionPhaseWebhookPayload](../../sdk/models/webhookdtosubscriptionphasewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoSubscriptionPhaseWebhookPayload](../../sdk/models/webhook-dto-subscription-phase-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2116,7 +2116,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionPhaseUpdated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsSubscriptionPhaseUpdated.js";
+import { webhookEventsPostWebhookEventsSubscriptionPhaseUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-phase-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2147,7 +2147,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoSubscriptionPhaseWebhookPayload](../../sdk/models/webhookdtosubscriptionphasewebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoSubscriptionPhaseWebhookPayload](../../sdk/models/webhook-dto-subscription-phase-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2184,7 +2184,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionRenewalDue } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsSubscriptionRenewalDue.js";
+import { webhookEventsPostWebhookEventsSubscriptionRenewalDue } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-renewal-due.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2215,7 +2215,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhookdtosubscriptionwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhook-dto-subscription-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2252,7 +2252,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionResumed } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsSubscriptionResumed.js";
+import { webhookEventsPostWebhookEventsSubscriptionResumed } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-resumed.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2283,7 +2283,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhookdtosubscriptionwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhook-dto-subscription-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2320,7 +2320,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionUpdated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsSubscriptionUpdated.js";
+import { webhookEventsPostWebhookEventsSubscriptionUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2351,7 +2351,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhookdtosubscriptionwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoSubscriptionWebhookPayload](../../sdk/models/webhook-dto-subscription-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2388,7 +2388,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletCreated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsWalletCreated.js";
+import { webhookEventsPostWebhookEventsWalletCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2419,7 +2419,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhookdtowalletwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhook-dto-wallet-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2456,7 +2456,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletCreditBalanceDropped } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsWalletCreditBalanceDropped.js";
+import { webhookEventsPostWebhookEventsWalletCreditBalanceDropped } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-credit-balance-dropped.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2487,7 +2487,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhookdtowalletwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhook-dto-wallet-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2524,7 +2524,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletCreditBalanceRecovered } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsWalletCreditBalanceRecovered.js";
+import { webhookEventsPostWebhookEventsWalletCreditBalanceRecovered } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-credit-balance-recovered.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2555,7 +2555,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhookdtowalletwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhook-dto-wallet-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2592,7 +2592,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletOngoingBalanceDropped } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsWalletOngoingBalanceDropped.js";
+import { webhookEventsPostWebhookEventsWalletOngoingBalanceDropped } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-ongoing-balance-dropped.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2623,7 +2623,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhookdtowalletwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhook-dto-wallet-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2660,7 +2660,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletOngoingBalanceRecovered } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsWalletOngoingBalanceRecovered.js";
+import { webhookEventsPostWebhookEventsWalletOngoingBalanceRecovered } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-ongoing-balance-recovered.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2691,7 +2691,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhookdtowalletwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhook-dto-wallet-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2728,7 +2728,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletTerminated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsWalletTerminated.js";
+import { webhookEventsPostWebhookEventsWalletTerminated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-terminated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2759,7 +2759,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhookdtowalletwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhook-dto-wallet-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2796,7 +2796,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletTransactionCreated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsWalletTransactionCreated.js";
+import { webhookEventsPostWebhookEventsWalletTransactionCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-transaction-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2827,7 +2827,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoTransactionWebhookPayload](../../sdk/models/webhookdtotransactionwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoTransactionWebhookPayload](../../sdk/models/webhook-dto-transaction-webhook-payload.md)\>**
 
 ### Errors
 
@@ -2864,7 +2864,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletUpdated } from "@tirdad-ai/sdk/funcs/webhookEventsPostWebhookEventsWalletUpdated.js";
+import { webhookEventsPostWebhookEventsWalletUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2895,7 +2895,7 @@ run();
 
 ### Response
 
-**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhookdtowalletwebhookpayload.md)\>**
+**Promise\<[models.WebhookDtoWalletWebhookPayload](../../sdk/models/webhook-dto-wallet-webhook-payload.md)\>**
 
 ### Errors
 

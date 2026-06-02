@@ -3,7 +3,7 @@
  */
 
 export { blobLikeSchema, isBlobLike } from "./blobs.js";
-export * from "./defaultToZeroValue.js";
+export * from "./default-to-zero-value.js";
 export type { ClosedEnum, OpenEnum } from "./enums.js";
 export type { Result } from "./fp.js";
 export type { PageIterator, Paginator } from "./operations.js";

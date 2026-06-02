@@ -4,13 +4,84 @@
 
 ### Available Operations
 
-* [createPriceUnit](#createpriceunit) - Create price unit
-* [deletePriceUnit](#deletepriceunit) - Delete price unit
-* [getPriceUnit](#getpriceunit) - Get price unit
-* [getPriceUnitByCode](#getpriceunitbycode) - Get price unit by code
 * [listPriceUnits](#listpriceunits) - List price units
+* [createPriceUnit](#createpriceunit) - Create price unit
+* [getPriceUnitByCode](#getpriceunitbycode) - Get price unit by code
 * [queryPriceUnit](#querypriceunit) - Query price units
+* [getPriceUnit](#getpriceunit) - Get price unit
 * [updatePriceUnit](#updatepriceunit) - Update price unit
+* [deletePriceUnit](#deletepriceunit) - Delete price unit
+
+## listPriceUnits
+
+Use when listing price units (e.g. in a catalog or when creating prices). Returns a paginated list; supports status, sort, and pagination.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listPriceUnits" method="get" path="/prices/units" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.priceUnits.listPriceUnits({});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { priceUnitsListPriceUnits } from "@tirdad-ai/sdk/funcs/price-units-list-price-units.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await priceUnitsListPriceUnits(tirdad, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("priceUnitsListPriceUnits failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [models.ListPriceUnitsRequest](../../sdk/models/list-price-units-request.md)                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.ListPriceUnitsResponse](../../sdk/models/list-price-units-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
 ## createPriceUnit
 
@@ -47,7 +118,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsCreatePriceUnit } from "@tirdad-ai/sdk/funcs/priceUnitsCreatePriceUnit.js";
+import { priceUnitsCreatePriceUnit } from "@tirdad-ai/sdk/funcs/price-units-create-price-unit.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -78,14 +149,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.CreatePriceUnitRequest](../../sdk/models/createpriceunitrequest.md)                                                                                                    | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [models.CreatePriceUnitRequest](../../sdk/models/create-price-unit-request.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.CreatePriceUnitResponse](../../sdk/models/createpriceunitresponse.md)\>**
+**Promise\<[models.CreatePriceUnitResponse](../../sdk/models/create-price-unit-response.md)\>**
 
 ### Errors
 
@@ -93,146 +164,6 @@ run();
 | -------------------------- | -------------------------- | -------------------------- |
 | models.ErrorsErrorResponse | 400                        | application/json           |
 | models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## deletePriceUnit
-
-Use when removing a price unit that is no longer needed. Fails if any price references this unit.
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="deletePriceUnit" method="delete" path="/prices/units/{id}" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.priceUnits.deletePriceUnit("<id>");
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsDeletePriceUnit } from "@tirdad-ai/sdk/funcs/priceUnitsDeletePriceUnit.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await priceUnitsDeletePriceUnit(tirdad, "<id>");
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("priceUnitsDeletePriceUnit failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Price unit ID                                                                                                                                                                  |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.SuccessResponse](../../sdk/models/successresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400, 404                   | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## getPriceUnit
-
-Use when you need to load a single price unit (e.g. for display or when creating a price).
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="getPriceUnit" method="get" path="/prices/units/{id}" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.priceUnits.getPriceUnit("<id>");
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsGetPriceUnit } from "@tirdad-ai/sdk/funcs/priceUnitsGetPriceUnit.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await priceUnitsGetPriceUnit(tirdad, "<id>");
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("priceUnitsGetPriceUnit failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Price unit ID                                                                                                                                                                  |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.PriceUnitResponse](../../sdk/models/priceunitresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400, 404                   | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
 ## getPriceUnitByCode
@@ -264,7 +195,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsGetPriceUnitByCode } from "@tirdad-ai/sdk/funcs/priceUnitsGetPriceUnitByCode.js";
+import { priceUnitsGetPriceUnitByCode } from "@tirdad-ai/sdk/funcs/price-units-get-price-unit-by-code.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -296,84 +227,13 @@ run();
 
 ### Response
 
-**Promise\<[models.PriceUnitResponse](../../sdk/models/priceunitresponse.md)\>**
+**Promise\<[models.PriceUnitResponse](../../sdk/models/price-unit-response.md)\>**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
 | models.ErrorsErrorResponse | 400, 404                   | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## listPriceUnits
-
-Use when listing price units (e.g. in a catalog or when creating prices). Returns a paginated list; supports status, sort, and pagination.
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="listPriceUnits" method="get" path="/prices/units" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.priceUnits.listPriceUnits({});
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsListPriceUnits } from "@tirdad-ai/sdk/funcs/priceUnitsListPriceUnits.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await priceUnitsListPriceUnits(tirdad, {});
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("priceUnitsListPriceUnits failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.ListPriceUnitsRequest](../../sdk/models/listpriceunitsrequest.md)                                                                                                      | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.ListPriceUnitsResponse](../../sdk/models/listpriceunitsresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400                        | application/json           |
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
@@ -406,7 +266,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsQueryPriceUnit } from "@tirdad-ai/sdk/funcs/priceUnitsQueryPriceUnit.js";
+import { priceUnitsQueryPriceUnit } from "@tirdad-ai/sdk/funcs/price-units-query-price-unit.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -431,14 +291,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.PriceUnitFilter](../../sdk/models/priceunitfilter.md)                                                                                                                  | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [models.PriceUnitFilter](../../sdk/models/price-unit-filter.md)                                                                                                                | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.ListPriceUnitsResponse](../../sdk/models/listpriceunitsresponse.md)\>**
+**Promise\<[models.ListPriceUnitsResponse](../../sdk/models/list-price-units-response.md)\>**
 
 ### Errors
 
@@ -446,6 +306,76 @@ run();
 | -------------------------- | -------------------------- | -------------------------- |
 | models.ErrorsErrorResponse | 400                        | application/json           |
 | models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## getPriceUnit
+
+Use when you need to load a single price unit (e.g. for display or when creating a price).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getPriceUnit" method="get" path="/prices/units/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.priceUnits.getPriceUnit("<id>");
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { priceUnitsGetPriceUnit } from "@tirdad-ai/sdk/funcs/price-units-get-price-unit.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await priceUnitsGetPriceUnit(tirdad, "<id>");
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("priceUnitsGetPriceUnit failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Price unit ID                                                                                                                                                                  |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.PriceUnitResponse](../../sdk/models/price-unit-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400, 404                   | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updatePriceUnit
@@ -477,7 +407,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsUpdatePriceUnit } from "@tirdad-ai/sdk/funcs/priceUnitsUpdatePriceUnit.js";
+import { priceUnitsUpdatePriceUnit } from "@tirdad-ai/sdk/funcs/price-units-update-price-unit.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -503,14 +433,84 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Price unit ID                                                                                                                                                                  |
-| `body`                                                                                                                                                                         | [models.UpdatePriceUnitRequest](../../sdk/models/updatepriceunitrequest.md)                                                                                                    | :heavy_check_mark:                                                                                                                                                             | Price unit details to update                                                                                                                                                   |
+| `body`                                                                                                                                                                         | [models.UpdatePriceUnitRequest](../../sdk/models/update-price-unit-request.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | Price unit details to update                                                                                                                                                   |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.PriceUnitResponse](../../sdk/models/priceunitresponse.md)\>**
+**Promise\<[models.PriceUnitResponse](../../sdk/models/price-unit-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400, 404                   | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## deletePriceUnit
+
+Use when removing a price unit that is no longer needed. Fails if any price references this unit.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="deletePriceUnit" method="delete" path="/prices/units/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.priceUnits.deletePriceUnit("<id>");
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { priceUnitsDeletePriceUnit } from "@tirdad-ai/sdk/funcs/price-units-delete-price-unit.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await priceUnitsDeletePriceUnit(tirdad, "<id>");
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("priceUnitsDeletePriceUnit failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Price unit ID                                                                                                                                                                  |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.SuccessResponse](../../sdk/models/success-response.md)\>**
 
 ### Errors
 

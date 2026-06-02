@@ -5,10 +5,10 @@
 ### Available Operations
 
 * [createCoupon](#createcoupon) - Create coupon
-* [deleteCoupon](#deletecoupon) - Delete coupon
-* [getCoupon](#getcoupon) - Get coupon
 * [queryCoupon](#querycoupon) - Query coupons
+* [getCoupon](#getcoupon) - Get coupon
 * [updateCoupon](#updatecoupon) - Update coupon
+* [deleteCoupon](#deletecoupon) - Delete coupon
 
 ## createCoupon
 
@@ -43,7 +43,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponsCreateCoupon } from "@tirdad-ai/sdk/funcs/couponsCreateCoupon.js";
+import { couponsCreateCoupon } from "@tirdad-ai/sdk/funcs/coupons-create-coupon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -72,14 +72,228 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.CreateCouponRequest](../../sdk/models/createcouponrequest.md)                                                                                                          | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [models.CreateCouponRequest](../../sdk/models/create-coupon-request.md)                                                                                                        | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.CouponResponse](../../sdk/models/couponresponse.md)\>**
+**Promise\<[models.CouponResponse](../../sdk/models/coupon-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400, 401, 403, 404         | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## queryCoupon
+
+Use when listing or searching coupons (e.g. promo management). Returns a paginated list; supports filtering and sorting.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="queryCoupon" method="post" path="/coupons/search" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.coupons.queryCoupon({});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { couponsQueryCoupon } from "@tirdad-ai/sdk/funcs/coupons-query-coupon.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await couponsQueryCoupon(tirdad, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("couponsQueryCoupon failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [models.CouponFilter](../../sdk/models/coupon-filter.md)                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.ListCouponsResponse](../../sdk/models/list-coupons-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## getCoupon
+
+Use when you need to load a single coupon (e.g. for display or to validate a code).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getCoupon" method="get" path="/coupons/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.coupons.getCoupon("<id>");
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { couponsGetCoupon } from "@tirdad-ai/sdk/funcs/coupons-get-coupon.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await couponsGetCoupon(tirdad, "<id>");
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("couponsGetCoupon failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Coupon ID                                                                                                                                                                      |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.CouponResponse](../../sdk/models/coupon-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400, 404                   | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## updateCoupon
+
+Use when changing coupon config (e.g. value, validity, or usage limits).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateCoupon" method="put" path="/coupons/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.coupons.updateCoupon("<id>", {});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { couponsUpdateCoupon } from "@tirdad-ai/sdk/funcs/coupons-update-coupon.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await couponsUpdateCoupon(tirdad, "<id>", {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("couponsUpdateCoupon failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Coupon ID                                                                                                                                                                      |
+| `body`                                                                                                                                                                         | [models.UpdateCouponRequest](../../sdk/models/update-coupon-request.md)                                                                                                        | :heavy_check_mark:                                                                                                                                                             | Coupon update request                                                                                                                                                          |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.CouponResponse](../../sdk/models/coupon-response.md)\>**
 
 ### Errors
 
@@ -118,7 +332,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponsDeleteCoupon } from "@tirdad-ai/sdk/funcs/couponsDeleteCoupon.js";
+import { couponsDeleteCoupon } from "@tirdad-ai/sdk/funcs/coupons-delete-coupon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -151,220 +365,6 @@ run();
 ### Response
 
 **Promise\<[{ [k: string]: string }](../../models/.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400, 401, 403, 404         | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## getCoupon
-
-Use when you need to load a single coupon (e.g. for display or to validate a code).
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="getCoupon" method="get" path="/coupons/{id}" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.coupons.getCoupon("<id>");
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponsGetCoupon } from "@tirdad-ai/sdk/funcs/couponsGetCoupon.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await couponsGetCoupon(tirdad, "<id>");
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("couponsGetCoupon failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Coupon ID                                                                                                                                                                      |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.CouponResponse](../../sdk/models/couponresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400, 404                   | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## queryCoupon
-
-Use when listing or searching coupons (e.g. promo management). Returns a paginated list; supports filtering and sorting.
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="queryCoupon" method="post" path="/coupons/search" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.coupons.queryCoupon({});
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponsQueryCoupon } from "@tirdad-ai/sdk/funcs/couponsQueryCoupon.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await couponsQueryCoupon(tirdad, {});
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("couponsQueryCoupon failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.CouponFilter](../../sdk/models/couponfilter.md)                                                                                                                        | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.ListCouponsResponse](../../sdk/models/listcouponsresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400                        | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## updateCoupon
-
-Use when changing coupon config (e.g. value, validity, or usage limits).
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="updateCoupon" method="put" path="/coupons/{id}" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.coupons.updateCoupon("<id>", {});
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponsUpdateCoupon } from "@tirdad-ai/sdk/funcs/couponsUpdateCoupon.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await couponsUpdateCoupon(tirdad, "<id>", {});
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("couponsUpdateCoupon failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Coupon ID                                                                                                                                                                      |
-| `body`                                                                                                                                                                         | [models.UpdateCouponRequest](../../sdk/models/updatecouponrequest.md)                                                                                                          | :heavy_check_mark:                                                                                                                                                             | Coupon update request                                                                                                                                                          |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.CouponResponse](../../sdk/models/couponresponse.md)\>**
 
 ### Errors
 

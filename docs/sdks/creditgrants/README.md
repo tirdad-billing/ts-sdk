@@ -5,10 +5,10 @@
 ### Available Operations
 
 * [createCreditGrant](#createcreditgrant) - Create credit grant
-* [deleteCreditGrant](#deletecreditgrant) - Delete credit grant
 * [getCreditGrant](#getcreditgrant) - Get credit grant
-* [getPlanCreditGrants](#getplancreditgrants) - Get plan credit grants
 * [updateCreditGrant](#updatecreditgrant) - Update credit grant
+* [deleteCreditGrant](#deletecreditgrant) - Delete credit grant
+* [getPlanCreditGrants](#getplancreditgrants) - Get plan credit grants
 
 ## createCreditGrant
 
@@ -44,7 +44,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditGrantsCreateCreditGrant } from "@tirdad-ai/sdk/funcs/creditGrantsCreateCreditGrant.js";
+import { creditGrantsCreateCreditGrant } from "@tirdad-ai/sdk/funcs/credit-grants-create-credit-grant.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -74,86 +74,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.CreateCreditGrantRequest](../../sdk/models/createcreditgrantrequest.md)                                                                                                | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [models.CreateCreditGrantRequest](../../sdk/models/create-credit-grant-request.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.CreditGrantResponse](../../sdk/models/creditgrantresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400                        | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## deleteCreditGrant
-
-Use when removing or ending a credit grant (e.g. revoke promo or close prepaid). Plan-scoped grants are archived; subscription-scoped supports optional effective_date in body.
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="deleteCreditGrant" method="delete" path="/creditgrants/{id}" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.creditGrants.deleteCreditGrant("<id>");
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditGrantsDeleteCreditGrant } from "@tirdad-ai/sdk/funcs/creditGrantsDeleteCreditGrant.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await creditGrantsDeleteCreditGrant(tirdad, "<id>");
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("creditGrantsDeleteCreditGrant failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Credit Grant ID                                                                                                                                                                |
-| `body`                                                                                                                                                                         | [models.DeleteCreditGrantRequest](../../sdk/models/deletecreditgrantrequest.md)                                                                                                | :heavy_minus_sign:                                                                                                                                                             | Optional: effective_date for subscription-scoped grants                                                                                                                        |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.SuccessResponse](../../sdk/models/successresponse.md)\>**
+**Promise\<[models.CreditGrantResponse](../../sdk/models/credit-grant-response.md)\>**
 
 ### Errors
 
@@ -192,7 +120,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditGrantsGetCreditGrant } from "@tirdad-ai/sdk/funcs/creditGrantsGetCreditGrant.js";
+import { creditGrantsGetCreditGrant } from "@tirdad-ai/sdk/funcs/credit-grants-get-credit-grant.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -224,7 +152,151 @@ run();
 
 ### Response
 
-**Promise\<[models.CreditGrantResponse](../../sdk/models/creditgrantresponse.md)\>**
+**Promise\<[models.CreditGrantResponse](../../sdk/models/credit-grant-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## updateCreditGrant
+
+Use when changing a credit grant (e.g. amount or end date). Request body contains the fields to update.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateCreditGrant" method="put" path="/creditgrants/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.creditGrants.updateCreditGrant("<id>", {});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { creditGrantsUpdateCreditGrant } from "@tirdad-ai/sdk/funcs/credit-grants-update-credit-grant.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await creditGrantsUpdateCreditGrant(tirdad, "<id>", {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("creditGrantsUpdateCreditGrant failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Credit Grant ID                                                                                                                                                                |
+| `body`                                                                                                                                                                         | [models.UpdateCreditGrantRequest](../../sdk/models/update-credit-grant-request.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | Credit Grant configuration                                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.CreditGrantResponse](../../sdk/models/credit-grant-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## deleteCreditGrant
+
+Use when removing or ending a credit grant (e.g. revoke promo or close prepaid). Plan-scoped grants are archived; subscription-scoped supports optional effective_date in body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="deleteCreditGrant" method="delete" path="/creditgrants/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.creditGrants.deleteCreditGrant("<id>");
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { creditGrantsDeleteCreditGrant } from "@tirdad-ai/sdk/funcs/credit-grants-delete-credit-grant.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await creditGrantsDeleteCreditGrant(tirdad, "<id>");
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("creditGrantsDeleteCreditGrant failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Credit Grant ID                                                                                                                                                                |
+| `body`                                                                                                                                                                         | [models.DeleteCreditGrantRequest](../../sdk/models/delete-credit-grant-request.md)                                                                                             | :heavy_minus_sign:                                                                                                                                                             | Optional: effective_date for subscription-scoped grants                                                                                                                        |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.SuccessResponse](../../sdk/models/success-response.md)\>**
 
 ### Errors
 
@@ -263,7 +335,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditGrantsGetPlanCreditGrants } from "@tirdad-ai/sdk/funcs/creditGrantsGetPlanCreditGrants.js";
+import { creditGrantsGetPlanCreditGrants } from "@tirdad-ai/sdk/funcs/credit-grants-get-plan-credit-grants.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -295,84 +367,12 @@ run();
 
 ### Response
 
-**Promise\<[models.ListCreditGrantsResponse](../../sdk/models/listcreditgrantsresponse.md)\>**
+**Promise\<[models.ListCreditGrantsResponse](../../sdk/models/list-credit-grants-response.md)\>**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
 | models.ErrorsErrorResponse | 400, 404                   | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## updateCreditGrant
-
-Use when changing a credit grant (e.g. amount or end date). Request body contains the fields to update.
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="updateCreditGrant" method="put" path="/creditgrants/{id}" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.creditGrants.updateCreditGrant("<id>", {});
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditGrantsUpdateCreditGrant } from "@tirdad-ai/sdk/funcs/creditGrantsUpdateCreditGrant.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await creditGrantsUpdateCreditGrant(tirdad, "<id>", {});
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("creditGrantsUpdateCreditGrant failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Credit Grant ID                                                                                                                                                                |
-| `body`                                                                                                                                                                         | [models.UpdateCreditGrantRequest](../../sdk/models/updatecreditgrantrequest.md)                                                                                                | :heavy_check_mark:                                                                                                                                                             | Credit Grant configuration                                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.CreditGrantResponse](../../sdk/models/creditgrantresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400                        | application/json           |
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |

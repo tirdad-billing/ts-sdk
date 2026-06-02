@@ -4,39 +4,39 @@
 
 ### Available Operations
 
-* [activateSubscription](#activatesubscription) - Activate draft subscription
-* [addSubscriptionAddon](#addsubscriptionaddon) - Add addon to subscription
-* [cancelSubscription](#cancelsubscription) - Cancel subscription
-* [cancelSubscriptionSchedule](#cancelsubscriptionschedule) - Cancel subscription schedule
 * [createSubscription](#createsubscription) - Create subscription
-* [createSubscriptionLineItem](#createsubscriptionlineitem) - Create subscription line item
+* [addSubscriptionAddon](#addsubscriptionaddon) - Add addon to subscription
+* [removeSubscriptionAddon](#removesubscriptionaddon) - Remove addon from subscription
+* [querySubscriptionLineItems](#querysubscriptionlineitems) - Search subscription line items
+* [updateSubscriptionLineItem](#updatesubscriptionlineitem) - Update subscription line item
 * [deleteSubscriptionLineItem](#deletesubscriptionlineitem) - Delete subscription line item
-* [executeSubscriptionChange](#executesubscriptionchange) - Execute subscription plan change
-* [executeSubscriptionModify](#executesubscriptionmodify) - Execute subscription modification
-* [getSubscription](#getsubscription) - Get subscription
-* [getSubscriptionAddonAssociations](#getsubscriptionaddonassociations) - Get active addon associations
-* [getSubscriptionEntitlements](#getsubscriptionentitlements) - Get subscription entitlements
-* [getSubscriptionSchedule](#getsubscriptionschedule) - Get subscription schedule
-* [getSubscriptionUpcomingGrants](#getsubscriptionupcominggrants) - Get upcoming credit grant applications
+* [querySubscription](#querysubscription) - Query subscriptions
 * [getSubscriptionUsage](#getsubscriptionusage) - Get usage by subscription
+* [getSubscription](#getsubscription) - Get subscription
+* [updateSubscription](#updatesubscription) - Update subscription
+* [activateSubscription](#activatesubscription) - Activate draft subscription
+* [getSubscriptionAddonAssociations](#getsubscriptionaddonassociations) - Get active addon associations
+* [cancelSubscription](#cancelsubscription) - Cancel subscription
+* [executeSubscriptionChange](#executesubscriptionchange) - Execute subscription plan change
+* [previewSubscriptionChange](#previewsubscriptionchange) - Preview subscription plan change
+* [getSubscriptionEntitlements](#getsubscriptionentitlements) - Get subscription entitlements
+* [getSubscriptionUpcomingGrants](#getsubscriptionupcominggrants) - Get upcoming credit grant applications
+* [createSubscriptionLineItem](#createsubscriptionlineitem) - Create subscription line item
+* [executeSubscriptionModify](#executesubscriptionmodify) - Execute subscription modification
+* [previewSubscriptionModify](#previewsubscriptionmodify) - Preview subscription modification
 * [getSubscriptionV2](#getsubscriptionv2) - Get subscription (V2)
 * [listAllSubscriptionSchedules](#listallsubscriptionschedules) - List all subscription schedules
+* [getSubscriptionSchedule](#getsubscriptionschedule) - Get subscription schedule
+* [cancelSubscriptionSchedule](#cancelsubscriptionschedule) - Cancel subscription schedule
 * [listSubscriptionSchedules](#listsubscriptionschedules) - List subscription schedules
-* [previewSubscriptionChange](#previewsubscriptionchange) - Preview subscription plan change
-* [previewSubscriptionModify](#previewsubscriptionmodify) - Preview subscription modification
-* [querySubscription](#querysubscription) - Query subscriptions
-* [querySubscriptionLineItems](#querysubscriptionlineitems) - Search subscription line items
-* [removeSubscriptionAddon](#removesubscriptionaddon) - Remove addon from subscription
-* [updateSubscription](#updatesubscription) - Update subscription
-* [updateSubscriptionLineItem](#updatesubscriptionlineitem) - Update subscription line item
 
-## activateSubscription
+## createSubscription
 
-Use when turning a draft subscription live (e.g. after collecting payment or completing setup). Once activated, billing and entitlements apply.
+Use when onboarding a customer to a plan or starting a new subscription. Ideal for draft subscriptions (activate later) or active from start.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="activateSubscription" method="post" path="/subscriptions/{id}/activate" -->
+<!-- UsageSnippet language="typescript" operationID="createSubscription" method="post" path="/subscriptions" -->
 ```typescript
 import { Tirdad } from "@tirdad-ai/sdk";
 
@@ -45,8 +45,10 @@ const tirdad = new Tirdad({
 });
 
 async function run() {
-  const result = await tirdad.subscriptions.activateSubscription("<id>", {
-    startDate: new Date("<value>"),
+  const result = await tirdad.subscriptions.createSubscription({
+    billingPeriod: "ONETIME",
+    currency: "Kwacha",
+    planId: "<id>",
   });
 
   console.log(result);
@@ -61,7 +63,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsActivateSubscription } from "@tirdad-ai/sdk/funcs/subscriptionsActivateSubscription.js";
+import { subscriptionsCreateSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-create-subscription.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -70,14 +72,16 @@ const tirdad = new TirdadCore({
 });
 
 async function run() {
-  const res = await subscriptionsActivateSubscription(tirdad, "<id>", {
-    startDate: new Date("<value>"),
+  const res = await subscriptionsCreateSubscription(tirdad, {
+    billingPeriod: "ONETIME",
+    currency: "Kwacha",
+    planId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionsActivateSubscription failed:", res.error);
+    console.log("subscriptionsCreateSubscription failed:", res.error);
   }
 }
 
@@ -88,15 +92,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
-| `body`                                                                                                                                                                         | [models.ActivateDraftSubscriptionRequest](../../sdk/models/activatedraftsubscriptionrequest.md)                                                                                | :heavy_check_mark:                                                                                                                                                             | Activate Draft Subscription Request                                                                                                                                            |
+| `request`                                                                                                                                                                      | [models.CreateSubscriptionRequest](../../sdk/models/create-subscription-request.md)                                                                                            | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.SubscriptionResponse](../../sdk/models/subscriptionresponse.md)\>**
+**Promise\<[models.SubscriptionResponse](../../sdk/models/subscription-response.md)\>**
 
 ### Errors
 
@@ -138,7 +141,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsAddSubscriptionAddon } from "@tirdad-ai/sdk/funcs/subscriptionsAddSubscriptionAddon.js";
+import { subscriptionsAddSubscriptionAddon } from "@tirdad-ai/sdk/funcs/subscriptions-add-subscription-addon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -166,14 +169,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.AddAddonRequest](../../sdk/models/addaddonrequest.md)                                                                                                                  | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [models.AddAddonRequest](../../sdk/models/add-addon-request.md)                                                                                                                | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.AddonAssociationResponse](../../sdk/models/addonassociationresponse.md)\>**
+**Promise\<[models.AddonAssociationResponse](../../sdk/models/addon-association-response.md)\>**
 
 ### Errors
 
@@ -183,13 +186,13 @@ run();
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
-## cancelSubscription
+## removeSubscriptionAddon
 
-Use when a customer churns or downgrades. Supports immediate or end-of-period cancellation and proration. Ideal for self-serve or support-driven cancellations.
+Use when removing an add-on from a subscription (e.g. downgrade or opt-out).
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="cancelSubscription" method="post" path="/subscriptions/{id}/cancel" -->
+<!-- UsageSnippet language="typescript" operationID="removeSubscriptionAddon" method="delete" path="/subscriptions/addon" -->
 ```typescript
 import { Tirdad } from "@tirdad-ai/sdk";
 
@@ -198,8 +201,8 @@ const tirdad = new Tirdad({
 });
 
 async function run() {
-  const result = await tirdad.subscriptions.cancelSubscription("<id>", {
-    cancellationType: "immediate",
+  const result = await tirdad.subscriptions.removeSubscriptionAddon({
+    addonAssociationId: "<id>",
   });
 
   console.log(result);
@@ -214,7 +217,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsCancelSubscription } from "@tirdad-ai/sdk/funcs/subscriptionsCancelSubscription.js";
+import { subscriptionsRemoveSubscriptionAddon } from "@tirdad-ai/sdk/funcs/subscriptions-remove-subscription-addon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -223,14 +226,14 @@ const tirdad = new TirdadCore({
 });
 
 async function run() {
-  const res = await subscriptionsCancelSubscription(tirdad, "<id>", {
-    cancellationType: "immediate",
+  const res = await subscriptionsRemoveSubscriptionAddon(tirdad, {
+    addonAssociationId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionsCancelSubscription failed:", res.error);
+    console.log("subscriptionsRemoveSubscriptionAddon failed:", res.error);
   }
 }
 
@@ -241,15 +244,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
-| `body`                                                                                                                                                                         | [models.CancelSubscriptionRequest](../../sdk/models/cancelsubscriptionrequest.md)                                                                                              | :heavy_check_mark:                                                                                                                                                             | Cancel Subscription Request                                                                                                                                                    |
+| `request`                                                                                                                                                                      | [models.RemoveAddonRequest](../../sdk/models/remove-addon-request.md)                                                                                                          | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.CancelSubscriptionResponse](../../sdk/models/cancelsubscriptionresponse.md)\>**
+**Promise\<[models.SuccessResponse](../../sdk/models/success-response.md)\>**
 
 ### Errors
 
@@ -259,13 +261,13 @@ run();
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
-## cancelSubscriptionSchedule
+## querySubscriptionLineItems
 
-Use when cancelling a scheduled change (e.g. customer changed mind). Identify by schedule ID in path or by subscription ID + schedule type in body.
+List subscription line items with a JSON filter (subscription, customer, price, pagination, expand=prices, etc.).
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="cancelSubscriptionSchedule" method="post" path="/v1/subscriptions/schedules/{schedule_id}/cancel" -->
+<!-- UsageSnippet language="typescript" operationID="querySubscriptionLineItems" method="post" path="/subscriptions/lineitems/search" -->
 ```typescript
 import { Tirdad } from "@tirdad-ai/sdk";
 
@@ -274,7 +276,7 @@ const tirdad = new Tirdad({
 });
 
 async function run() {
-  const result = await tirdad.subscriptions.cancelSubscriptionSchedule("<id>");
+  const result = await tirdad.subscriptions.querySubscriptionLineItems({});
 
   console.log(result);
 }
@@ -288,7 +290,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsCancelSubscriptionSchedule } from "@tirdad-ai/sdk/funcs/subscriptionsCancelSubscriptionSchedule.js";
+import { subscriptionsQuerySubscriptionLineItems } from "@tirdad-ai/sdk/funcs/subscriptions-query-subscription-line-items.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -297,12 +299,12 @@ const tirdad = new TirdadCore({
 });
 
 async function run() {
-  const res = await subscriptionsCancelSubscriptionSchedule(tirdad, "<id>");
+  const res = await subscriptionsQuerySubscriptionLineItems(tirdad, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionsCancelSubscriptionSchedule failed:", res.error);
+    console.log("subscriptionsQuerySubscriptionLineItems failed:", res.error);
   }
 }
 
@@ -313,92 +315,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `scheduleId`                                                                                                                                                                   | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Schedule ID (optional if using request body)                                                                                                                                   |
-| `body`                                                                                                                                                                         | [models.CancelScheduleRequest](../../sdk/models/cancelschedulerequest.md)                                                                                                      | :heavy_minus_sign:                                                                                                                                                             | Cancel request (optional if using path parameter)                                                                                                                              |
+| `request`                                                                                                                                                                      | [models.SubscriptionLineItemFilter](../../sdk/models/subscription-line-item-filter.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.CancelScheduleResponse](../../sdk/models/cancelscheduleresponse.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| models.SDKError | 4XX, 5XX        | \*/\*           |
-
-## createSubscription
-
-Use when onboarding a customer to a plan or starting a new subscription. Ideal for draft subscriptions (activate later) or active from start.
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="createSubscription" method="post" path="/subscriptions" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.subscriptions.createSubscription({
-    billingPeriod: "DAILY",
-    currency: "New Leu",
-    planId: "<id>",
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsCreateSubscription } from "@tirdad-ai/sdk/funcs/subscriptionsCreateSubscription.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await subscriptionsCreateSubscription(tirdad, {
-    billingPeriod: "DAILY",
-    currency: "New Leu",
-    planId: "<id>",
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("subscriptionsCreateSubscription failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.CreateSubscriptionRequest](../../sdk/models/createsubscriptionrequest.md)                                                                                              | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.SubscriptionResponse](../../sdk/models/subscriptionresponse.md)\>**
+**Promise\<[models.ListSubscriptionLineItemsResponse](../../sdk/models/list-subscription-line-items-response.md)\>**
 
 ### Errors
 
@@ -408,13 +332,13 @@ run();
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
-## createSubscriptionLineItem
+## updateSubscriptionLineItem
 
-Use when adding a new charge or seat to a subscription (e.g. extra seat or one-time add). Supports price_id or inline price.
+Use when changing a subscription line item (e.g. quantity or price). Implemented by ending the current line and creating a new one for clean billing.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createSubscriptionLineItem" method="post" path="/subscriptions/{id}/lineitems" -->
+<!-- UsageSnippet language="typescript" operationID="updateSubscriptionLineItem" method="put" path="/subscriptions/lineitems/{id}" -->
 ```typescript
 import { Tirdad } from "@tirdad-ai/sdk";
 
@@ -423,7 +347,7 @@ const tirdad = new Tirdad({
 });
 
 async function run() {
-  const result = await tirdad.subscriptions.createSubscriptionLineItem("<id>", {});
+  const result = await tirdad.subscriptions.updateSubscriptionLineItem("<id>", {});
 
   console.log(result);
 }
@@ -437,7 +361,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsCreateSubscriptionLineItem } from "@tirdad-ai/sdk/funcs/subscriptionsCreateSubscriptionLineItem.js";
+import { subscriptionsUpdateSubscriptionLineItem } from "@tirdad-ai/sdk/funcs/subscriptions-update-subscription-line-item.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -446,12 +370,12 @@ const tirdad = new TirdadCore({
 });
 
 async function run() {
-  const res = await subscriptionsCreateSubscriptionLineItem(tirdad, "<id>", {});
+  const res = await subscriptionsUpdateSubscriptionLineItem(tirdad, "<id>", {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionsCreateSubscriptionLineItem failed:", res.error);
+    console.log("subscriptionsUpdateSubscriptionLineItem failed:", res.error);
   }
 }
 
@@ -462,21 +386,21 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
-| `body`                                                                                                                                                                         | [models.CreateSubscriptionLineItemRequest](../../sdk/models/createsubscriptionlineitemrequest.md)                                                                              | :heavy_check_mark:                                                                                                                                                             | Create Line Item Request                                                                                                                                                       |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Line Item ID                                                                                                                                                                   |
+| `body`                                                                                                                                                                         | [models.UpdateSubscriptionLineItemRequest](../../sdk/models/update-subscription-line-item-request.md)                                                                          | :heavy_check_mark:                                                                                                                                                             | Update Line Item Request                                                                                                                                                       |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.SubscriptionLineItemResponse](../../sdk/models/subscriptionlineitemresponse.md)\>**
+**Promise\<[models.SubscriptionLineItemResponse](../../sdk/models/subscription-line-item-response.md)\>**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400, 404                   | application/json           |
+| models.ErrorsErrorResponse | 400                        | application/json           |
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
@@ -509,7 +433,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsDeleteSubscriptionLineItem } from "@tirdad-ai/sdk/funcs/subscriptionsDeleteSubscriptionLineItem.js";
+import { subscriptionsDeleteSubscriptionLineItem } from "@tirdad-ai/sdk/funcs/subscriptions-delete-subscription-line-item.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -535,14 +459,14 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Line Item ID                                                                                                                                                                   |
-| `body`                                                                                                                                                                         | [models.DeleteSubscriptionLineItemRequest](../../sdk/models/deletesubscriptionlineitemrequest.md)                                                                              | :heavy_check_mark:                                                                                                                                                             | Delete Line Item Request                                                                                                                                                       |
+| `body`                                                                                                                                                                         | [models.DeleteSubscriptionLineItemRequest](../../sdk/models/delete-subscription-line-item-request.md)                                                                          | :heavy_check_mark:                                                                                                                                                             | Delete Line Item Request                                                                                                                                                       |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.SubscriptionLineItemResponse](../../sdk/models/subscriptionlineitemresponse.md)\>**
+**Promise\<[models.SubscriptionLineItemResponse](../../sdk/models/subscription-line-item-response.md)\>**
 
 ### Errors
 
@@ -552,13 +476,13 @@ run();
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
-## executeSubscriptionChange
+## querySubscription
 
-Use when applying a plan change (e.g. upgrade or downgrade). Executes proration and generates invoice or credit as needed.
+Use when listing or searching subscriptions (e.g. admin view or customer subscription list). Returns a paginated list; supports filtering by customer, plan, status.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="executeSubscriptionChange" method="post" path="/subscriptions/{id}/change/execute" -->
+<!-- UsageSnippet language="typescript" operationID="querySubscription" method="post" path="/subscriptions/search" -->
 ```typescript
 import { Tirdad } from "@tirdad-ai/sdk";
 
@@ -567,13 +491,7 @@ const tirdad = new Tirdad({
 });
 
 async function run() {
-  const result = await tirdad.subscriptions.executeSubscriptionChange("<id>", {
-    billingCadence: "RECURRING",
-    billingCycle: "anniversary",
-    billingPeriod: "QUARTERLY",
-    prorationBehavior: "create_prorations",
-    targetPlanId: "<id>",
-  });
+  const result = await tirdad.subscriptions.querySubscription({});
 
   console.log(result);
 }
@@ -587,7 +505,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsExecuteSubscriptionChange } from "@tirdad-ai/sdk/funcs/subscriptionsExecuteSubscriptionChange.js";
+import { subscriptionsQuerySubscription } from "@tirdad-ai/sdk/funcs/subscriptions-query-subscription.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -596,18 +514,12 @@ const tirdad = new TirdadCore({
 });
 
 async function run() {
-  const res = await subscriptionsExecuteSubscriptionChange(tirdad, "<id>", {
-    billingCadence: "RECURRING",
-    billingCycle: "anniversary",
-    billingPeriod: "QUARTERLY",
-    prorationBehavior: "create_prorations",
-    targetPlanId: "<id>",
-  });
+  const res = await subscriptionsQuerySubscription(tirdad, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionsExecuteSubscriptionChange failed:", res.error);
+    console.log("subscriptionsQuerySubscription failed:", res.error);
   }
 }
 
@@ -618,31 +530,30 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
-| `body`                                                                                                                                                                         | [models.SubscriptionChangeRequest](../../sdk/models/subscriptionchangerequest.md)                                                                                              | :heavy_check_mark:                                                                                                                                                             | Subscription change request                                                                                                                                                    |
+| `request`                                                                                                                                                                      | [models.SubscriptionFilter](../../sdk/models/subscription-filter.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.SubscriptionChangeExecuteResponse](../../sdk/models/subscriptionchangeexecuteresponse.md)\>**
+**Promise\<[models.ListSubscriptionsResponse](../../sdk/models/list-subscriptions-response.md)\>**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400, 404                   | application/json           |
+| models.ErrorsErrorResponse | 400                        | application/json           |
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
-## executeSubscriptionModify
+## getSubscriptionUsage
 
-Execute a mid-cycle subscription modification (inheritance or quantity change).
+Use when showing usage for a subscription (e.g. in a portal or for overage checks). Supports time range and filters.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="executeSubscriptionModify" method="post" path="/subscriptions/{id}/modify/execute" -->
+<!-- UsageSnippet language="typescript" operationID="getSubscriptionUsage" method="post" path="/subscriptions/usage" -->
 ```typescript
 import { Tirdad } from "@tirdad-ai/sdk";
 
@@ -651,8 +562,11 @@ const tirdad = new Tirdad({
 });
 
 async function run() {
-  const result = await tirdad.subscriptions.executeSubscriptionModify("<id>", {
-    type: "inheritance",
+  const result = await tirdad.subscriptions.getSubscriptionUsage({
+    endTime: new Date("2024-03-20T00:00:00Z"),
+    lifetimeUsage: false,
+    startTime: new Date("2024-03-13T00:00:00Z"),
+    subscriptionId: "123",
   });
 
   console.log(result);
@@ -667,7 +581,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsExecuteSubscriptionModify } from "@tirdad-ai/sdk/funcs/subscriptionsExecuteSubscriptionModify.js";
+import { subscriptionsGetSubscriptionUsage } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-usage.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -676,14 +590,17 @@ const tirdad = new TirdadCore({
 });
 
 async function run() {
-  const res = await subscriptionsExecuteSubscriptionModify(tirdad, "<id>", {
-    type: "inheritance",
+  const res = await subscriptionsGetSubscriptionUsage(tirdad, {
+    endTime: new Date("2024-03-20T00:00:00Z"),
+    lifetimeUsage: false,
+    startTime: new Date("2024-03-13T00:00:00Z"),
+    subscriptionId: "123",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionsExecuteSubscriptionModify failed:", res.error);
+    console.log("subscriptionsGetSubscriptionUsage failed:", res.error);
   }
 }
 
@@ -694,21 +611,20 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
-| `body`                                                                                                                                                                         | [models.ExecuteSubscriptionModifyRequest](../../sdk/models/executesubscriptionmodifyrequest.md)                                                                                | :heavy_check_mark:                                                                                                                                                             | Modification request                                                                                                                                                           |
+| `request`                                                                                                                                                                      | [models.GetUsageBySubscriptionRequest](../../sdk/models/get-usage-by-subscription-request.md)                                                                                  | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.SubscriptionModifyResponse](../../sdk/models/subscriptionmodifyresponse.md)\>**
+**Promise\<[models.GetUsageBySubscriptionResponse](../../sdk/models/get-usage-by-subscription-response.md)\>**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400, 404                   | application/json           |
+| models.ErrorsErrorResponse | 400                        | application/json           |
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
@@ -741,7 +657,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscription } from "@tirdad-ai/sdk/funcs/subscriptionsGetSubscription.js";
+import { subscriptionsGetSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -773,7 +689,155 @@ run();
 
 ### Response
 
-**Promise\<[models.SubscriptionResponse](../../sdk/models/subscriptionresponse.md)\>**
+**Promise\<[models.SubscriptionResponse](../../sdk/models/subscription-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## updateSubscription
+
+Use when changing subscription details (e.g. quantity, billing anchor, or parent). Supports partial update; send "" to clear parent_subscription_id.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateSubscription" method="put" path="/subscriptions/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.subscriptions.updateSubscription("<id>", {});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { subscriptionsUpdateSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-update-subscription.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await subscriptionsUpdateSubscription(tirdad, "<id>", {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("subscriptionsUpdateSubscription failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
+| `body`                                                                                                                                                                         | [models.UpdateSubscriptionRequest](../../sdk/models/update-subscription-request.md)                                                                                            | :heavy_check_mark:                                                                                                                                                             | Update Subscription Request                                                                                                                                                    |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.SubscriptionResponse](../../sdk/models/subscription-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## activateSubscription
+
+Use when turning a draft subscription live (e.g. after collecting payment or completing setup). Once activated, billing and entitlements apply.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="activateSubscription" method="post" path="/subscriptions/{id}/activate" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.subscriptions.activateSubscription("<id>", {
+    startDate: new Date("2026-02-04T05:02:31.632Z"),
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { subscriptionsActivateSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-activate-subscription.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await subscriptionsActivateSubscription(tirdad, "<id>", {
+    startDate: new Date("2026-02-04T05:02:31.632Z"),
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("subscriptionsActivateSubscription failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
+| `body`                                                                                                                                                                         | [models.ActivateDraftSubscriptionRequest](../../sdk/models/activate-draft-subscription-request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | Activate Draft Subscription Request                                                                                                                                            |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.SubscriptionResponse](../../sdk/models/subscription-response.md)\>**
 
 ### Errors
 
@@ -812,7 +876,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionAddonAssociations } from "@tirdad-ai/sdk/funcs/subscriptionsGetSubscriptionAddonAssociations.js";
+import { subscriptionsGetSubscriptionAddonAssociations } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-addon-associations.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -854,6 +918,250 @@ run();
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
+## cancelSubscription
+
+Use when a customer churns or downgrades. Supports immediate or end-of-period cancellation and proration. Ideal for self-serve or support-driven cancellations.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="cancelSubscription" method="post" path="/subscriptions/{id}/cancel" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.subscriptions.cancelSubscription("<id>", {
+    cancellationType: "immediate",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { subscriptionsCancelSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-cancel-subscription.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await subscriptionsCancelSubscription(tirdad, "<id>", {
+    cancellationType: "immediate",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("subscriptionsCancelSubscription failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
+| `body`                                                                                                                                                                         | [models.CancelSubscriptionRequest](../../sdk/models/cancel-subscription-request.md)                                                                                            | :heavy_check_mark:                                                                                                                                                             | Cancel Subscription Request                                                                                                                                                    |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.CancelSubscriptionResponse](../../sdk/models/cancel-subscription-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## executeSubscriptionChange
+
+Use when applying a plan change (e.g. upgrade or downgrade). Executes proration and generates invoice or credit as needed.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="executeSubscriptionChange" method="post" path="/subscriptions/{id}/change/execute" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.subscriptions.executeSubscriptionChange("<id>", {
+    billingCadence: "RECURRING",
+    billingCycle: "anniversary",
+    billingPeriod: "ANNUAL",
+    prorationBehavior: "none",
+    targetPlanId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { subscriptionsExecuteSubscriptionChange } from "@tirdad-ai/sdk/funcs/subscriptions-execute-subscription-change.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await subscriptionsExecuteSubscriptionChange(tirdad, "<id>", {
+    billingCadence: "RECURRING",
+    billingCycle: "anniversary",
+    billingPeriod: "ANNUAL",
+    prorationBehavior: "none",
+    targetPlanId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("subscriptionsExecuteSubscriptionChange failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
+| `body`                                                                                                                                                                         | [models.SubscriptionChangeRequest](../../sdk/models/subscription-change-request.md)                                                                                            | :heavy_check_mark:                                                                                                                                                             | Subscription change request                                                                                                                                                    |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.SubscriptionChangeExecuteResponse](../../sdk/models/subscription-change-execute-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400, 404                   | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## previewSubscriptionChange
+
+Use when showing a customer the cost of a plan change before they confirm (e.g. upgrade/downgrade preview with proration).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="previewSubscriptionChange" method="post" path="/subscriptions/{id}/change/preview" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.subscriptions.previewSubscriptionChange("<id>", {
+    billingCadence: "RECURRING",
+    billingCycle: "anniversary",
+    billingPeriod: "ONETIME",
+    prorationBehavior: "none",
+    targetPlanId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { subscriptionsPreviewSubscriptionChange } from "@tirdad-ai/sdk/funcs/subscriptions-preview-subscription-change.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await subscriptionsPreviewSubscriptionChange(tirdad, "<id>", {
+    billingCadence: "RECURRING",
+    billingCycle: "anniversary",
+    billingPeriod: "ONETIME",
+    prorationBehavior: "none",
+    targetPlanId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("subscriptionsPreviewSubscriptionChange failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
+| `body`                                                                                                                                                                         | [models.SubscriptionChangeRequest](../../sdk/models/subscription-change-request.md)                                                                                            | :heavy_check_mark:                                                                                                                                                             | Subscription change preview request                                                                                                                                            |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.SubscriptionChangePreviewResponse](../../sdk/models/subscription-change-preview-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400, 404                   | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
 ## getSubscriptionEntitlements
 
 Use when checking what features or limits a subscription has (e.g. entitlement checks or feature gating). Optional feature_ids to filter.
@@ -883,7 +1191,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionEntitlements } from "@tirdad-ai/sdk/funcs/subscriptionsGetSubscriptionEntitlements.js";
+import { subscriptionsGetSubscriptionEntitlements } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-entitlements.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -916,7 +1224,7 @@ run();
 
 ### Response
 
-**Promise\<[models.SubscriptionEntitlementsResponse](../../sdk/models/subscriptionentitlementsresponse.md)\>**
+**Promise\<[models.SubscriptionEntitlementsResponse](../../sdk/models/subscription-entitlements-response.md)\>**
 
 ### Errors
 
@@ -925,75 +1233,6 @@ run();
 | models.ErrorsErrorResponse | 400, 404                   | application/json           |
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## getSubscriptionSchedule
-
-Use when you need to load a single scheduled change (e.g. to show when a plan change or renewal takes effect).
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="getSubscriptionSchedule" method="get" path="/v1/subscription-schedules/{id}" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.subscriptions.getSubscriptionSchedule("<id>");
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionSchedule } from "@tirdad-ai/sdk/funcs/subscriptionsGetSubscriptionSchedule.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await subscriptionsGetSubscriptionSchedule(tirdad, "<id>");
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("subscriptionsGetSubscriptionSchedule failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Schedule ID                                                                                                                                                                    |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.SubscriptionScheduleResponse](../../sdk/models/subscriptionscheduleresponse.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## getSubscriptionUpcomingGrants
 
@@ -1024,7 +1263,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionUpcomingGrants } from "@tirdad-ai/sdk/funcs/subscriptionsGetSubscriptionUpcomingGrants.js";
+import { subscriptionsGetSubscriptionUpcomingGrants } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-upcoming-grants.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1056,7 +1295,7 @@ run();
 
 ### Response
 
-**Promise\<[models.ListCreditGrantApplicationsResponse](../../sdk/models/listcreditgrantapplicationsresponse.md)\>**
+**Promise\<[models.ListCreditGrantApplicationsResponse](../../sdk/models/list-credit-grant-applications-response.md)\>**
 
 ### Errors
 
@@ -1066,13 +1305,13 @@ run();
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
-## getSubscriptionUsage
+## createSubscriptionLineItem
 
-Use when showing usage for a subscription (e.g. in a portal or for overage checks). Supports time range and filters.
+Use when adding a new charge or seat to a subscription (e.g. extra seat or one-time add). Supports price_id or inline price.
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getSubscriptionUsage" method="post" path="/subscriptions/usage" -->
+<!-- UsageSnippet language="typescript" operationID="createSubscriptionLineItem" method="post" path="/subscriptions/{id}/lineitems" -->
 ```typescript
 import { Tirdad } from "@tirdad-ai/sdk";
 
@@ -1081,11 +1320,80 @@ const tirdad = new Tirdad({
 });
 
 async function run() {
-  const result = await tirdad.subscriptions.getSubscriptionUsage({
-    endTime: new Date("2024-03-20T00:00:00Z"),
-    lifetimeUsage: false,
-    startTime: new Date("2024-03-13T00:00:00Z"),
-    subscriptionId: "123",
+  const result = await tirdad.subscriptions.createSubscriptionLineItem("<id>", {});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { subscriptionsCreateSubscriptionLineItem } from "@tirdad-ai/sdk/funcs/subscriptions-create-subscription-line-item.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await subscriptionsCreateSubscriptionLineItem(tirdad, "<id>", {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("subscriptionsCreateSubscriptionLineItem failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
+| `body`                                                                                                                                                                         | [models.CreateSubscriptionLineItemRequest](../../sdk/models/create-subscription-line-item-request.md)                                                                          | :heavy_check_mark:                                                                                                                                                             | Create Line Item Request                                                                                                                                                       |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.SubscriptionLineItemResponse](../../sdk/models/subscription-line-item-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400, 404                   | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## executeSubscriptionModify
+
+Execute a mid-cycle subscription modification (inheritance or quantity change).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="executeSubscriptionModify" method="post" path="/subscriptions/{id}/modify/execute" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.subscriptions.executeSubscriptionModify("<id>", {
+    type: "inheritance",
   });
 
   console.log(result);
@@ -1100,7 +1408,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionUsage } from "@tirdad-ai/sdk/funcs/subscriptionsGetSubscriptionUsage.js";
+import { subscriptionsExecuteSubscriptionModify } from "@tirdad-ai/sdk/funcs/subscriptions-execute-subscription-modify.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1109,17 +1417,14 @@ const tirdad = new TirdadCore({
 });
 
 async function run() {
-  const res = await subscriptionsGetSubscriptionUsage(tirdad, {
-    endTime: new Date("2024-03-20T00:00:00Z"),
-    lifetimeUsage: false,
-    startTime: new Date("2024-03-13T00:00:00Z"),
-    subscriptionId: "123",
+  const res = await subscriptionsExecuteSubscriptionModify(tirdad, "<id>", {
+    type: "inheritance",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionsGetSubscriptionUsage failed:", res.error);
+    console.log("subscriptionsExecuteSubscriptionModify failed:", res.error);
   }
 }
 
@@ -1130,20 +1435,97 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.GetUsageBySubscriptionRequest](../../sdk/models/getusagebysubscriptionrequest.md)                                                                                      | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
+| `body`                                                                                                                                                                         | [models.ExecuteSubscriptionModifyRequest](../../sdk/models/execute-subscription-modify-request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | Modification request                                                                                                                                                           |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[models.GetUsageBySubscriptionResponse](../../sdk/models/getusagebysubscriptionresponse.md)\>**
+**Promise\<[models.SubscriptionModifyResponse](../../sdk/models/subscription-modify-response.md)\>**
 
 ### Errors
 
 | Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400                        | application/json           |
+| models.ErrorsErrorResponse | 400, 404                   | application/json           |
+| models.ErrorsErrorResponse | 500                        | application/json           |
+| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
+
+## previewSubscriptionModify
+
+Preview the impact of a mid-cycle subscription modification without committing changes.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="previewSubscriptionModify" method="post" path="/subscriptions/{id}/modify/preview" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.subscriptions.previewSubscriptionModify("<id>", {
+    type: "trial_end",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { subscriptionsPreviewSubscriptionModify } from "@tirdad-ai/sdk/funcs/subscriptions-preview-subscription-modify.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await subscriptionsPreviewSubscriptionModify(tirdad, "<id>", {
+    type: "trial_end",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("subscriptionsPreviewSubscriptionModify failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
+| `body`                                                                                                                                                                         | [models.ExecuteSubscriptionModifyRequest](../../sdk/models/execute-subscription-modify-request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | Modification preview request                                                                                                                                                   |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.SubscriptionModifyResponse](../../sdk/models/subscription-modify-response.md)\>**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models.ErrorsErrorResponse | 400, 404                   | application/json           |
 | models.ErrorsErrorResponse | 500                        | application/json           |
 | models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
@@ -1176,7 +1558,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionV2 } from "@tirdad-ai/sdk/funcs/subscriptionsGetSubscriptionV2.js";
+import { subscriptionsGetSubscriptionV2 } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-v2.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1209,7 +1591,7 @@ run();
 
 ### Response
 
-**Promise\<[models.SubscriptionResponseV2](../../sdk/models/subscriptionresponsev2.md)\>**
+**Promise\<[models.SubscriptionResponseV2](../../sdk/models/subscription-response-v2.md)\>**
 
 ### Errors
 
@@ -1248,7 +1630,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsListAllSubscriptionSchedules } from "@tirdad-ai/sdk/funcs/subscriptionsListAllSubscriptionSchedules.js";
+import { subscriptionsListAllSubscriptionSchedules } from "@tirdad-ai/sdk/funcs/subscriptions-list-all-subscription-schedules.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1283,7 +1665,146 @@ run();
 
 ### Response
 
-**Promise\<[models.GetPendingSchedulesResponse](../../sdk/models/getpendingschedulesresponse.md)\>**
+**Promise\<[models.GetPendingSchedulesResponse](../../sdk/models/get-pending-schedules-response.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getSubscriptionSchedule
+
+Use when you need to load a single scheduled change (e.g. to show when a plan change or renewal takes effect).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getSubscriptionSchedule" method="get" path="/v1/subscription-schedules/{id}" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.subscriptions.getSubscriptionSchedule("<id>");
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { subscriptionsGetSubscriptionSchedule } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-schedule.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await subscriptionsGetSubscriptionSchedule(tirdad, "<id>");
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("subscriptionsGetSubscriptionSchedule failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Schedule ID                                                                                                                                                                    |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.SubscriptionScheduleResponse](../../sdk/models/subscription-schedule-response.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
+
+## cancelSubscriptionSchedule
+
+Use when cancelling a scheduled change (e.g. customer changed mind). Identify by schedule ID in path or by subscription ID + schedule type in body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="cancelSubscriptionSchedule" method="post" path="/v1/subscriptions/schedules/{schedule_id}/cancel" -->
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const result = await tirdad.subscriptions.cancelSubscriptionSchedule("<id>");
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { TirdadCore } from "@tirdad-ai/sdk/core.js";
+import { subscriptionsCancelSubscriptionSchedule } from "@tirdad-ai/sdk/funcs/subscriptions-cancel-subscription-schedule.js";
+
+// Use `TirdadCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const tirdad = new TirdadCore({
+  apiKeyAuth: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await subscriptionsCancelSubscriptionSchedule(tirdad, "<id>");
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("subscriptionsCancelSubscriptionSchedule failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `scheduleId`                                                                                                                                                                   | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Schedule ID (optional if using request body)                                                                                                                                   |
+| `body`                                                                                                                                                                         | [models.CancelScheduleRequest](../../sdk/models/cancel-schedule-request.md)                                                                                                    | :heavy_minus_sign:                                                                                                                                                             | Cancel request (optional if using path parameter)                                                                                                                              |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[models.CancelScheduleResponse](../../sdk/models/cancel-schedule-response.md)\>**
 
 ### Errors
 
@@ -1320,7 +1841,7 @@ The standalone function version of this method:
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsListSubscriptionSchedules } from "@tirdad-ai/sdk/funcs/subscriptionsListSubscriptionSchedules.js";
+import { subscriptionsListSubscriptionSchedules } from "@tirdad-ai/sdk/funcs/subscriptions-list-subscription-schedules.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1352,531 +1873,10 @@ run();
 
 ### Response
 
-**Promise\<[models.GetPendingSchedulesResponse](../../sdk/models/getpendingschedulesresponse.md)\>**
+**Promise\<[models.GetPendingSchedulesResponse](../../sdk/models/get-pending-schedules-response.md)\>**
 
 ### Errors
 
 | Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4XX, 5XX        | \*/\*           |
-
-## previewSubscriptionChange
-
-Use when showing a customer the cost of a plan change before they confirm (e.g. upgrade/downgrade preview with proration).
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="previewSubscriptionChange" method="post" path="/subscriptions/{id}/change/preview" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.subscriptions.previewSubscriptionChange("<id>", {
-    billingCadence: "RECURRING",
-    billingCycle: "calendar",
-    billingPeriod: "HALF_YEARLY",
-    prorationBehavior: "create_prorations",
-    targetPlanId: "<id>",
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsPreviewSubscriptionChange } from "@tirdad-ai/sdk/funcs/subscriptionsPreviewSubscriptionChange.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await subscriptionsPreviewSubscriptionChange(tirdad, "<id>", {
-    billingCadence: "RECURRING",
-    billingCycle: "calendar",
-    billingPeriod: "HALF_YEARLY",
-    prorationBehavior: "create_prorations",
-    targetPlanId: "<id>",
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("subscriptionsPreviewSubscriptionChange failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
-| `body`                                                                                                                                                                         | [models.SubscriptionChangeRequest](../../sdk/models/subscriptionchangerequest.md)                                                                                              | :heavy_check_mark:                                                                                                                                                             | Subscription change preview request                                                                                                                                            |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.SubscriptionChangePreviewResponse](../../sdk/models/subscriptionchangepreviewresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400, 404                   | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## previewSubscriptionModify
-
-Preview the impact of a mid-cycle subscription modification without committing changes.
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="previewSubscriptionModify" method="post" path="/subscriptions/{id}/modify/preview" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.subscriptions.previewSubscriptionModify("<id>", {
-    type: "grouped_invoicing",
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsPreviewSubscriptionModify } from "@tirdad-ai/sdk/funcs/subscriptionsPreviewSubscriptionModify.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await subscriptionsPreviewSubscriptionModify(tirdad, "<id>", {
-    type: "grouped_invoicing",
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("subscriptionsPreviewSubscriptionModify failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
-| `body`                                                                                                                                                                         | [models.ExecuteSubscriptionModifyRequest](../../sdk/models/executesubscriptionmodifyrequest.md)                                                                                | :heavy_check_mark:                                                                                                                                                             | Modification preview request                                                                                                                                                   |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.SubscriptionModifyResponse](../../sdk/models/subscriptionmodifyresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400, 404                   | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## querySubscription
-
-Use when listing or searching subscriptions (e.g. admin view or customer subscription list). Returns a paginated list; supports filtering by customer, plan, status.
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="querySubscription" method="post" path="/subscriptions/search" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.subscriptions.querySubscription({});
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsQuerySubscription } from "@tirdad-ai/sdk/funcs/subscriptionsQuerySubscription.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await subscriptionsQuerySubscription(tirdad, {});
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("subscriptionsQuerySubscription failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.SubscriptionFilter](../../sdk/models/subscriptionfilter.md)                                                                                                            | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.ListSubscriptionsResponse](../../sdk/models/listsubscriptionsresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400                        | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## querySubscriptionLineItems
-
-List subscription line items with a JSON filter (subscription, customer, price, pagination, expand=prices, etc.).
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="querySubscriptionLineItems" method="post" path="/subscriptions/lineitems/search" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.subscriptions.querySubscriptionLineItems({});
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsQuerySubscriptionLineItems } from "@tirdad-ai/sdk/funcs/subscriptionsQuerySubscriptionLineItems.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await subscriptionsQuerySubscriptionLineItems(tirdad, {});
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("subscriptionsQuerySubscriptionLineItems failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.SubscriptionLineItemFilter](../../sdk/models/subscriptionlineitemfilter.md)                                                                                            | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.ListSubscriptionLineItemsResponse](../../sdk/models/listsubscriptionlineitemsresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400                        | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## removeSubscriptionAddon
-
-Use when removing an add-on from a subscription (e.g. downgrade or opt-out).
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="removeSubscriptionAddon" method="delete" path="/subscriptions/addon" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.subscriptions.removeSubscriptionAddon({
-    addonAssociationId: "<id>",
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsRemoveSubscriptionAddon } from "@tirdad-ai/sdk/funcs/subscriptionsRemoveSubscriptionAddon.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await subscriptionsRemoveSubscriptionAddon(tirdad, {
-    addonAssociationId: "<id>",
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("subscriptionsRemoveSubscriptionAddon failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [models.RemoveAddonRequest](../../sdk/models/removeaddonrequest.md)                                                                                                            | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.SuccessResponse](../../sdk/models/successresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400                        | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## updateSubscription
-
-Use when changing subscription details (e.g. quantity, billing anchor, or parent). Supports partial update; send "" to clear parent_subscription_id.
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="updateSubscription" method="put" path="/subscriptions/{id}" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.subscriptions.updateSubscription("<id>", {});
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsUpdateSubscription } from "@tirdad-ai/sdk/funcs/subscriptionsUpdateSubscription.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await subscriptionsUpdateSubscription(tirdad, "<id>", {});
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("subscriptionsUpdateSubscription failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Subscription ID                                                                                                                                                                |
-| `body`                                                                                                                                                                         | [models.UpdateSubscriptionRequest](../../sdk/models/updatesubscriptionrequest.md)                                                                                              | :heavy_check_mark:                                                                                                                                                             | Update Subscription Request                                                                                                                                                    |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.SubscriptionResponse](../../sdk/models/subscriptionresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400                        | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
-
-## updateSubscriptionLineItem
-
-Use when changing a subscription line item (e.g. quantity or price). Implemented by ending the current line and creating a new one for clean billing.
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="updateSubscriptionLineItem" method="put" path="/subscriptions/lineitems/{id}" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.subscriptions.updateSubscriptionLineItem("<id>", {});
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsUpdateSubscriptionLineItem } from "@tirdad-ai/sdk/funcs/subscriptionsUpdateSubscriptionLineItem.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await subscriptionsUpdateSubscriptionLineItem(tirdad, "<id>", {});
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("subscriptionsUpdateSubscriptionLineItem failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | Line Item ID                                                                                                                                                                   |
-| `body`                                                                                                                                                                         | [models.UpdateSubscriptionLineItemRequest](../../sdk/models/updatesubscriptionlineitemrequest.md)                                                                              | :heavy_check_mark:                                                                                                                                                             | Update Line Item Request                                                                                                                                                       |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.SubscriptionLineItemResponse](../../sdk/models/subscriptionlineitemresponse.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400                        | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |

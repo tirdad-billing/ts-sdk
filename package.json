@@ -1,6 +1,6 @@
 {
   "name": "@tirdad-ai/sdk",
-  "version": "2.1.15",
+  "version": "2.1.16",
   "author": "Tirdad",
   "engines": {
     "node": ">=18"
@@ -37,19 +37,17 @@
   "type": "module",
   "main": "./esm/index.js",
   "scripts": {
-    "lint": "eslint --cache --max-warnings=0 src",
-    "build": "tsc",
+    "lint": "oxlint --max-warnings=0 --deny-warnings src/**/*.ts src/**/*.tsx",
+    "build": "tsgo",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@eslint/js": "^9.26.0",
-    "eslint": "^9.26.0",
-    "globals": "^15.14.0",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.26.0"
+    "@typescript/native-preview": "7.0.0-dev.20260302.1",
+    "oxlint": "^1.60.0",
+    "typescript": "~5.8.3"
   },
   "dependencies": {
-    "zod": "^3.25.0 || ^4.0.0"
+    "zod": "^3.25.65 || ^4.0.0"
   }
 }

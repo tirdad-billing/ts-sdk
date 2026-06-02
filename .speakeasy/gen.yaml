@@ -1,9 +1,11 @@
 configVersion: 2.0.0
 generation:
   sdkClassName: Tirdad
+  maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
     sdkInitStyle: constructor
+  useClassNamesForArrayFields: true
   fixes:
     nameResolutionDec2023: true
     nameResolutionFeb2025: true
@@ -17,6 +19,8 @@ generation:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
     hoistGlobalSecurity: true
+  inferSSEOverload: true
+  sdkHooksConfigAccess: true
   schemas:
     allOfMergeStrategy: deepMerge
   requestBodyFieldName: body
@@ -27,7 +31,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 typescript:
-  version: 2.1.15
+  version: 2.1.16
   acceptHeaderEnum: true
   additionalDependencies:
     dependencies: {}
@@ -53,7 +57,7 @@ typescript:
   enumFormat: union
   exportZodModelNamespace: false
   fixEnumNameSanitization: false
-  flatAdditionalProperties: false
+  flatAdditionalProperties: true
   flattenGlobalSecurity: true
   flatteningOrder: parameters-first
   formStringArrayEncodeMode: encoded-string
@@ -70,9 +74,9 @@ typescript:
       webhooks: sdk/models
   inferUnionDiscriminators: true
   inputModelSuffix: Input
-  jsonpath: legacy
+  jsonpath: rfc9535
   laxMode: lax
-  legacyFileNaming: true
+  legacyFileNaming: false
   maxMethodParams: 4
   methodArguments: infer-optional-args
   modelPropertyCasing: camel
@@ -89,6 +93,6 @@ typescript:
   unionStrategy: populated-fields
   usageSDKInitImports: []
   useIndexModules: true
-  useOxlint: false
-  useTsgo: false
-  zodVersion: v3
+  useOxlint: true
+  useTsgo: true
+  zodVersion: v4-mini

@@ -10,7 +10,7 @@ import {
   RequestAbortedError,
   RequestTimeoutError,
   UnexpectedClientError,
-} from "../sdk/models/httpclienterrors.js";
+} from "../sdk/models/http-client-errors.js";
 import { ERR, OK, Result } from "../types/fp.js";
 import { stringToBase64 } from "./base64.js";
 import { SDK_METADATA, SDKOptions, serverURLFromOptions } from "./config.js";
@@ -95,17 +95,16 @@ export class ClientSDK {
     } else {
       this.#hooks = new SDKHooks();
     }
+    const defaultHttpClient = new HTTPClient();
+    options.httpClient = options.httpClient || defaultHttpClient;
+    options = this.#hooks.sdkInit(options);
+
     const url = serverURLFromOptions(options);
     if (url) {
       url.pathname = url.pathname.replace(/\/+$/, "") + "/";
     }
-
-    const { baseURL, client } = this.#hooks.sdkInit({
-      baseURL: url,
-      client: options.httpClient || new HTTPClient(),
-    });
-    this._baseURL = baseURL;
-    this.#httpClient = client;
+    this._baseURL = url;
+    this.#httpClient = options.httpClient || defaultHttpClient;
 
     this._options = { ...options, hooks: this.#hooks };
 
