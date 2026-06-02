@@ -90,7 +90,7 @@ async function main() {
 main();
 ```
 
-For more examples and all API operations, see the [API reference](https://docs.flexprice.io) and the [examples](examples/) in this repo.
+For more examples and all API operations, see the [API reference](https://docs.tirdad.io) and the [examples](examples/) in this repo.
 
 ## Property names (snake_case)
 
@@ -99,7 +99,7 @@ For request bodies, the API often expects **snake_case** field names. The SDK ma
 - Prefer: `event_name`, `external_customer_id`, `page_size`
 - Avoid using only camelCase in raw payloads if the API spec uses snake_case
 
-Check the [API reference](https://docs.flexprice.io) for the exact request shapes.
+Check the [API reference](https://docs.tirdad.io) for the exact request shapes.
 
 ## TypeScript
 
@@ -128,7 +128,7 @@ const result = await flexPrice.events.ingestEvent({
 
 - Set the API key via `apiKeyAuth` when constructing `Tirdad`. The SDK sends it in the `x-api-key` header.
 - Set `TIRDAD_API_HOST` to a full URL (see [Environment](#environment)) or rely on the default `https://api.tirdad.ai/v1`.
-- Use environment variables and never expose keys in client-side or public code. Get keys from your [Tirdad dashboard](https://app.flexprice.io) or docs.
+- Use environment variables and never expose keys in client-side or public code. Get keys from your [Tirdad dashboard](https://app.tirdad.io) or docs.
 
 ## Features
 
@@ -137,13 +137,13 @@ const result = await flexPrice.events.ingestEvent({
 - Built-in retries and error handling
 - ESM and CommonJS support
 
-For a full list of operations, see the [API reference](https://docs.flexprice.io) and the [examples](examples/) in this repo.
+For a full list of operations, see the [API reference](https://docs.tirdad.io) and the [examples](examples/) in this repo.
 
 ## Troubleshooting
 
 - **Missing or invalid API key:** Ensure `apiKeyAuth` is set and the key is active. Use server-side only.
 - **Wrong server URL:** Use a full URL such as `https://api.tirdad.ai/v1` (include `/v1`; no trailing slash).
-- **Validation or 4xx errors:** Confirm request body field names (snake_case vs camelCase) and required fields against the [API docs](https://docs.flexprice.io).
+- **Validation or 4xx errors:** Confirm request body field names (snake_case vs camelCase) and required fields against the [API docs](https://docs.tirdad.io).
 - **Parameter passing:** Pass the request object directly to methods (e.g. `ingestEvent({ ... })`), not wrapped in an extra key, unless the SDK docs say otherwise.
 
 ## Handling Webhooks
@@ -226,6 +226,6 @@ function handleWebhook(rawBody: string): void {
 
 ## Documentation
 
-- [Tirdad API documentation](https://docs.flexprice.io)
+- [Tirdad API documentation](https://docs.tirdad.io)
 - [TypeScript SDK examples](examples/) in this repo
 - [SDK integration tests](../tests/README.md) — different `TIRDAD_API_HOST` shape for automated tests
