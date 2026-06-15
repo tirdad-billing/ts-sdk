@@ -1379,7 +1379,7 @@ run();
 
 ## executeSubscriptionModify
 
-Execute a mid-cycle subscription modification (inheritance or quantity change).
+Execute a mid-cycle subscription modification (inheritance, quantity change, grouped invoicing, trial end, coupon, or tax).
 
 ### Example Usage
 
@@ -1455,7 +1455,7 @@ run();
 
 ## previewSubscriptionModify
 
-Preview the impact of a mid-cycle subscription modification without committing changes.
+Preview the impact of a mid-cycle subscription modification (inheritance, quantity change, grouped invoicing, trial end, coupon, or tax) without committing changes.
 
 ### Example Usage
 
@@ -1469,7 +1469,7 @@ const tirdad = new Tirdad({
 
 async function run() {
   const result = await tirdad.subscriptions.previewSubscriptionModify("<id>", {
-    type: "trial_end",
+    type: "coupon",
   });
 
   console.log(result);
@@ -1494,7 +1494,7 @@ const tirdad = new TirdadCore({
 
 async function run() {
   const res = await subscriptionsPreviewSubscriptionModify(tirdad, "<id>", {
-    type: "trial_end",
+    type: "coupon",
   });
   if (res.ok) {
     const { value: result } = res;
