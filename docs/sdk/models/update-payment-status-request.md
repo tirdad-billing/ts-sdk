@@ -6,7 +6,7 @@
 import { UpdatePaymentStatusRequest } from "@tirdad-ai/sdk/sdk/models";
 
 let value: UpdatePaymentStatusRequest = {
-  paymentStatus: "FAILED",
+  paymentStatus: "REFUNDED",
 };
 ```
 

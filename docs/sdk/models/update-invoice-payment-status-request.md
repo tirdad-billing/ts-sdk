@@ -8,7 +8,7 @@ import { UpdateInvoicePaymentStatusRequest } from "@tirdad-ai/sdk/sdk/models";
 let value: UpdateInvoicePaymentStatusRequest = {
   id: "<id>",
   body: {
-    paymentStatus: "PARTIALLY_REFUNDED",
+    paymentStatus: "VOIDED",
   },
 };
 ```
