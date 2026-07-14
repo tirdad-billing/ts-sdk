@@ -105,6 +105,7 @@ const tirdad = new Tirdad({
 async function run() {
   const result = await tirdad.customers.createCustomer({
     externalId: "<id>",
+    name: "<value>",
   });
 
   console.log(result);
@@ -130,6 +131,7 @@ const tirdad = new TirdadCore({
 async function run() {
   const res = await customersCreateCustomer(tirdad, {
     externalId: "<id>",
+    name: "<value>",
   });
   if (res.ok) {
     const { value: result } = res;

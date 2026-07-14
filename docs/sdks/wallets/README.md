@@ -677,7 +677,7 @@ const tirdad = new Tirdad({
 
 async function run() {
   const result = await tirdad.wallets.topUpWallet("<id>", {
-    transactionReason: "CREDIT_ADJUSTMENT",
+    transactionReason: "INVOICE_VOID_REFUND",
   });
 
   console.log(result);
@@ -702,7 +702,7 @@ const tirdad = new TirdadCore({
 
 async function run() {
   const res = await walletsTopUpWallet(tirdad, "<id>", {
-    transactionReason: "CREDIT_ADJUSTMENT",
+    transactionReason: "INVOICE_VOID_REFUND",
   });
   if (res.ok) {
     const { value: result } = res;

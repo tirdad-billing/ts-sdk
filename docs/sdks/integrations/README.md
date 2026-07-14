@@ -95,7 +95,7 @@ const tirdad = new Tirdad({
 async function run() {
   const result = await tirdad.integrations.linkIntegrationMapping({
     entityId: "<id>",
-    entityType: "item_price",
+    entityType: "price",
     providerEntityId: "<id>",
     providerType: "<value>",
   });
@@ -123,7 +123,7 @@ const tirdad = new TirdadCore({
 async function run() {
   const res = await integrationsLinkIntegrationMapping(tirdad, {
     entityId: "<id>",
-    entityType: "item_price",
+    entityType: "price",
     providerEntityId: "<id>",
     providerType: "<value>",
   });

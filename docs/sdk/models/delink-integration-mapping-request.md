@@ -7,7 +7,7 @@ import { DelinkIntegrationMappingRequest } from "@tirdad-ai/sdk/sdk/models";
 
 let value: DelinkIntegrationMappingRequest = {
   entityId: "<id>",
-  entityType: "invoice",
+  entityType: "subscription",
   providerType: "<value>",
 };
 ```
