@@ -5,7 +5,7 @@
 ```typescript
 import { SecretProvider } from "@tirdad-ai/sdk/sdk/models";
 
-let value: SecretProvider = "zoho_books";
+let value: SecretProvider = "moyasar";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: SecretProvider = "zoho_books";
 ## Values
 
 ```typescript
-"tirdad" | "stripe" | "s3" | "hubspot" | "razorpay" | "chargebee" | "quickbooks" | "zoho_books" | "nomod" | "moyasar" | "paddle" | "whop" | "tabs" | Unrecognized<string>
+"tirdad" | "stripe" | "s3" | "hubspot" | "razorpay" | "chargebee" | "quickbooks" | "zoho_books" | "nomod" | "moyasar" | "paddle" | "whop" | "tabs" | "aws_marketplace" | "gcp_marketplace" | "azure_marketplace" | Unrecognized<string>
 ```

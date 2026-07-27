@@ -24,7 +24,7 @@ const tirdad = new Tirdad({
 
 async function run() {
   const result = await tirdad.checkout.createCheckoutSession({
-    action: "create_subscription",
+    action: "modify_subscription",
     customerExternalId: "<id>",
     paymentProvider: "razorpay",
   });
@@ -51,7 +51,7 @@ const tirdad = new TirdadCore({
 
 async function run() {
   const res = await checkoutCreateCheckoutSession(tirdad, {
-    action: "create_subscription",
+    action: "modify_subscription",
     customerExternalId: "<id>",
     paymentProvider: "razorpay",
   });
