@@ -6,7 +6,7 @@
 import { CreateCheckoutSessionRequest } from "@tirdad-ai/sdk/sdk/models";
 
 let value: CreateCheckoutSessionRequest = {
-  action: "create_subscription",
+  action: "modify_subscription",
   customerExternalId: "<id>",
   paymentProvider: "razorpay",
 };
