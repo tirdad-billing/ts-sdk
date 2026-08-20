@@ -95,7 +95,7 @@ const tirdad = new Tirdad({
 async function run() {
   const result = await tirdad.integrations.linkIntegrationMapping({
     entityId: "<id>",
-    entityType: "price",
+    entityType: "invoice_line_item",
     providerEntityId: "<id>",
     providerType: "<value>",
   });
@@ -123,7 +123,7 @@ const tirdad = new TirdadCore({
 async function run() {
   const res = await integrationsLinkIntegrationMapping(tirdad, {
     entityId: "<id>",
-    entityType: "price",
+    entityType: "invoice_line_item",
     providerEntityId: "<id>",
     providerType: "<value>",
   });
@@ -176,7 +176,7 @@ const tirdad = new Tirdad({
 async function run() {
   const result = await tirdad.integrations.delinkIntegrationMapping({
     entityId: "<id>",
-    entityType: "item_price",
+    entityType: "price",
     providerType: "<value>",
   });
 
@@ -203,7 +203,7 @@ const tirdad = new TirdadCore({
 async function run() {
   const res = await integrationsDelinkIntegrationMapping(tirdad, {
     entityId: "<id>",
-    entityType: "item_price",
+    entityType: "price",
     providerType: "<value>",
   });
   if (res.ok) {
