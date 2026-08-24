@@ -1,6 +1,6 @@
 {
   "name": "@tirdad-ai/sdk",
-  "version": "2.1.25",
+  "version": "2.1.26",
   "author": "Tirdad",
   "engines": {
     "node": ">=18"
