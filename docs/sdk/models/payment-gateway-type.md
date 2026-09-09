@@ -5,11 +5,11 @@
 ```typescript
 import { PaymentGatewayType } from "@tirdad-ai/sdk/sdk/models";
 
-let value: PaymentGatewayType = "moyasar";
+let value: PaymentGatewayType = "paddle";
 ```
 
 ## Values
 
 ```typescript
-"stripe" | "razorpay" | "nomod" | "moyasar" | "paddle" | "whop"
+"stripe" | "razorpay" | "nomod" | "moyasar" | "paddle" | "whop" | "chargebee"
 ```
