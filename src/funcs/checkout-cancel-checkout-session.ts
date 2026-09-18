@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { TirdadCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
+import { encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -27,19 +27,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Create one-off invoice
- *
- * @remarks
- * Use when creating a manual or one-off invoice (e.g. custom charge or non-recurring billing). Invoice is created in draft; finalize when ready.
- * Pass a `checkout` object to gate the invoice behind a hosted payment session: the invoice stays DRAFT with no invoice number, and the response carries `checkout_session.payment_action.url` for the customer to pay. It finalizes only when the payment webhook lands; if the session expires the invoice is voided and archived. Poll `GET /checkout/sessions/{id}` until `terminal` is true. One-off invoices only.
+ * Cancel checkout session
  */
-export function invoicesCreateInvoice(
+export function checkoutCancelCheckoutSession(
   client: TirdadCore,
-  request: models.CreateInvoiceRequest,
+  id: string,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    models.InvoiceResponse,
+    models.CheckoutSessionResponse,
     | models.ErrorsErrorResponse
     | TirdadError
     | ResponseValidationError
@@ -53,19 +49,19 @@ export function invoicesCreateInvoice(
 > {
   return new APIPromise($do(
     client,
-    request,
+    id,
     options,
   ));
 }
 
 async function $do(
   client: TirdadCore,
-  request: models.CreateInvoiceRequest,
+  id: string,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      models.InvoiceResponse,
+      models.CheckoutSessionResponse,
       | models.ErrorsErrorResponse
       | TirdadError
       | ResponseValidationError
@@ -79,21 +75,31 @@ async function $do(
     APICall,
   ]
 > {
+  const input: models.CancelCheckoutSessionRequest = {
+    id: id,
+  };
+
   const parsed = safeParse(
-    request,
-    (value) => z.parse(models.CreateInvoiceRequest$outboundSchema, value),
+    input,
+    (value) =>
+      z.parse(models.CancelCheckoutSessionRequest$outboundSchema, value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
+  const body = null;
 
-  const path = pathToFunc("/invoices")();
+  const pathParams = {
+    id: encodeSimple("id", payload.id, {
+      explode: false,
+      charEncoding: "percent",
+    }),
+  };
+  const path = pathToFunc("/checkout/sessions/{id}/cancel")(pathParams);
 
   const headers = new Headers(compactMap({
-    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -104,7 +110,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "createInvoice",
+    operationID: "cancelCheckoutSession",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -148,7 +154,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    models.InvoiceResponse,
+    models.CheckoutSessionResponse,
     | models.ErrorsErrorResponse
     | TirdadError
     | ResponseValidationError
@@ -159,8 +165,8 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(201, models.InvoiceResponse$inboundSchema),
-    M.jsonErr(400, models.ErrorsErrorResponse$inboundSchema),
+    M.json(200, models.CheckoutSessionResponse$inboundSchema),
+    M.jsonErr([400, 404], models.ErrorsErrorResponse$inboundSchema),
     M.jsonErr(500, models.ErrorsErrorResponse$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
