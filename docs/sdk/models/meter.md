@@ -1,11 +1,11 @@
-# MeterMeter
+# Meter
 
 ## Example Usage
 
 ```typescript
-import { MeterMeter } from "@tirdad-ai/sdk/sdk/models";
+import { Meter } from "@tirdad-ai/sdk/sdk/models";
 
-let value: MeterMeter = {};
+let value: Meter = {};
 ```
 
 ## Fields

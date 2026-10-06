@@ -153,18 +153,12 @@ export class Subscriptions extends ClientSDK {
    * Use when listing or searching scheduled changes across subscriptions (e.g. admin view). Returns schedules with optional filtering.
    */
   async listAllSubscriptionSchedules(
-    pendingOnly?: boolean | undefined,
-    subscriptionId?: string | undefined,
-    limit?: number | undefined,
-    offset?: number | undefined,
+    request?: models.ListAllSubscriptionSchedulesRequest | undefined,
     options?: RequestOptions,
   ): Promise<models.GetPendingSchedulesResponse> {
     return unwrapAsync(subscriptionsListAllSubscriptionSchedules(
       this,
-      pendingOnly,
-      subscriptionId,
-      limit,
-      offset,
+      request,
       options,
     ));
   }
@@ -473,7 +467,8 @@ export class Subscriptions extends ClientSDK {
    * Execute subscription modification
    *
    * @remarks
-   * Execute a mid-cycle subscription modification (inheritance, quantity change, grouped invoicing, trial end, coupon, tax, a single addon add/remove, or a batch of addon adds and removes settled as one netted document).
+   * Execute a mid-cycle subscription modification (inheritance, line item change, grouped invoicing, trial end, coupon, tax, a single addon add/remove, or a batch of addon adds and removes settled as one netted document).
+   * Type "quantity_change" is deprecated: use "line_item_change", which changes a fixed charge's quantity, price, or both, with the same proration and checkout behaviour.
    */
   async executeSubscriptionModify(
     id: string,
@@ -492,7 +487,8 @@ export class Subscriptions extends ClientSDK {
    * Preview subscription modification
    *
    * @remarks
-   * Preview the impact of a mid-cycle subscription modification (inheritance, quantity change, grouped invoicing, trial end, coupon, tax, a single addon add/remove, or a batch of addon adds and removes) without committing changes.
+   * Preview the impact of a mid-cycle subscription modification (inheritance, line item change, grouped invoicing, trial end, coupon, tax, a single addon add/remove, or a batch of addon adds and removes) without committing changes.
+   * Type "quantity_change" is deprecated: use "line_item_change".
    */
   async previewSubscriptionModify(
     id: string,

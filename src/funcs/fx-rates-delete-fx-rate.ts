@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { TirdadCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
+import { encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -25,20 +25,21 @@ import { SDKValidationError } from "../sdk/models/sdk-validation-error.js";
 import { TirdadError } from "../sdk/models/tirdad-error.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
+import * as types$ from "../types/primitives.js";
 
 /**
- * Get Hugging Face inference data
+ * Delete an FX rate
  *
  * @remarks
- * Use when fetching Hugging Face inference usage or billing data (e.g. for HF-specific reporting or reconciliation). Reads the meter-usage pipeline.
+ * Archive a customer or subscription override. Tenant rates cannot be deleted.
  */
-export function eventsGetHuggingfaceInferenceData(
+export function fxRatesDeleteFXRate(
   client: TirdadCore,
-  request: models.GetHuggingFaceBillingDataRequest,
+  id: string,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    models.GetHuggingFaceBillingDataResponse,
+    { [k: string]: string },
     | models.ErrorsErrorResponse
     | TirdadError
     | ResponseValidationError
@@ -52,19 +53,19 @@ export function eventsGetHuggingfaceInferenceData(
 > {
   return new APIPromise($do(
     client,
-    request,
+    id,
     options,
   ));
 }
 
 async function $do(
   client: TirdadCore,
-  request: models.GetHuggingFaceBillingDataRequest,
+  id: string,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      models.GetHuggingFaceBillingDataResponse,
+      { [k: string]: string },
       | models.ErrorsErrorResponse
       | TirdadError
       | ResponseValidationError
@@ -78,22 +79,30 @@ async function $do(
     APICall,
   ]
 > {
+  const input: models.DeleteFXRateRequest = {
+    id: id,
+  };
+
   const parsed = safeParse(
-    request,
-    (value) =>
-      z.parse(models.GetHuggingFaceBillingDataRequest$outboundSchema, value),
+    input,
+    (value) => z.parse(models.DeleteFXRateRequest$outboundSchema, value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
+  const body = null;
 
-  const path = pathToFunc("/events/huggingface-inference")();
+  const pathParams = {
+    id: encodeSimple("id", payload.id, {
+      explode: false,
+      charEncoding: "percent",
+    }),
+  };
+  const path = pathToFunc("/forex/{id}")(pathParams);
 
   const headers = new Headers(compactMap({
-    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -104,7 +113,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "getHuggingfaceInferenceData",
+    operationID: "deleteFXRate",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -118,7 +127,7 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "POST",
+    method: "DELETE",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
@@ -148,7 +157,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    models.GetHuggingFaceBillingDataResponse,
+    { [k: string]: string },
     | models.ErrorsErrorResponse
     | TirdadError
     | ResponseValidationError
@@ -159,7 +168,8 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, models.GetHuggingFaceBillingDataResponse$inboundSchema),
+    M.json(200, z.record(z.string(), types$.string())),
+    M.jsonErr(400, models.ErrorsErrorResponse$inboundSchema),
     M.jsonErr(500, models.ErrorsErrorResponse$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
