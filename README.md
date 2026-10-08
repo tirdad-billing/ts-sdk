@@ -126,9 +126,41 @@ const result = await tirdad.events.ingestEvent({
 
 ## Authentication
 
-- Set the API key via `apiKeyAuth` when constructing `Tirdad`. The SDK sends it in the `x-api-key` header.
-- Set `TIRDAD_API_HOST` to a full URL (see [Environment](#environment)) or rely on the default `https://api.tirdad.ai/v1`.
-- Use environment variables and never expose keys in client-side or public code. Get keys from your [Tirdad dashboard](https://app.tirdad.io) or docs.
+The SDK supports two credentials. Set one of them, not both.
+
+| Option | Header | Use it for |
+| ------ | ------ | ---------- |
+| `apiKeyAuth` | `x-api-key` | Servers and scripts |
+| `bearerAuth` | `Authorization: Bearer <token>` | A browser app acting as a signed-in Tirdad user |
+
+**API key (server side).** Set the key via `apiKeyAuth`. Keys created in the dashboard are bound to one environment, so no other option is needed.
+
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({ apiKeyAuth: process.env.TIRDAD_API_KEY! });
+```
+
+**Signed-in user (browser).** Pass the user's JWT via `bearerAuth`, and the active environment via `environmentId`, which is sent as `X-Environment-ID`. Most endpoints are scoped to an environment and return 403 without it.
+
+```typescript
+import { Tirdad } from "@tirdad-ai/sdk";
+
+const tirdad = new Tirdad({
+  serverURL: "https://api.tirdad.ai/v1",
+  bearerAuth: async () => getAccessToken(),
+  environmentId: () => getActiveEnvironmentId(),
+});
+```
+
+- Both options take a string or a function, so a refreshed token or a switched environment applies without creating a new client. The SDK does not refresh tokens itself.
+- A `bearerAuth` function is called before every attempt, retries included. An `environmentId` function is called once per API call, so a retry never switches environments.
+- If the value or the function result is empty, that header is not sent.
+- Headers passed on a single call (`{ headers: { ... } }`) take precedence over these options, and the matching option's function is not called.
+- `environmentId` also works with `apiKeyAuth`. The API ignores it for keys bound to an environment.
+- Setting both `apiKeyAuth` and `bearerAuth` fails every call with an `UnexpectedClientError` before anything is sent.
+
+Set `TIRDAD_API_HOST` to a full URL (see [Environment](#environment)) or rely on the default `https://api.tirdad.ai/v1`.
 
 ## Features
 
@@ -142,6 +174,10 @@ For a full list of operations, see the [API reference](https://docs.tirdad.io) a
 ## Troubleshooting
 
 - **Missing or invalid API key:** Ensure `apiKeyAuth` is set and the key is active. Use server-side only.
+- **401 with `bearerAuth`:** The token is missing or expired. Check that your token function returns a current JWT.
+- **403 with `bearerAuth`:** Set `environmentId`. Dashboard login tokens are not bound to an environment.
+- **"set either apiKeyAuth or bearerAuth, not both":** Remove one of the two options from the constructor.
+- **`debugLogger`:** It prints every request header, including `Authorization` and `x-api-key`. Use it only for local debugging.
 - **Wrong server URL:** Use a full URL such as `https://api.tirdad.ai/v1` (include `/v1`; no trailing slash).
 - **Validation or 4xx errors:** Confirm request body field names (snake_case vs camelCase) and required fields against the [API docs](https://docs.tirdad.io).
 - **Parameter passing:** Pass the request object directly to methods (e.g. `ingestEvent({ ... })`), not wrapped in an extra key, unless the SDK docs say otherwise.
