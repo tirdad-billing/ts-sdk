@@ -6,7 +6,13 @@
 import { UpdateCustomerRequestRequest } from "@tirdad-ai/sdk/sdk/models";
 
 let value: UpdateCustomerRequestRequest = {
-  body: {},
+  body: {
+    contactPersons: [
+      {
+        firstName: "Ryan",
+      },
+    ],
+  },
 };
 ```
 
