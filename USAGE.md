@@ -7,10 +7,7 @@ const tirdad = new Tirdad({
 });
 
 async function run() {
-  const result = await tirdad.addons.createAddon({
-    lookupKey: "<value>",
-    name: "<value>",
-  });
+  const result = await tirdad.activity.listActivity({});
 
   console.log(result);
 }

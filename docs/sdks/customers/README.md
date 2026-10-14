@@ -32,9 +32,7 @@ const tirdad = new Tirdad({
 });
 
 async function run() {
-  const result = await tirdad.customers.updateCustomer({
-    contactPersons: [],
-  });
+  const result = await tirdad.customers.updateCustomer({});
 
   console.log(result);
 }
@@ -57,9 +55,7 @@ const tirdad = new TirdadCore({
 });
 
 async function run() {
-  const res = await customersUpdateCustomer(tirdad, {
-    contactPersons: [],
-  });
+  const res = await customersUpdateCustomer(tirdad, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
@@ -110,7 +106,6 @@ const tirdad = new Tirdad({
 
 async function run() {
   const result = await tirdad.customers.createCustomer({
-    contactPersons: [],
     externalId: "<id>",
     name: "<value>",
   });
@@ -137,7 +132,6 @@ const tirdad = new TirdadCore({
 
 async function run() {
   const res = await customersCreateCustomer(tirdad, {
-    contactPersons: [],
     externalId: "<id>",
     name: "<value>",
   });

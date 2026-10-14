@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { addonsCreateAddon } from "@tirdad-ai/sdk/funcs/addons-create-addon.js";
+import { activityListActivity } from "@tirdad-ai/sdk/funcs/activity-list-activity.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -29,15 +29,12 @@ const tirdad = new TirdadCore({
 });
 
 async function run() {
-  const res = await addonsCreateAddon(tirdad, {
-    lookupKey: "<value>",
-    name: "<value>",
-  });
+  const res = await activityListActivity(tirdad, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("addonsCreateAddon failed:", res.error);
+    console.log("activityListActivity failed:", res.error);
   }
 }
 

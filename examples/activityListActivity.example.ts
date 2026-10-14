@@ -8,7 +8,7 @@ dotenv.config();
  * Example usage of the @tirdad-ai/sdk SDK
  *
  * To run this example from the examples directory:
- * npm run build && npx tsx addonsCreateAddon.example.ts
+ * npm run build && npx tsx activityListActivity.example.ts
  */
 
 import { Tirdad } from "@tirdad-ai/sdk";
@@ -18,10 +18,7 @@ const tirdad = new Tirdad({
 });
 
 async function main() {
-  const result = await tirdad.addons.createAddon({
-    lookupKey: "<value>",
-    name: "<value>",
-  });
+  const result = await tirdad.activity.listActivity({});
 
   console.log(result);
 }
