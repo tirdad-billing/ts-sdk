@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DataType } from "@tirdad-ai/sdk/sdk/models";
+import { DataType } from "@tirdad/sdk/sdk/models";
 
 let value: DataType = "array";
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TaxReversalMode } from "@tirdad-ai/sdk/sdk/models";
+import { TaxReversalMode } from "@tirdad/sdk/sdk/models";
 
 let value: TaxReversalMode = "partial";
 

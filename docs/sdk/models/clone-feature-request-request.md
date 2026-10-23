@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CloneFeatureRequestRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CloneFeatureRequestRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CloneFeatureRequestRequest = {
   id: "<id>",

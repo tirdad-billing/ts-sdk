@@ -14,7 +14,7 @@ Lists usage records. Also accepts filters/sort for a filtered query.
 
 <!-- UsageSnippet language="typescript" operationID="post_/usage-records/search" method="post" path="/usage-records/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -34,8 +34,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { usageRecordsPostUsageRecordsSearch } from "@tirdad-ai/sdk/funcs/usage-records-post-usage-records-search.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { usageRecordsPostUsageRecordsSearch } from "@tirdad/sdk/funcs/usage-records-post-usage-records-search.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -5,7 +5,7 @@ Request object for creating a new customer in the system
 ## Example Usage
 
 ```typescript
-import { CreateCustomerRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CreateCustomerRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CreateCustomerRequest = {
   externalId: "<id>",

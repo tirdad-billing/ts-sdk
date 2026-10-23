@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OverrideLineItemRequest } from "@tirdad-ai/sdk/sdk/models";
+import { OverrideLineItemRequest } from "@tirdad/sdk/sdk/models";
 
 let value: OverrideLineItemRequest = {
   priceId: "<id>",

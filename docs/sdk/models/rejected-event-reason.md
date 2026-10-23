@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { RejectedEventReason } from "@tirdad-ai/sdk/sdk/models";
+import { RejectedEventReason } from "@tirdad/sdk/sdk/models";
 
 let value: RejectedEventReason = "no_matching_meter";
 

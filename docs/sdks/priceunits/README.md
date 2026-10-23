@@ -20,7 +20,7 @@ Use when listing price units (e.g. in a catalog or when creating prices). Return
 
 <!-- UsageSnippet language="typescript" operationID="listPriceUnits" method="get" path="/prices/units" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -40,8 +40,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsListPriceUnits } from "@tirdad-ai/sdk/funcs/price-units-list-price-units.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { priceUnitsListPriceUnits } from "@tirdad/sdk/funcs/price-units-list-price-units.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -91,7 +91,7 @@ Use when defining a new unit of measure for pricing (e.g. GB, API call, seat). I
 
 <!-- UsageSnippet language="typescript" operationID="createPriceUnit" method="post" path="/prices/units" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -117,8 +117,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsCreatePriceUnit } from "@tirdad-ai/sdk/funcs/price-units-create-price-unit.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { priceUnitsCreatePriceUnit } from "@tirdad/sdk/funcs/price-units-create-price-unit.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -174,7 +174,7 @@ Use when resolving a price unit by code (e.g. from an external catalog or config
 
 <!-- UsageSnippet language="typescript" operationID="getPriceUnitByCode" method="get" path="/prices/units/code/{code}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -194,8 +194,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsGetPriceUnitByCode } from "@tirdad-ai/sdk/funcs/price-units-get-price-unit-by-code.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { priceUnitsGetPriceUnitByCode } from "@tirdad/sdk/funcs/price-units-get-price-unit-by-code.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -245,7 +245,7 @@ Use when searching or listing price units (e.g. admin catalog). Returns a pagina
 
 <!-- UsageSnippet language="typescript" operationID="queryPriceUnit" method="post" path="/prices/units/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -265,8 +265,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsQueryPriceUnit } from "@tirdad-ai/sdk/funcs/price-units-query-price-unit.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { priceUnitsQueryPriceUnit } from "@tirdad/sdk/funcs/price-units-query-price-unit.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -316,7 +316,7 @@ Use when you need to load a single price unit (e.g. for display or when creating
 
 <!-- UsageSnippet language="typescript" operationID="getPriceUnit" method="get" path="/prices/units/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -336,8 +336,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsGetPriceUnit } from "@tirdad-ai/sdk/funcs/price-units-get-price-unit.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { priceUnitsGetPriceUnit } from "@tirdad/sdk/funcs/price-units-get-price-unit.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -386,7 +386,7 @@ Use when renaming or updating metadata for a price unit. Code is immutable once 
 
 <!-- UsageSnippet language="typescript" operationID="updatePriceUnit" method="put" path="/prices/units/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -406,8 +406,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsUpdatePriceUnit } from "@tirdad-ai/sdk/funcs/price-units-update-price-unit.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { priceUnitsUpdatePriceUnit } from "@tirdad/sdk/funcs/price-units-update-price-unit.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -457,7 +457,7 @@ Use when removing a price unit that is no longer needed. Fails if any price refe
 
 <!-- UsageSnippet language="typescript" operationID="deletePriceUnit" method="delete" path="/prices/units/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -477,8 +477,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { priceUnitsDeletePriceUnit } from "@tirdad-ai/sdk/funcs/price-units-delete-price-unit.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { priceUnitsDeletePriceUnit } from "@tirdad/sdk/funcs/price-units-delete-price-unit.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

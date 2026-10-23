@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GlobalCustomField } from "@tirdad-ai/sdk/sdk/models";
+import { GlobalCustomField } from "@tirdad/sdk/sdk/models";
 
 let value: GlobalCustomField = {};
 ```

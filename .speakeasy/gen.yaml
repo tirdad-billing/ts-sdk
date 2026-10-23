@@ -31,7 +31,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 typescript:
-  version: 2.1.40
+  version: 2.1.41
   acceptHeaderEnum: true
   additionalDependencies:
     dependencies: {}
@@ -86,7 +86,7 @@ typescript:
   multipartArrayFormat: legacy
   numericEnumMemberNames: words
   outputModelSuffix: Output
-  packageName: '@tirdad-ai/sdk'
+  packageName: '@tirdad/sdk'
   preApplyUnionDiscriminators: true
   preserveModelFieldNames: false
   privateIdentifierPrefix: '#'

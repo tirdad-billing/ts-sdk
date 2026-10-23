@@ -5,7 +5,7 @@ Confirmation of schedule cancellation
 ## Example Usage
 
 ```typescript
-import { CancelScheduleResponse } from "@tirdad-ai/sdk/sdk/models";
+import { CancelScheduleResponse } from "@tirdad/sdk/sdk/models";
 
 let value: CancelScheduleResponse = {};
 ```

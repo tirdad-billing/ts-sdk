@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { RoundType } from "@tirdad-ai/sdk/sdk/models";
+import { RoundType } from "@tirdad/sdk/sdk/models";
 
 let value: RoundType = "down";
 

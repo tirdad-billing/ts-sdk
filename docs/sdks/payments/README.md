@@ -19,7 +19,7 @@ Use when listing or searching payments (e.g. reconciliation UI or customer payme
 
 <!-- UsageSnippet language="typescript" operationID="listPayments" method="get" path="/payments" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -39,8 +39,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { paymentsListPayments } from "@tirdad-ai/sdk/funcs/payments-list-payments.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { paymentsListPayments } from "@tirdad/sdk/funcs/payments-list-payments.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -90,7 +90,7 @@ Use when recording a payment against an invoice (e.g. after receiving funds via 
 
 <!-- UsageSnippet language="typescript" operationID="createPayment" method="post" path="/payments" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -116,8 +116,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { paymentsCreatePayment } from "@tirdad-ai/sdk/funcs/payments-create-payment.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { paymentsCreatePayment } from "@tirdad/sdk/funcs/payments-create-payment.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -173,7 +173,7 @@ Use when you need to load a single payment (e.g. for a receipt view or reconcili
 
 <!-- UsageSnippet language="typescript" operationID="getPayment" method="get" path="/payments/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -193,8 +193,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { paymentsGetPayment } from "@tirdad-ai/sdk/funcs/payments-get-payment.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { paymentsGetPayment } from "@tirdad/sdk/funcs/payments-get-payment.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -244,7 +244,7 @@ Use when updating payment status or metadata (e.g. after reconciliation or addin
 
 <!-- UsageSnippet language="typescript" operationID="updatePayment" method="put" path="/payments/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -264,8 +264,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { paymentsUpdatePayment } from "@tirdad-ai/sdk/funcs/payments-update-payment.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { paymentsUpdatePayment } from "@tirdad/sdk/funcs/payments-update-payment.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -316,7 +316,7 @@ Use when removing or voiding a payment record (e.g. correcting erroneous entries
 
 <!-- UsageSnippet language="typescript" operationID="deletePayment" method="delete" path="/payments/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -336,8 +336,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { paymentsDeletePayment } from "@tirdad-ai/sdk/funcs/payments-delete-payment.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { paymentsDeletePayment } from "@tirdad/sdk/funcs/payments-delete-payment.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -387,7 +387,7 @@ Use when you need to charge or process a payment (e.g. trigger the payment provi
 
 <!-- UsageSnippet language="typescript" operationID="processPayment" method="post" path="/payments/{id}/process" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -407,8 +407,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { paymentsProcessPayment } from "@tirdad-ai/sdk/funcs/payments-process-payment.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { paymentsProcessPayment } from "@tirdad/sdk/funcs/payments-process-payment.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

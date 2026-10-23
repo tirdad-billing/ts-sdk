@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AggregationType } from "@tirdad-ai/sdk/sdk/models";
+import { AggregationType } from "@tirdad/sdk/sdk/models";
 
 let value: AggregationType = "COUNT";
 

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TriggerInvoiceCommsWebhookRequest } from "@tirdad-ai/sdk/sdk/models";
+import { TriggerInvoiceCommsWebhookRequest } from "@tirdad/sdk/sdk/models";
 
 let value: TriggerInvoiceCommsWebhookRequest = {
   id: "<id>",

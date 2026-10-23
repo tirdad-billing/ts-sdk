@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubscriptionPhaseCreateRequest } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionPhaseCreateRequest } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionPhaseCreateRequest = {
   startDate: new Date("2026-07-11T06:03:26.109Z"),

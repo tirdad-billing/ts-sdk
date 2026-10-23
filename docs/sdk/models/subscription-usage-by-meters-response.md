@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubscriptionUsageByMetersResponse } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionUsageByMetersResponse } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionUsageByMetersResponse = {};
 ```

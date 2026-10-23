@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { MeterResponse } from "@tirdad-ai/sdk/sdk/models";
+import { MeterResponse } from "@tirdad/sdk/sdk/models";
 
 let value: MeterResponse = {
   createdAt: new Date("2024-03-20T15:04:05Z"),

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ExportMetadataEntityType } from "@tirdad-ai/sdk/sdk/models";
+import { ExportMetadataEntityType } from "@tirdad/sdk/sdk/models";
 
 let value: ExportMetadataEntityType = "wallet";
 

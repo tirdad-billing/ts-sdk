@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { LineItemCommitmentConfig } from "@tirdad-ai/sdk/sdk/models";
+import { LineItemCommitmentConfig } from "@tirdad/sdk/sdk/models";
 
 let value: LineItemCommitmentConfig = {};
 ```

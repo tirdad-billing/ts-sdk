@@ -5,7 +5,7 @@ created (proration invoice) | wallet_credit (downgrade credit)
 ## Example Usage
 
 ```typescript
-import { ChangedInvoiceAction } from "@tirdad-ai/sdk/sdk/models";
+import { ChangedInvoiceAction } from "@tirdad/sdk/sdk/models";
 
 let value: ChangedInvoiceAction = "created";
 

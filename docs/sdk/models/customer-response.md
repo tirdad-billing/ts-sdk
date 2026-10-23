@@ -5,7 +5,7 @@ Customer response object containing all customer information
 ## Example Usage
 
 ```typescript
-import { CustomerResponse } from "@tirdad-ai/sdk/sdk/models";
+import { CustomerResponse } from "@tirdad/sdk/sdk/models";
 
 let value: CustomerResponse = {};
 ```

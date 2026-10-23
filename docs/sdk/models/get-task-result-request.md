@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetTaskResultRequest } from "@tirdad-ai/sdk/sdk/models";
+import { GetTaskResultRequest } from "@tirdad/sdk/sdk/models";
 
 let value: GetTaskResultRequest = {
   workflowId: "<id>",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PauseMode } from "@tirdad-ai/sdk/sdk/models";
+import { PauseMode } from "@tirdad/sdk/sdk/models";
 
 let value: PauseMode = "immediate";
 

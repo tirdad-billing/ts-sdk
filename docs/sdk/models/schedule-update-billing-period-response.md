@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ScheduleUpdateBillingPeriodResponse } from "@tirdad-ai/sdk/sdk/models";
+import { ScheduleUpdateBillingPeriodResponse } from "@tirdad/sdk/sdk/models";
 
 let value: ScheduleUpdateBillingPeriodResponse = {};
 ```

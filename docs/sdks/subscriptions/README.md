@@ -42,7 +42,7 @@ Use when onboarding a customer to a plan or starting a new subscription. Ideal f
 
 <!-- UsageSnippet language="typescript" operationID="createSubscription" method="post" path="/subscriptions" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -66,8 +66,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsCreateSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-create-subscription.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsCreateSubscription } from "@tirdad/sdk/funcs/subscriptions-create-subscription.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -124,7 +124,7 @@ Use when adding an optional product or add-on to an existing subscription (e.g. 
 
 <!-- UsageSnippet language="typescript" operationID="addSubscriptionAddon" method="post" path="/subscriptions/addon" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -147,8 +147,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsAddSubscriptionAddon } from "@tirdad-ai/sdk/funcs/subscriptions-add-subscription-addon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsAddSubscriptionAddon } from "@tirdad/sdk/funcs/subscriptions-add-subscription-addon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -204,7 +204,7 @@ Use when removing an add-on from a subscription (e.g. downgrade or opt-out).
 
 <!-- UsageSnippet language="typescript" operationID="removeSubscriptionAddon" method="delete" path="/subscriptions/addon" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -226,8 +226,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsRemoveSubscriptionAddon } from "@tirdad-ai/sdk/funcs/subscriptions-remove-subscription-addon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsRemoveSubscriptionAddon } from "@tirdad/sdk/funcs/subscriptions-remove-subscription-addon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -279,7 +279,7 @@ List subscription line items with a JSON filter (subscription, customer, price, 
 
 <!-- UsageSnippet language="typescript" operationID="querySubscriptionLineItems" method="post" path="/subscriptions/lineitems/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -299,8 +299,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsQuerySubscriptionLineItems } from "@tirdad-ai/sdk/funcs/subscriptions-query-subscription-line-items.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsQuerySubscriptionLineItems } from "@tirdad/sdk/funcs/subscriptions-query-subscription-line-items.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -350,7 +350,7 @@ Use when changing a subscription line item (e.g. quantity or price). Implemented
 
 <!-- UsageSnippet language="typescript" operationID="updateSubscriptionLineItem" method="put" path="/subscriptions/lineitems/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -370,8 +370,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsUpdateSubscriptionLineItem } from "@tirdad-ai/sdk/funcs/subscriptions-update-subscription-line-item.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsUpdateSubscriptionLineItem } from "@tirdad/sdk/funcs/subscriptions-update-subscription-line-item.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -422,7 +422,7 @@ Use when removing a charge or seat from a subscription (e.g. downgrade). Line it
 
 <!-- UsageSnippet language="typescript" operationID="deleteSubscriptionLineItem" method="delete" path="/subscriptions/lineitems/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -442,8 +442,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsDeleteSubscriptionLineItem } from "@tirdad-ai/sdk/funcs/subscriptions-delete-subscription-line-item.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsDeleteSubscriptionLineItem } from "@tirdad/sdk/funcs/subscriptions-delete-subscription-line-item.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -494,7 +494,7 @@ Use when listing or searching scheduled changes across subscriptions (e.g. admin
 
 <!-- UsageSnippet language="typescript" operationID="listAllSubscriptionSchedules" method="get" path="/subscriptions/schedules" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -514,8 +514,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsListAllSubscriptionSchedules } from "@tirdad-ai/sdk/funcs/subscriptions-list-all-subscription-schedules.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsListAllSubscriptionSchedules } from "@tirdad/sdk/funcs/subscriptions-list-all-subscription-schedules.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -563,7 +563,7 @@ Use when you need to load a single scheduled change (e.g. to show when a plan ch
 
 <!-- UsageSnippet language="typescript" operationID="getSubscriptionSchedule" method="get" path="/subscriptions/schedules/{schedule_id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -583,8 +583,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionSchedule } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-schedule.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsGetSubscriptionSchedule } from "@tirdad/sdk/funcs/subscriptions-get-subscription-schedule.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -632,7 +632,7 @@ Use when cancelling a scheduled change (e.g. customer changed mind). Identify by
 
 <!-- UsageSnippet language="typescript" operationID="cancelSubscriptionSchedule" method="post" path="/subscriptions/schedules/{schedule_id}/cancel" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -652,8 +652,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsCancelSubscriptionSchedule } from "@tirdad-ai/sdk/funcs/subscriptions-cancel-subscription-schedule.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsCancelSubscriptionSchedule } from "@tirdad/sdk/funcs/subscriptions-cancel-subscription-schedule.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -702,7 +702,7 @@ Use when listing or searching subscriptions (e.g. admin view or customer subscri
 
 <!-- UsageSnippet language="typescript" operationID="querySubscription" method="post" path="/subscriptions/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -722,8 +722,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsQuerySubscription } from "@tirdad-ai/sdk/funcs/subscriptions-query-subscription.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsQuerySubscription } from "@tirdad/sdk/funcs/subscriptions-query-subscription.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -773,7 +773,7 @@ Use when showing usage for a subscription (e.g. in a portal or for overage check
 
 <!-- UsageSnippet language="typescript" operationID="getSubscriptionUsage" method="post" path="/subscriptions/usage" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -798,8 +798,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionUsage } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-usage.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsGetSubscriptionUsage } from "@tirdad/sdk/funcs/subscriptions-get-subscription-usage.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -854,7 +854,7 @@ Use when you need to load a single subscription (e.g. for a billing portal or to
 
 <!-- UsageSnippet language="typescript" operationID="getSubscription" method="get" path="/subscriptions/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -874,8 +874,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsGetSubscription } from "@tirdad/sdk/funcs/subscriptions-get-subscription.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -925,7 +925,7 @@ Use when changing subscription details (e.g. quantity, billing anchor, or parent
 
 <!-- UsageSnippet language="typescript" operationID="updateSubscription" method="put" path="/subscriptions/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -945,8 +945,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsUpdateSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-update-subscription.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsUpdateSubscription } from "@tirdad/sdk/funcs/subscriptions-update-subscription.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -997,7 +997,7 @@ Use when turning a draft subscription live (e.g. after collecting payment or com
 
 <!-- UsageSnippet language="typescript" operationID="activateSubscription" method="post" path="/subscriptions/{id}/activate" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1019,8 +1019,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsActivateSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-activate-subscription.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsActivateSubscription } from "@tirdad/sdk/funcs/subscriptions-activate-subscription.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1073,7 +1073,7 @@ Use when listing which add-ons are currently attached to a subscription (e.g. fo
 
 <!-- UsageSnippet language="typescript" operationID="getSubscriptionAddonAssociations" method="get" path="/subscriptions/{id}/addons/associations" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1093,8 +1093,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionAddonAssociations } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-addon-associations.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsGetSubscriptionAddonAssociations } from "@tirdad/sdk/funcs/subscriptions-get-subscription-addon-associations.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1144,7 +1144,7 @@ Use when a customer churns or downgrades. Supports immediate or end-of-period ca
 
 <!-- UsageSnippet language="typescript" operationID="cancelSubscription" method="post" path="/subscriptions/{id}/cancel" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1166,8 +1166,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsCancelSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-cancel-subscription.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsCancelSubscription } from "@tirdad/sdk/funcs/subscriptions-cancel-subscription.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1220,7 +1220,7 @@ Use when applying a plan change (e.g. upgrade or downgrade). Executes proration 
 
 <!-- UsageSnippet language="typescript" operationID="executeSubscriptionChange" method="post" path="/subscriptions/{id}/change/execute" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1246,8 +1246,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsExecuteSubscriptionChange } from "@tirdad-ai/sdk/funcs/subscriptions-execute-subscription-change.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsExecuteSubscriptionChange } from "@tirdad/sdk/funcs/subscriptions-execute-subscription-change.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1304,7 +1304,7 @@ Use when showing a customer the cost of a plan change before they confirm (e.g. 
 
 <!-- UsageSnippet language="typescript" operationID="previewSubscriptionChange" method="post" path="/subscriptions/{id}/change/preview" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1330,8 +1330,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsPreviewSubscriptionChange } from "@tirdad-ai/sdk/funcs/subscriptions-preview-subscription-change.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsPreviewSubscriptionChange } from "@tirdad/sdk/funcs/subscriptions-preview-subscription-change.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1396,7 +1396,7 @@ Set on_conflict_policies.on_pending_schedule to 'supersede' to replace the queue
 
 <!-- UsageSnippet language="typescript" operationID="executeSubscriptionPlanChangeV2" method="post" path="/subscriptions/{id}/change/v2/execute" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1419,8 +1419,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsExecuteSubscriptionPlanChangeV2 } from "@tirdad-ai/sdk/funcs/subscriptions-execute-subscription-plan-change-v2.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsExecuteSubscriptionPlanChangeV2 } from "@tirdad/sdk/funcs/subscriptions-execute-subscription-plan-change-v2.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1474,7 +1474,7 @@ Preview a subscription plan change without writing. Swap-in-place: subscription 
 
 <!-- UsageSnippet language="typescript" operationID="previewSubscriptionPlanChangeV2" method="post" path="/subscriptions/{id}/change/v2/preview" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1497,8 +1497,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsPreviewSubscriptionPlanChangeV2 } from "@tirdad-ai/sdk/funcs/subscriptions-preview-subscription-plan-change-v2.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsPreviewSubscriptionPlanChangeV2 } from "@tirdad/sdk/funcs/subscriptions-preview-subscription-plan-change-v2.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1552,7 +1552,7 @@ Use when checking what features or limits a subscription has (e.g. entitlement c
 
 <!-- UsageSnippet language="typescript" operationID="getSubscriptionEntitlements" method="get" path="/subscriptions/{id}/entitlements" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1572,8 +1572,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionEntitlements } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-entitlements.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsGetSubscriptionEntitlements } from "@tirdad/sdk/funcs/subscriptions-get-subscription-entitlements.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1624,7 +1624,7 @@ Use when showing upcoming or pending credits for a subscription (e.g. in a porta
 
 <!-- UsageSnippet language="typescript" operationID="getSubscriptionUpcomingGrants" method="get" path="/subscriptions/{id}/grants/upcoming" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1644,8 +1644,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionUpcomingGrants } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-upcoming-grants.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsGetSubscriptionUpcomingGrants } from "@tirdad/sdk/funcs/subscriptions-get-subscription-upcoming-grants.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1695,7 +1695,7 @@ Use when adding a new charge or seat to a subscription (e.g. extra seat or one-t
 
 <!-- UsageSnippet language="typescript" operationID="createSubscriptionLineItem" method="post" path="/subscriptions/{id}/lineitems" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1715,8 +1715,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsCreateSubscriptionLineItem } from "@tirdad-ai/sdk/funcs/subscriptions-create-subscription-line-item.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsCreateSubscriptionLineItem } from "@tirdad/sdk/funcs/subscriptions-create-subscription-line-item.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1768,7 +1768,7 @@ Type "quantity_change" is deprecated: use "line_item_change", which changes a fi
 
 <!-- UsageSnippet language="typescript" operationID="executeSubscriptionModify" method="post" path="/subscriptions/{id}/modify/execute" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1790,8 +1790,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsExecuteSubscriptionModify } from "@tirdad-ai/sdk/funcs/subscriptions-execute-subscription-modify.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsExecuteSubscriptionModify } from "@tirdad/sdk/funcs/subscriptions-execute-subscription-modify.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1845,7 +1845,7 @@ Type "quantity_change" is deprecated: use "line_item_change".
 
 <!-- UsageSnippet language="typescript" operationID="previewSubscriptionModify" method="post" path="/subscriptions/{id}/modify/preview" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1867,8 +1867,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsPreviewSubscriptionModify } from "@tirdad-ai/sdk/funcs/subscriptions-preview-subscription-modify.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsPreviewSubscriptionModify } from "@tirdad/sdk/funcs/subscriptions-preview-subscription-modify.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1921,7 +1921,7 @@ Use when a customer stops temporarily. Pauses an active subscription now: usage 
 
 <!-- UsageSnippet language="typescript" operationID="pauseSubscription" method="post" path="/subscriptions/{id}/pause" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1941,8 +1941,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsPauseSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-pause-subscription.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsPauseSubscription } from "@tirdad/sdk/funcs/subscriptions-pause-subscription.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1993,7 +1993,7 @@ Use when a paused customer comes back. Resumes a paused subscription now on its 
 
 <!-- UsageSnippet language="typescript" operationID="resumeSubscription" method="post" path="/subscriptions/{id}/resume" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2013,8 +2013,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsResumeSubscription } from "@tirdad-ai/sdk/funcs/subscriptions-resume-subscription.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsResumeSubscription } from "@tirdad/sdk/funcs/subscriptions-resume-subscription.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2065,7 +2065,7 @@ Use when listing scheduled changes for a subscription (e.g. upcoming plan change
 
 <!-- UsageSnippet language="typescript" operationID="listSubscriptionSchedules" method="get" path="/subscriptions/{id}/schedules" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2085,8 +2085,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsListSubscriptionSchedules } from "@tirdad-ai/sdk/funcs/subscriptions-list-subscription-schedules.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsListSubscriptionSchedules } from "@tirdad/sdk/funcs/subscriptions-list-subscription-schedules.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2134,7 +2134,7 @@ Use when you need a subscription with related data (line items, prices, plan). S
 
 <!-- UsageSnippet language="typescript" operationID="getSubscriptionV2" method="get" path="/subscriptions/{id}/v2" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2154,8 +2154,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { subscriptionsGetSubscriptionV2 } from "@tirdad-ai/sdk/funcs/subscriptions-get-subscription-v2.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { subscriptionsGetSubscriptionV2 } from "@tirdad/sdk/funcs/subscriptions-get-subscription-v2.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

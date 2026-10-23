@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ProrationBehavior } from "@tirdad-ai/sdk/sdk/models";
+import { ProrationBehavior } from "@tirdad/sdk/sdk/models";
 
 let value: ProrationBehavior = "none";
 

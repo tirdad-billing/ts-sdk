@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { RevenueAnalyticsRequest } from "@tirdad-ai/sdk/sdk/models";
+import { RevenueAnalyticsRequest } from "@tirdad/sdk/sdk/models";
 
 let value: RevenueAnalyticsRequest = {
   startTime: new Date("2026-04-10T05:25:48.901Z"),

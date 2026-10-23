@@ -28,7 +28,7 @@ Use when showing a customer's invoice overview (e.g. billing portal or balance s
 
 <!-- UsageSnippet language="typescript" operationID="getCustomerInvoiceSummary" method="get" path="/customers/{id}/invoices/summary" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -48,8 +48,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesGetCustomerInvoiceSummary } from "@tirdad-ai/sdk/funcs/invoices-get-customer-invoice-summary.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesGetCustomerInvoiceSummary } from "@tirdad/sdk/funcs/invoices-get-customer-invoice-summary.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -100,7 +100,7 @@ Pass a `checkout` object to gate the invoice behind a hosted payment session: th
 
 <!-- UsageSnippet language="typescript" operationID="createInvoice" method="post" path="/invoices" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -126,8 +126,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesCreateInvoice } from "@tirdad-ai/sdk/funcs/invoices-create-invoice.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesCreateInvoice } from "@tirdad/sdk/funcs/invoices-create-invoice.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -183,7 +183,7 @@ Use when showing a customer what they will be charged (e.g. preview before check
 
 <!-- UsageSnippet language="typescript" operationID="getInvoicePreview" method="post" path="/invoices/preview" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -205,8 +205,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesGetInvoicePreview } from "@tirdad-ai/sdk/funcs/invoices-get-invoice-preview.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesGetInvoicePreview } from "@tirdad/sdk/funcs/invoices-get-invoice-preview.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -258,7 +258,7 @@ Use when listing or searching invoices (e.g. admin view or customer history). Re
 
 <!-- UsageSnippet language="typescript" operationID="queryInvoice" method="post" path="/invoices/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -278,8 +278,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesQueryInvoice } from "@tirdad-ai/sdk/funcs/invoices-query-invoice.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesQueryInvoice } from "@tirdad/sdk/funcs/invoices-query-invoice.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -329,7 +329,7 @@ Use when loading an invoice for display or editing (e.g. portal or reconciliatio
 
 <!-- UsageSnippet language="typescript" operationID="getInvoice" method="get" path="/invoices/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -349,8 +349,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesGetInvoice } from "@tirdad-ai/sdk/funcs/invoices-get-invoice.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesGetInvoice } from "@tirdad/sdk/funcs/invoices-get-invoice.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -403,7 +403,7 @@ Use when updating invoice metadata or due date (e.g. PDF URL, net terms), or whe
 
 <!-- UsageSnippet language="typescript" operationID="updateInvoice" method="put" path="/invoices/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -423,8 +423,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesUpdateInvoice } from "@tirdad-ai/sdk/funcs/invoices-update-invoice.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesUpdateInvoice } from "@tirdad/sdk/funcs/invoices-update-invoice.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -475,7 +475,7 @@ Use when sending an invoice to the customer (e.g. trigger email or Slack). Paylo
 
 <!-- UsageSnippet language="typescript" operationID="triggerInvoiceCommsWebhook" method="post" path="/invoices/{id}/comms/trigger" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -495,8 +495,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesTriggerInvoiceCommsWebhook } from "@tirdad-ai/sdk/funcs/invoices-trigger-invoice-comms-webhook.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesTriggerInvoiceCommsWebhook } from "@tirdad/sdk/funcs/invoices-trigger-invoice-comms-webhook.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -546,7 +546,7 @@ Use when locking an invoice for payment (e.g. after review). Once finalized, lin
 
 <!-- UsageSnippet language="typescript" operationID="finalizeInvoice" method="post" path="/invoices/{id}/finalize" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -566,8 +566,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesFinalizeInvoice } from "@tirdad-ai/sdk/funcs/invoices-finalize-invoice.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesFinalizeInvoice } from "@tirdad/sdk/funcs/invoices-finalize-invoice.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -617,7 +617,7 @@ Execute a modification on a draft or finalized invoice. Supports line item chang
 
 <!-- UsageSnippet language="typescript" operationID="executeInvoiceModify" method="post" path="/invoices/{id}/modify/execute" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -639,8 +639,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesExecuteInvoiceModify } from "@tirdad-ai/sdk/funcs/invoices-execute-invoice-modify.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesExecuteInvoiceModify } from "@tirdad/sdk/funcs/invoices-execute-invoice-modify.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -693,7 +693,7 @@ Use when reconciling payment status from an external gateway or manual entry (e.
 
 <!-- UsageSnippet language="typescript" operationID="updateInvoicePaymentStatus" method="put" path="/invoices/{id}/payment" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -715,8 +715,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesUpdateInvoicePaymentStatus } from "@tirdad-ai/sdk/funcs/invoices-update-invoice-payment-status.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesUpdateInvoicePaymentStatus } from "@tirdad/sdk/funcs/invoices-update-invoice-payment-status.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -769,7 +769,7 @@ Use when paying an invoice with the customer's wallet balance (e.g. prepaid cred
 
 <!-- UsageSnippet language="typescript" operationID="attemptInvoicePayment" method="post" path="/invoices/{id}/payment/attempt" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -789,8 +789,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesAttemptInvoicePayment } from "@tirdad-ai/sdk/funcs/invoices-attempt-invoice-payment.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesAttemptInvoicePayment } from "@tirdad/sdk/funcs/invoices-attempt-invoice-payment.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -840,7 +840,7 @@ Use when delivering an invoice PDF to the customer (e.g. email attachment or dow
 
 <!-- UsageSnippet language="typescript" operationID="getInvoicePdf" method="get" path="/invoices/{id}/pdf" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -860,8 +860,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesGetInvoicePdf } from "@tirdad-ai/sdk/funcs/invoices-get-invoice-pdf.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesGetInvoicePdf } from "@tirdad/sdk/funcs/invoices-get-invoice-pdf.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -911,7 +911,7 @@ Starts an async workflow that creates a fresh replacement invoice for a voided S
 
 <!-- UsageSnippet language="typescript" operationID="recalculateInvoice" method="post" path="/invoices/{id}/recalculate" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -931,8 +931,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesRecalculateInvoice } from "@tirdad-ai/sdk/funcs/invoices-recalculate-invoice.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesRecalculateInvoice } from "@tirdad/sdk/funcs/invoices-recalculate-invoice.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -982,7 +982,7 @@ Recalculates a draft SUBSCRIPTION invoice in-place (replaces line items, reappli
 
 <!-- UsageSnippet language="typescript" operationID="recalculateInvoiceV2" method="post" path="/invoices/{id}/recalculate-v2" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1002,8 +1002,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesRecalculateInvoiceV2 } from "@tirdad-ai/sdk/funcs/invoices-recalculate-invoice-v2.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesRecalculateInvoiceV2 } from "@tirdad/sdk/funcs/invoices-recalculate-invoice-v2.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1054,7 +1054,7 @@ Use when cancelling an invoice (e.g. order cancelled or duplicate). Only unpaid 
 
 <!-- UsageSnippet language="typescript" operationID="voidInvoice" method="post" path="/invoices/{id}/void" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1074,8 +1074,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { invoicesVoidInvoice } from "@tirdad-ai/sdk/funcs/invoices-void-invoice.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { invoicesVoidInvoice } from "@tirdad/sdk/funcs/invoices-void-invoice.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

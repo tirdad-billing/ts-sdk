@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetPriceRequest } from "@tirdad-ai/sdk/sdk/models";
+import { GetPriceRequest } from "@tirdad/sdk/sdk/models";
 
 let value: GetPriceRequest = {
   id: "<id>",

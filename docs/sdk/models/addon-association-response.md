@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AddonAssociationResponse } from "@tirdad-ai/sdk/sdk/models";
+import { AddonAssociationResponse } from "@tirdad/sdk/sdk/models";
 
 let value: AddonAssociationResponse = {
   addon: {

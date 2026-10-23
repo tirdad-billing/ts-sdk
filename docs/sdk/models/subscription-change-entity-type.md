@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubscriptionChangeEntityType } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionChangeEntityType } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionChangeEntityType = "addon_association";
 

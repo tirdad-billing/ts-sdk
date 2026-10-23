@@ -14,7 +14,7 @@ Use when listing or auditing workflow runs (e.g. ops dashboard or debugging). Re
 
 <!-- UsageSnippet language="typescript" operationID="queryWorkflow" method="post" path="/workflows/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -34,8 +34,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { workflowsQueryWorkflow } from "@tirdad-ai/sdk/funcs/workflows-query-workflow.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { workflowsQueryWorkflow } from "@tirdad/sdk/funcs/workflows-query-workflow.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

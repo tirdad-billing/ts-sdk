@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WebhookDtoRejectedEventWebhookPayload } from "@tirdad-ai/sdk/sdk/models";
+import { WebhookDtoRejectedEventWebhookPayload } from "@tirdad/sdk/sdk/models";
 
 let value: WebhookDtoRejectedEventWebhookPayload = {};
 ```

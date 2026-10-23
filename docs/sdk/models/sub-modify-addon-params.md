@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubModifyAddonParams } from "@tirdad-ai/sdk/sdk/models";
+import { SubModifyAddonParams } from "@tirdad/sdk/sdk/models";
 
 let value: SubModifyAddonParams = {
   action: "remove",

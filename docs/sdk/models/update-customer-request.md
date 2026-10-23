@@ -5,7 +5,7 @@ Request object for updating an existing customer. All fields are optional - only
 ## Example Usage
 
 ```typescript
-import { UpdateCustomerRequest } from "@tirdad-ai/sdk/sdk/models";
+import { UpdateCustomerRequest } from "@tirdad/sdk/sdk/models";
 
 let value: UpdateCustomerRequest = {};
 ```

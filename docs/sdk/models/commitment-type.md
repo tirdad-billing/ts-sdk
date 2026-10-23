@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CommitmentType } from "@tirdad-ai/sdk/sdk/models";
+import { CommitmentType } from "@tirdad/sdk/sdk/models";
 
 let value: CommitmentType = "amount";
 

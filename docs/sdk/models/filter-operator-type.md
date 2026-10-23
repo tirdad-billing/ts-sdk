@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { FilterOperatorType } from "@tirdad-ai/sdk/sdk/models";
+import { FilterOperatorType } from "@tirdad/sdk/sdk/models";
 
 let value: FilterOperatorType = "gte";
 

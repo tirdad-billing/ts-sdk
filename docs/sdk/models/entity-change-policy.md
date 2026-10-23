@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EntityChangePolicy } from "@tirdad-ai/sdk/sdk/models";
+import { EntityChangePolicy } from "@tirdad/sdk/sdk/models";
 
 let value: EntityChangePolicy = {};
 ```

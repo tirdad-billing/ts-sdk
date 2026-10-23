@@ -20,7 +20,7 @@ Use when sending a single usage event from your app (e.g. one API call or one GB
 
 <!-- UsageSnippet language="typescript" operationID="ingestEvent" method="post" path="/events" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -51,8 +51,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { eventsIngestEvent } from "@tirdad-ai/sdk/funcs/events-ingest-event.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { eventsIngestEvent } from "@tirdad/sdk/funcs/events-ingest-event.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -113,7 +113,7 @@ Use when building analytics views (e.g. usage by feature or customer over time).
 
 <!-- UsageSnippet language="typescript" operationID="getUsageAnalytics" method="post" path="/events/analytics" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -133,8 +133,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { eventsGetUsageAnalytics } from "@tirdad-ai/sdk/funcs/events-get-usage-analytics.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { eventsGetUsageAnalytics } from "@tirdad/sdk/funcs/events-get-usage-analytics.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -184,7 +184,7 @@ Use when batching usage events (e.g. backfill or high-volume ingestion). More ef
 
 <!-- UsageSnippet language="typescript" operationID="ingestEventsBulk" method="post" path="/events/bulk" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -206,8 +206,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { eventsIngestEventsBulk } from "@tirdad-ai/sdk/funcs/events-ingest-events-bulk.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { eventsIngestEventsBulk } from "@tirdad/sdk/funcs/events-ingest-events-bulk.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -259,7 +259,7 @@ Use when debugging a specific event (e.g. why it failed or how it was aggregated
 
 <!-- UsageSnippet language="typescript" operationID="getEvent" method="get" path="/events/lookup" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -279,8 +279,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { eventsGetEvent } from "@tirdad-ai/sdk/funcs/events-get-event.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { eventsGetEvent } from "@tirdad/sdk/funcs/events-get-event.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -333,7 +333,7 @@ Use when debugging ingestion or exporting raw event data (e.g. support or audit)
 
 <!-- UsageSnippet language="typescript" operationID="listRawEvents" method="post" path="/events/query" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -358,8 +358,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { eventsListRawEvents } from "@tirdad-ai/sdk/funcs/events-list-raw-events.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { eventsListRawEvents } from "@tirdad/sdk/funcs/events-list-raw-events.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -414,7 +414,7 @@ Use when building usage reports or dashboards across events. Supports filters an
 
 <!-- UsageSnippet language="typescript" operationID="getUsageStatistics" method="post" path="/events/usage" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -443,8 +443,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { eventsGetUsageStatistics } from "@tirdad-ai/sdk/funcs/events-get-usage-statistics.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { eventsGetUsageStatistics } from "@tirdad/sdk/funcs/events-get-usage-statistics.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -503,7 +503,7 @@ Use when showing usage for a specific meter (e.g. dashboard or overage check). S
 
 <!-- UsageSnippet language="typescript" operationID="getUsageByMeter" method="post" path="/events/usage/meter" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -530,8 +530,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { eventsGetUsageByMeter } from "@tirdad-ai/sdk/funcs/events-get-usage-by-meter.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { eventsGetUsageByMeter } from "@tirdad/sdk/funcs/events-get-usage-by-meter.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

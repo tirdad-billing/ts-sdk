@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateCustomerPortalSessionRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CreateCustomerPortalSessionRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CreateCustomerPortalSessionRequest = {
   externalId: "<id>",

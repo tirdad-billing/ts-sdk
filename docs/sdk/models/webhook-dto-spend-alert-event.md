@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WebhookDtoSpendAlertEvent } from "@tirdad-ai/sdk/sdk/models";
+import { WebhookDtoSpendAlertEvent } from "@tirdad/sdk/sdk/models";
 
 let value: WebhookDtoSpendAlertEvent = {};
 ```

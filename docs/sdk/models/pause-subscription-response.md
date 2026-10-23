@@ -5,7 +5,7 @@ The paused subscription and its pause
 ## Example Usage
 
 ```typescript
-import { PauseSubscriptionResponse } from "@tirdad-ai/sdk/sdk/models";
+import { PauseSubscriptionResponse } from "@tirdad/sdk/sdk/models";
 
 let value: PauseSubscriptionResponse = {
   subscription: {

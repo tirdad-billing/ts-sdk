@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DeleteAlertSettingsRequest } from "@tirdad-ai/sdk/sdk/models";
+import { DeleteAlertSettingsRequest } from "@tirdad/sdk/sdk/models";
 
 let value: DeleteAlertSettingsRequest = {
   id: "<id>",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ColumnRole } from "@tirdad-ai/sdk/sdk/models";
+import { ColumnRole } from "@tirdad/sdk/sdk/models";
 
 let value: ColumnRole = "metric";
 

@@ -3,12 +3,12 @@
 ## Example Usage
 
 ```typescript
-import { CreateViewRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CreateViewRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CreateViewRequest = {
   definition: {
     metrics: [
-      "usage_quantity",
+      "invoice_total",
     ],
     shape: "breakdown",
   },

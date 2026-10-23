@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EntityIntegrationMappingResponse } from "@tirdad-ai/sdk/sdk/models";
+import { EntityIntegrationMappingResponse } from "@tirdad/sdk/sdk/models";
 
 let value: EntityIntegrationMappingResponse = {};
 ```

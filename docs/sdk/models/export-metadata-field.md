@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ExportMetadataField } from "@tirdad-ai/sdk/sdk/models";
+import { ExportMetadataField } from "@tirdad/sdk/sdk/models";
 
 let value: ExportMetadataField = {
   entityType: "customer",

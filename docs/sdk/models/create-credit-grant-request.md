@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateCreditGrantRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CreateCreditGrantRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CreateCreditGrantRequest = {
   cadence: "ONETIME",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CheckoutParams } from "@tirdad-ai/sdk/sdk/models";
+import { CheckoutParams } from "@tirdad/sdk/sdk/models";
 
 let value: CheckoutParams = {
   paymentProvider: "chargebee",

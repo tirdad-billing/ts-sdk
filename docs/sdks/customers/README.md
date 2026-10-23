@@ -26,7 +26,7 @@ Use when updating customer details (e.g. name, email, or metadata). Identify by 
 
 <!-- UsageSnippet language="typescript" operationID="updateCustomer" method="put" path="/customers" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -46,8 +46,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersUpdateCustomer } from "@tirdad-ai/sdk/funcs/customers-update-customer.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersUpdateCustomer } from "@tirdad/sdk/funcs/customers-update-customer.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -99,7 +99,7 @@ Use when onboarding a new billing customer (e.g. sign-up or CRM sync). Ideal for
 
 <!-- UsageSnippet language="typescript" operationID="createCustomer" method="post" path="/customers" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -122,8 +122,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersCreateCustomer } from "@tirdad-ai/sdk/funcs/customers-create-customer.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersCreateCustomer } from "@tirdad/sdk/funcs/customers-create-customer.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -176,7 +176,7 @@ Use when resolving a customer by your app's id (e.g. from your user table). Idea
 
 <!-- UsageSnippet language="typescript" operationID="getCustomerByExternalId" method="get" path="/customers/external/{external_id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -196,8 +196,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersGetCustomerByExternalId } from "@tirdad-ai/sdk/funcs/customers-get-customer-by-external-id.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersGetCustomerByExternalId } from "@tirdad/sdk/funcs/customers-get-customer-by-external-id.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -247,7 +247,7 @@ Use when checking entitlements by your app's customer id (e.g. feature gating at
 
 <!-- UsageSnippet language="typescript" operationID="getCustomerEntitlementsByExternalID" method="get" path="/customers/external/{external_id}/entitlements" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -267,8 +267,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersGetCustomerEntitlementsByExternalID } from "@tirdad-ai/sdk/funcs/customers-get-customer-entitlements-by-external-id.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersGetCustomerEntitlementsByExternalID } from "@tirdad/sdk/funcs/customers-get-customer-entitlements-by-external-id.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -318,7 +318,7 @@ Returns all subscriptions for a customer looked up by external_id, with line-ite
 
 <!-- UsageSnippet language="typescript" operationID="getSubscriptionsForCustomer" method="get" path="/customers/external/{external_id}/subscriptions" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -338,8 +338,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersGetSubscriptionsForCustomer } from "@tirdad-ai/sdk/funcs/customers-get-subscriptions-for-customer.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersGetSubscriptionsForCustomer } from "@tirdad/sdk/funcs/customers-get-subscriptions-for-customer.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -390,7 +390,7 @@ Use when sending a customer to their self-serve billing portal (invoices, usage,
 
 <!-- UsageSnippet language="typescript" operationID="createCustomerPortalSession" method="get" path="/customers/portal/{external_id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -410,8 +410,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersCreateCustomerPortalSession } from "@tirdad-ai/sdk/funcs/customers-create-customer-portal-session.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersCreateCustomerPortalSession } from "@tirdad/sdk/funcs/customers-create-customer-portal-session.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -461,7 +461,7 @@ Use when listing or searching customers (e.g. admin CRM or reporting). Returns a
 
 <!-- UsageSnippet language="typescript" operationID="queryCustomer" method="post" path="/customers/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -481,8 +481,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersQueryCustomer } from "@tirdad-ai/sdk/funcs/customers-query-customer.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersQueryCustomer } from "@tirdad/sdk/funcs/customers-query-customer.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -532,7 +532,7 @@ Use when showing a customer's usage (e.g. portal or overage alerts). Identify by
 
 <!-- UsageSnippet language="typescript" operationID="getCustomerUsageSummary" method="get" path="/customers/usage" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -552,8 +552,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersGetCustomerUsageSummary } from "@tirdad-ai/sdk/funcs/customers-get-customer-usage-summary.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersGetCustomerUsageSummary } from "@tirdad/sdk/funcs/customers-get-customer-usage-summary.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -603,7 +603,7 @@ Use when you need to load a single customer (e.g. for a billing portal or to att
 
 <!-- UsageSnippet language="typescript" operationID="getCustomer" method="get" path="/customers/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -623,8 +623,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersGetCustomer } from "@tirdad-ai/sdk/funcs/customers-get-customer.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersGetCustomer } from "@tirdad/sdk/funcs/customers-get-customer.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -674,7 +674,7 @@ Use when removing a customer (e.g. GDPR or churn). Returns 204 No Content on suc
 
 <!-- UsageSnippet language="typescript" operationID="deleteCustomer" method="delete" path="/customers/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -694,8 +694,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersDeleteCustomer } from "@tirdad-ai/sdk/funcs/customers-delete-customer.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersDeleteCustomer } from "@tirdad/sdk/funcs/customers-delete-customer.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -745,7 +745,7 @@ Use when checking what a customer can access (e.g. feature gating or usage limit
 
 <!-- UsageSnippet language="typescript" operationID="getCustomerEntitlements" method="get" path="/customers/{id}/entitlements" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -765,8 +765,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersGetCustomerEntitlements } from "@tirdad-ai/sdk/funcs/customers-get-customer-entitlements.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersGetCustomerEntitlements } from "@tirdad/sdk/funcs/customers-get-customer-entitlements.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -816,7 +816,7 @@ Use when showing upcoming or pending credits for a customer (e.g. in a portal or
 
 <!-- UsageSnippet language="typescript" operationID="getCustomerUpcomingGrants" method="get" path="/customers/{id}/grants/upcoming" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -836,8 +836,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersGetCustomerUpcomingGrants } from "@tirdad-ai/sdk/funcs/customers-get-customer-upcoming-grants.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersGetCustomerUpcomingGrants } from "@tirdad/sdk/funcs/customers-get-customer-upcoming-grants.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -887,7 +887,7 @@ Use when you need a customer's saved payment methods across every connected gate
 
 <!-- UsageSnippet language="typescript" operationID="listCustomerPaymentMethods" method="get" path="/customers/{id}/payment-methods" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -907,8 +907,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { customersListCustomerPaymentMethods } from "@tirdad-ai/sdk/funcs/customers-list-customer-payment-methods.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { customersListCustomerPaymentMethods } from "@tirdad/sdk/funcs/customers-list-customer-payment-methods.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

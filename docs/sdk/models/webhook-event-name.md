@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WebhookEventName } from "@tirdad-ai/sdk/sdk/models";
+import { WebhookEventName } from "@tirdad/sdk/sdk/models";
 
 let value: WebhookEventName = "subscription.draft.created";
 

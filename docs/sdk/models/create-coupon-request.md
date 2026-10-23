@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateCouponRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CreateCouponRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CreateCouponRequest = {
   cadence: "once",

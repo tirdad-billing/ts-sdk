@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AutoTopupDuration } from "@tirdad-ai/sdk/sdk/models";
+import { AutoTopupDuration } from "@tirdad/sdk/sdk/models";
 
 let value: AutoTopupDuration = {};
 ```

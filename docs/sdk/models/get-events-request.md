@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetEventsRequest } from "@tirdad-ai/sdk/sdk/models";
+import { GetEventsRequest } from "@tirdad/sdk/sdk/models";
 
 let value: GetEventsRequest = {
   endTime: new Date("2024-12-09T00:00:00Z"),

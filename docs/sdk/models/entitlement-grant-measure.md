@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EntitlementGrantMeasure } from "@tirdad-ai/sdk/sdk/models";
+import { EntitlementGrantMeasure } from "@tirdad/sdk/sdk/models";
 
 let value: EntitlementGrantMeasure = "quantity";
 

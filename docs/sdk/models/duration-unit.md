@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DurationUnit } from "@tirdad-ai/sdk/sdk/models";
+import { DurationUnit } from "@tirdad/sdk/sdk/models";
 
 let value: DurationUnit = "hour";
 

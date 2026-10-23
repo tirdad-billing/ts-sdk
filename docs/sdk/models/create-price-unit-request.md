@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreatePriceUnitRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CreatePriceUnitRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CreatePriceUnitRequest = {
   baseCurrency: "<value>",

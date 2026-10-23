@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubscriptionChangeV2Request } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionChangeV2Request } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionChangeV2Request = {
   prorationBehavior: "none",

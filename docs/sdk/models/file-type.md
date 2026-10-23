@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { FileType } from "@tirdad-ai/sdk/sdk/models";
+import { FileType } from "@tirdad/sdk/sdk/models";
 
 let value: FileType = "JSON";
 

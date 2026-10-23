@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetUsageRequest } from "@tirdad-ai/sdk/sdk/models";
+import { GetUsageRequest } from "@tirdad/sdk/sdk/models";
 
 let value: GetUsageRequest = {
   aggregationType: "SUM_WITH_MULTIPLIER",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ViewQueryRequest } from "@tirdad-ai/sdk/sdk/models";
+import { ViewQueryRequest } from "@tirdad/sdk/sdk/models";
 
 let value: ViewQueryRequest = {};
 ```

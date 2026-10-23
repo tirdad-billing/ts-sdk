@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CancelImmediatelyInvoicePolicy } from "@tirdad-ai/sdk/sdk/models";
+import { CancelImmediatelyInvoicePolicy } from "@tirdad/sdk/sdk/models";
 
 let value: CancelImmediatelyInvoicePolicy = "skip";
 ```

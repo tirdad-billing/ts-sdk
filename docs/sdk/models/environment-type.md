@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EnvironmentType } from "@tirdad-ai/sdk/sdk/models";
+import { EnvironmentType } from "@tirdad/sdk/sdk/models";
 
 let value: EnvironmentType = "production";
 ```

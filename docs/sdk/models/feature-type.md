@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { FeatureType } from "@tirdad-ai/sdk/sdk/models";
+import { FeatureType } from "@tirdad/sdk/sdk/models";
 
 let value: FeatureType = "boolean";
 

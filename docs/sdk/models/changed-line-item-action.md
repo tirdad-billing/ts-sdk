@@ -5,7 +5,7 @@ created | updated | ended
 ## Example Usage
 
 ```typescript
-import { ChangedLineItemAction } from "@tirdad-ai/sdk/sdk/models";
+import { ChangedLineItemAction } from "@tirdad/sdk/sdk/models";
 
 let value: ChangedLineItemAction = "created";
 

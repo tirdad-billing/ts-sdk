@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { FilterCondition } from "@tirdad-ai/sdk/sdk/models";
+import { FilterCondition } from "@tirdad/sdk/sdk/models";
 
 let value: FilterCondition = {};
 ```

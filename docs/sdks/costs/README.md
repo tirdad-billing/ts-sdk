@@ -20,7 +20,7 @@ Use when setting up a new pricing configuration (e.g. a new product or region). 
 
 <!-- UsageSnippet language="typescript" operationID="createCostsheet" method="post" path="/costs" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { costsCreateCostsheet } from "@tirdad-ai/sdk/funcs/costs-create-costsheet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { costsCreateCostsheet } from "@tirdad/sdk/funcs/costs-create-costsheet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -95,7 +95,7 @@ Use when you need the tenant's default pricing configuration (e.g. for checkout 
 
 <!-- UsageSnippet language="typescript" operationID="getActiveCostsheet" method="get" path="/costs/active" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -115,8 +115,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { costsGetActiveCostsheet } from "@tirdad-ai/sdk/funcs/costs-get-active-costsheet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { costsGetActiveCostsheet } from "@tirdad/sdk/funcs/costs-get-active-costsheet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -165,7 +165,7 @@ Use when building dashboards or reports that need revenue vs cost, ROI, and marg
 
 <!-- UsageSnippet language="typescript" operationID="getDetailedCostAnalytics" method="post" path="/costs/analytics" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -185,8 +185,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { costsGetDetailedCostAnalytics } from "@tirdad-ai/sdk/funcs/costs-get-detailed-cost-analytics.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { costsGetDetailedCostAnalytics } from "@tirdad/sdk/funcs/costs-get-detailed-cost-analytics.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -236,7 +236,7 @@ Use when listing or searching costsheets (e.g. admin catalog). Returns a paginat
 
 <!-- UsageSnippet language="typescript" operationID="queryCostsheet" method="post" path="/costs/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -256,8 +256,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { costsQueryCostsheet } from "@tirdad-ai/sdk/funcs/costs-query-costsheet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { costsQueryCostsheet } from "@tirdad/sdk/funcs/costs-query-costsheet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -307,7 +307,7 @@ Use when you need to load a single costsheet (e.g. for editing or display). Supp
 
 <!-- UsageSnippet language="typescript" operationID="getCostsheet" method="get" path="/costs/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -327,8 +327,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { costsGetCostsheet } from "@tirdad-ai/sdk/funcs/costs-get-costsheet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { costsGetCostsheet } from "@tirdad/sdk/funcs/costs-get-costsheet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -379,7 +379,7 @@ Use when changing costsheet name or metadata.
 
 <!-- UsageSnippet language="typescript" operationID="updateCostsheet" method="put" path="/costs/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -399,8 +399,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { costsUpdateCostsheet } from "@tirdad-ai/sdk/funcs/costs-update-costsheet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { costsUpdateCostsheet } from "@tirdad/sdk/funcs/costs-update-costsheet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -451,7 +451,7 @@ Use when retiring a costsheet (e.g. end-of-life product). Soft-deletes; status s
 
 <!-- UsageSnippet language="typescript" operationID="deleteCostsheet" method="delete" path="/costs/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -471,8 +471,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { costsDeleteCostsheet } from "@tirdad-ai/sdk/funcs/costs-delete-costsheet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { costsDeleteCostsheet } from "@tirdad/sdk/funcs/costs-delete-costsheet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { S3EncryptionType } from "@tirdad-ai/sdk/sdk/models";
+import { S3EncryptionType } from "@tirdad/sdk/sdk/models";
 
 let value: S3EncryptionType = "aws:kms";
 

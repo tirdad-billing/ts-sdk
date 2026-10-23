@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DeleteCreditGrantRequestRequest } from "@tirdad-ai/sdk/sdk/models";
+import { DeleteCreditGrantRequestRequest } from "@tirdad/sdk/sdk/models";
 
 let value: DeleteCreditGrantRequestRequest = {
   id: "<id>",

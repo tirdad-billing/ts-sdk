@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WorkflowExecutionDTO } from "@tirdad-ai/sdk/sdk/models";
+import { WorkflowExecutionDTO } from "@tirdad/sdk/sdk/models";
 
 let value: WorkflowExecutionDTO = {};
 ```

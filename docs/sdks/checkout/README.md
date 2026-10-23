@@ -17,7 +17,7 @@ Create checkout session
 
 <!-- UsageSnippet language="typescript" operationID="createCheckoutSession" method="post" path="/checkout/sessions" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { checkoutCreateCheckoutSession } from "@tirdad-ai/sdk/funcs/checkout-create-checkout-session.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { checkoutCreateCheckoutSession } from "@tirdad/sdk/funcs/checkout-create-checkout-session.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -96,7 +96,7 @@ Get checkout session
 
 <!-- UsageSnippet language="typescript" operationID="getCheckoutSession" method="get" path="/checkout/sessions/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -116,8 +116,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { checkoutGetCheckoutSession } from "@tirdad-ai/sdk/funcs/checkout-get-checkout-session.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { checkoutGetCheckoutSession } from "@tirdad/sdk/funcs/checkout-get-checkout-session.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -167,7 +167,7 @@ Delete checkout session
 
 <!-- UsageSnippet language="typescript" operationID="deleteCheckoutSession" method="delete" path="/checkout/sessions/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -187,8 +187,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { checkoutDeleteCheckoutSession } from "@tirdad-ai/sdk/funcs/checkout-delete-checkout-session.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { checkoutDeleteCheckoutSession } from "@tirdad/sdk/funcs/checkout-delete-checkout-session.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -238,7 +238,7 @@ Cancel checkout session
 
 <!-- UsageSnippet language="typescript" operationID="cancelCheckoutSession" method="post" path="/checkout/sessions/{id}/cancel" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -258,8 +258,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { checkoutCancelCheckoutSession } from "@tirdad-ai/sdk/funcs/checkout-cancel-checkout-session.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { checkoutCancelCheckoutSession } from "@tirdad/sdk/funcs/checkout-cancel-checkout-session.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -21,7 +21,7 @@ Use when checking what features or limits an addon grants (e.g. for display or e
 
 <!-- UsageSnippet language="typescript" operationID="getAddonEntitlements" method="get" path="/addons/{id}/entitlements" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { entitlementsGetAddonEntitlements } from "@tirdad-ai/sdk/funcs/entitlements-get-addon-entitlements.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { entitlementsGetAddonEntitlements } from "@tirdad/sdk/funcs/entitlements-get-addon-entitlements.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -92,7 +92,7 @@ Use when attaching a feature (and its limit) to a plan or addon (e.g. "10 seats"
 
 <!-- UsageSnippet language="typescript" operationID="createEntitlement" method="post" path="/entitlements" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -115,8 +115,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { entitlementsCreateEntitlement } from "@tirdad-ai/sdk/funcs/entitlements-create-entitlement.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { entitlementsCreateEntitlement } from "@tirdad/sdk/funcs/entitlements-create-entitlement.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -169,7 +169,7 @@ Use when attaching many features to a plan or addon at once (e.g. initial plan s
 
 <!-- UsageSnippet language="typescript" operationID="createEntitlementsBulk" method="post" path="/entitlements/bulk" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -196,8 +196,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { entitlementsCreateEntitlementsBulk } from "@tirdad-ai/sdk/funcs/entitlements-create-entitlements-bulk.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { entitlementsCreateEntitlementsBulk } from "@tirdad/sdk/funcs/entitlements-create-entitlements-bulk.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -254,7 +254,7 @@ Use when listing or searching entitlements (e.g. plan editor or audit). Returns 
 
 <!-- UsageSnippet language="typescript" operationID="queryEntitlement" method="post" path="/entitlements/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -274,8 +274,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { entitlementsQueryEntitlement } from "@tirdad-ai/sdk/funcs/entitlements-query-entitlement.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { entitlementsQueryEntitlement } from "@tirdad/sdk/funcs/entitlements-query-entitlement.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -325,7 +325,7 @@ Use when you need to load a single entitlement (e.g. to display or edit a featur
 
 <!-- UsageSnippet language="typescript" operationID="getEntitlement" method="get" path="/entitlements/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -345,8 +345,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { entitlementsGetEntitlement } from "@tirdad-ai/sdk/funcs/entitlements-get-entitlement.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { entitlementsGetEntitlement } from "@tirdad/sdk/funcs/entitlements-get-entitlement.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -396,7 +396,7 @@ Use when changing an entitlement (e.g. increasing or decreasing a limit). Reques
 
 <!-- UsageSnippet language="typescript" operationID="updateEntitlement" method="put" path="/entitlements/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -416,8 +416,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { entitlementsUpdateEntitlement } from "@tirdad-ai/sdk/funcs/entitlements-update-entitlement.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { entitlementsUpdateEntitlement } from "@tirdad/sdk/funcs/entitlements-update-entitlement.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -468,7 +468,7 @@ Use when removing a feature from a plan or addon (e.g. deprecating a capability)
 
 <!-- UsageSnippet language="typescript" operationID="deleteEntitlement" method="delete" path="/entitlements/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -488,8 +488,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { entitlementsDeleteEntitlement } from "@tirdad-ai/sdk/funcs/entitlements-delete-entitlement.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { entitlementsDeleteEntitlement } from "@tirdad/sdk/funcs/entitlements-delete-entitlement.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -539,7 +539,7 @@ Use when checking what a plan includes (e.g. feature list or limits for display 
 
 <!-- UsageSnippet language="typescript" operationID="getPlanEntitlements" method="get" path="/plans/{id}/entitlements" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -559,8 +559,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { entitlementsGetPlanEntitlements } from "@tirdad-ai/sdk/funcs/entitlements-get-plan-entitlements.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { entitlementsGetPlanEntitlements } from "@tirdad/sdk/funcs/entitlements-get-plan-entitlements.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

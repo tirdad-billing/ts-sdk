@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SecretProvider } from "@tirdad-ai/sdk/sdk/models";
+import { SecretProvider } from "@tirdad/sdk/sdk/models";
 
 let value: SecretProvider = "nomod";
 

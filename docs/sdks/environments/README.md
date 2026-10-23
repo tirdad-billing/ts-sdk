@@ -14,7 +14,7 @@ Clone all published features and plans from the source environment into a target
 
 <!-- UsageSnippet language="typescript" operationID="cloneEnvironment" method="post" path="/environments/{id}/clone" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -34,8 +34,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { environmentsCloneEnvironment } from "@tirdad-ai/sdk/funcs/environments-clone-environment.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { environmentsCloneEnvironment } from "@tirdad/sdk/funcs/environments-clone-environment.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

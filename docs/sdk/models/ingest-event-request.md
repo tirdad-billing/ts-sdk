@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { IngestEventRequest } from "@tirdad-ai/sdk/sdk/models";
+import { IngestEventRequest } from "@tirdad/sdk/sdk/models";
 
 let value: IngestEventRequest = {
   customerId: "customer456",

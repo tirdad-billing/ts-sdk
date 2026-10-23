@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ProviderError } from "@tirdad-ai/sdk/sdk/models";
+import { ProviderError } from "@tirdad/sdk/sdk/models";
 
 let value: ProviderError = {};
 ```

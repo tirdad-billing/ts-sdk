@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { MetadataCustomFieldSource } from "@tirdad-ai/sdk/sdk/models";
+import { MetadataCustomFieldSource } from "@tirdad/sdk/sdk/models";
 
 let value: MetadataCustomFieldSource = "invoice";
 

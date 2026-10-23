@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GroupedInvoicingChildRequest } from "@tirdad-ai/sdk/sdk/models";
+import { GroupedInvoicingChildRequest } from "@tirdad/sdk/sdk/models";
 
 let value: GroupedInvoicingChildRequest = {
   externalCustomerId: "<id>",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ServicePeriodCustomFields } from "@tirdad-ai/sdk/sdk/models";
+import { ServicePeriodCustomFields } from "@tirdad/sdk/sdk/models";
 
 let value: ServicePeriodCustomFields = {};
 ```

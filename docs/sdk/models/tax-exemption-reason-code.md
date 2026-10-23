@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TaxExemptionReasonCode } from "@tirdad-ai/sdk/sdk/models";
+import { TaxExemptionReasonCode } from "@tirdad/sdk/sdk/models";
 
 let value: TaxExemptionReasonCode = "not_subject_to_tax";
 

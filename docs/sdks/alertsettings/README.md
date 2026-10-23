@@ -18,7 +18,7 @@ Configure a subscription, line item, or group spend alert.
 
 <!-- UsageSnippet language="typescript" operationID="createAlertSettings" method="post" path="/alerts/setting" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { alertSettingsCreateAlertSettings } from "@tirdad-ai/sdk/funcs/alert-settings-create-alert-settings.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { alertSettingsCreateAlertSettings } from "@tirdad/sdk/funcs/alert-settings-create-alert-settings.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -97,7 +97,7 @@ List or search alert settings. Returns a paginated list.
 
 <!-- UsageSnippet language="typescript" operationID="queryAlertSettings" method="post" path="/alerts/setting/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -117,8 +117,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { alertSettingsQueryAlertSettings } from "@tirdad-ai/sdk/funcs/alert-settings-query-alert-settings.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { alertSettingsQueryAlertSettings } from "@tirdad/sdk/funcs/alert-settings-query-alert-settings.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -168,7 +168,7 @@ Fetch a single alert setting by id.
 
 <!-- UsageSnippet language="typescript" operationID="getAlertSettings" method="get" path="/alerts/setting/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -188,8 +188,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { alertSettingsGetAlertSettings } from "@tirdad-ai/sdk/funcs/alert-settings-get-alert-settings.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { alertSettingsGetAlertSettings } from "@tirdad/sdk/funcs/alert-settings-get-alert-settings.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -239,7 +239,7 @@ Patch an alert setting's config; omitted fields keep their stored value.
 
 <!-- UsageSnippet language="typescript" operationID="updateAlertSettings" method="put" path="/alerts/setting/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -261,8 +261,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { alertSettingsUpdateAlertSettings } from "@tirdad-ai/sdk/funcs/alert-settings-update-alert-settings.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { alertSettingsUpdateAlertSettings } from "@tirdad/sdk/funcs/alert-settings-update-alert-settings.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -315,7 +315,7 @@ Soft delete an alert setting.
 
 <!-- UsageSnippet language="typescript" operationID="deleteAlertSettings" method="delete" path="/alerts/setting/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -335,8 +335,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { alertSettingsDeleteAlertSettings } from "@tirdad-ai/sdk/funcs/alert-settings-delete-alert-settings.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { alertSettingsDeleteAlertSettings } from "@tirdad/sdk/funcs/alert-settings-delete-alert-settings.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

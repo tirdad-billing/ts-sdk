@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateCreditNoteRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CreateCreditNoteRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CreateCreditNoteRequest = {
   invoiceId: "<id>",

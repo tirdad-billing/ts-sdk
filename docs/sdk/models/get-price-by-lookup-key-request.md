@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetPriceByLookupKeyRequest } from "@tirdad-ai/sdk/sdk/models";
+import { GetPriceByLookupKeyRequest } from "@tirdad/sdk/sdk/models";
 
 let value: GetPriceByLookupKeyRequest = {
   lookupKey: "<value>",

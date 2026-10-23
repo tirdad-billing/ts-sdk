@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SortDirection } from "@tirdad-ai/sdk/sdk/models";
+import { SortDirection } from "@tirdad/sdk/sdk/models";
 
 let value: SortDirection = "asc";
 

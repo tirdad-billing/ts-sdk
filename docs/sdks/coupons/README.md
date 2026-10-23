@@ -19,7 +19,7 @@ Use when creating a discount (e.g. promo code or referral). Ideal for percent or
 
 <!-- UsageSnippet language="typescript" operationID="createCoupon" method="post" path="/coupons" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -43,8 +43,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponsCreateCoupon } from "@tirdad-ai/sdk/funcs/coupons-create-coupon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { couponsCreateCoupon } from "@tirdad/sdk/funcs/coupons-create-coupon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -98,7 +98,7 @@ Use when resolving a coupon by promo code (e.g. checkout or validation).
 
 <!-- UsageSnippet language="typescript" operationID="getCouponByCode" method="get" path="/coupons/code/{code}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -118,8 +118,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponsGetCouponByCode } from "@tirdad-ai/sdk/funcs/coupons-get-coupon-by-code.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { couponsGetCouponByCode } from "@tirdad/sdk/funcs/coupons-get-coupon-by-code.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -169,7 +169,7 @@ Use when listing or searching coupons (e.g. promo management). Returns a paginat
 
 <!-- UsageSnippet language="typescript" operationID="queryCoupon" method="post" path="/coupons/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -189,8 +189,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponsQueryCoupon } from "@tirdad-ai/sdk/funcs/coupons-query-coupon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { couponsQueryCoupon } from "@tirdad/sdk/funcs/coupons-query-coupon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -240,7 +240,7 @@ Use when you need to load a single coupon (e.g. for display or to validate a cod
 
 <!-- UsageSnippet language="typescript" operationID="getCoupon" method="get" path="/coupons/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -260,8 +260,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponsGetCoupon } from "@tirdad-ai/sdk/funcs/coupons-get-coupon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { couponsGetCoupon } from "@tirdad/sdk/funcs/coupons-get-coupon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -311,7 +311,7 @@ Use when changing coupon config (e.g. value, validity, or usage limits).
 
 <!-- UsageSnippet language="typescript" operationID="updateCoupon" method="put" path="/coupons/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -331,8 +331,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponsUpdateCoupon } from "@tirdad-ai/sdk/funcs/coupons-update-coupon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { couponsUpdateCoupon } from "@tirdad/sdk/funcs/coupons-update-coupon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -383,7 +383,7 @@ Use when retiring a coupon (e.g. campaign ended). Returns 200 with success messa
 
 <!-- UsageSnippet language="typescript" operationID="deleteCoupon" method="delete" path="/coupons/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -403,8 +403,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponsDeleteCoupon } from "@tirdad-ai/sdk/funcs/coupons-delete-coupon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { couponsDeleteCoupon } from "@tirdad/sdk/funcs/coupons-delete-coupon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

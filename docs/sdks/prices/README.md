@@ -20,7 +20,7 @@ Use when adding a new price to a plan or catalog (e.g. per-seat, flat, or metere
 
 <!-- UsageSnippet language="typescript" operationID="createPrice" method="post" path="/prices" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -49,8 +49,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { pricesCreatePrice } from "@tirdad-ai/sdk/funcs/prices-create-price.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { pricesCreatePrice } from "@tirdad/sdk/funcs/prices-create-price.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -109,7 +109,7 @@ Use when creating many prices at once (e.g. importing a catalog or setting up a 
 
 <!-- UsageSnippet language="typescript" operationID="createPricesBulk" method="post" path="/prices/bulk" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -131,8 +131,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { pricesCreatePricesBulk } from "@tirdad-ai/sdk/funcs/prices-create-prices-bulk.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { pricesCreatePricesBulk } from "@tirdad/sdk/funcs/prices-create-prices-bulk.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -184,7 +184,7 @@ Use when resolving a price by external id (e.g. from your catalog or CMS). Ideal
 
 <!-- UsageSnippet language="typescript" operationID="getPriceByLookupKey" method="get" path="/prices/lookup/{lookup_key}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -204,8 +204,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { pricesGetPriceByLookupKey } from "@tirdad-ai/sdk/funcs/prices-get-price-by-lookup-key.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { pricesGetPriceByLookupKey } from "@tirdad/sdk/funcs/prices-get-price-by-lookup-key.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -255,7 +255,7 @@ Use when listing or searching prices (e.g. plan builder or catalog). Returns a p
 
 <!-- UsageSnippet language="typescript" operationID="queryPrice" method="post" path="/prices/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -275,8 +275,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { pricesQueryPrice } from "@tirdad-ai/sdk/funcs/prices-query-price.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { pricesQueryPrice } from "@tirdad/sdk/funcs/prices-query-price.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -326,7 +326,7 @@ Use when you need to load a single price (e.g. for display or editing). Response
 
 <!-- UsageSnippet language="typescript" operationID="getPrice" method="get" path="/prices/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -346,8 +346,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { pricesGetPrice } from "@tirdad-ai/sdk/funcs/prices-get-price.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { pricesGetPrice } from "@tirdad/sdk/funcs/prices-get-price.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -397,7 +397,7 @@ Use when changing price configuration (e.g. amount, billing scheme, or metadata)
 
 <!-- UsageSnippet language="typescript" operationID="updatePrice" method="put" path="/prices/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -417,8 +417,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { pricesUpdatePrice } from "@tirdad-ai/sdk/funcs/prices-update-price.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { pricesUpdatePrice } from "@tirdad/sdk/funcs/prices-update-price.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -469,7 +469,7 @@ Use when retiring a price (e.g. end-of-life or replacement). Optional effective 
 
 <!-- UsageSnippet language="typescript" operationID="deletePrice" method="delete" path="/prices/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -489,8 +489,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { pricesDeletePrice } from "@tirdad-ai/sdk/funcs/prices-delete-price.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { pricesDeletePrice } from "@tirdad/sdk/funcs/prices-delete-price.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -17,7 +17,7 @@ Returns the base capabilities and current sync configuration for all connected p
 
 <!-- UsageSnippet language="typescript" operationID="getIntegrationConfig" method="get" path="/integrations/config" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -37,8 +37,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { integrationsGetIntegrationConfig } from "@tirdad-ai/sdk/funcs/integrations-get-integration-config.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { integrationsGetIntegrationConfig } from "@tirdad/sdk/funcs/integrations-get-integration-config.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -86,7 +86,7 @@ Link a Tirdad entity to provider entity with provider-specific side effects.
 
 <!-- UsageSnippet language="typescript" operationID="linkIntegrationMapping" method="post" path="/integrations/link" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -111,8 +111,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { integrationsLinkIntegrationMapping } from "@tirdad-ai/sdk/funcs/integrations-link-integration-mapping.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { integrationsLinkIntegrationMapping } from "@tirdad/sdk/funcs/integrations-link-integration-mapping.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -167,7 +167,7 @@ Soft-delete (archive) the mapping between a Tirdad entity and a provider entity.
 
 <!-- UsageSnippet language="typescript" operationID="delinkIntegrationMapping" method="delete" path="/integrations/link" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -191,8 +191,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { integrationsDelinkIntegrationMapping } from "@tirdad-ai/sdk/funcs/integrations-delink-integration-mapping.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { integrationsDelinkIntegrationMapping } from "@tirdad/sdk/funcs/integrations-delink-integration-mapping.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -246,7 +246,7 @@ Get integration mappings for a specific entity by entity type and entity ID.
 
 <!-- UsageSnippet language="typescript" operationID="getEntityIntegrationMappings" method="get" path="/integrations/mappings" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -266,8 +266,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { integrationsGetEntityIntegrationMappings } from "@tirdad-ai/sdk/funcs/integrations-get-entity-integration-mappings.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { integrationsGetEntityIntegrationMappings } from "@tirdad/sdk/funcs/integrations-get-entity-integration-mappings.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

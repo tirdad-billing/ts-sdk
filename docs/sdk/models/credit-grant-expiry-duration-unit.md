@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreditGrantExpiryDurationUnit } from "@tirdad-ai/sdk/sdk/models";
+import { CreditGrantExpiryDurationUnit } from "@tirdad/sdk/sdk/models";
 
 let value: CreditGrantExpiryDurationUnit = "WEEK";
 

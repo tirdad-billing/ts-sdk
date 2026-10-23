@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetUsageBySubscriptionRequest } from "@tirdad-ai/sdk/sdk/models";
+import { GetUsageBySubscriptionRequest } from "@tirdad/sdk/sdk/models";
 
 let value: GetUsageBySubscriptionRequest = {
   endTime: new Date("2024-03-20T00:00:00Z"),

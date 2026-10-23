@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetAddonByLookupKeyRequest } from "@tirdad-ai/sdk/sdk/models";
+import { GetAddonByLookupKeyRequest } from "@tirdad/sdk/sdk/models";
 
 let value: GetAddonByLookupKeyRequest = {
   lookupKey: "<value>",

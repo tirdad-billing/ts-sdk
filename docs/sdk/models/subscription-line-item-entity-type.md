@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubscriptionLineItemEntityType } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionLineItemEntityType } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionLineItemEntityType = "subscription";
 

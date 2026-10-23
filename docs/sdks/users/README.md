@@ -21,7 +21,7 @@ Create a user account (type=user, email required; returns user + password for lo
 
 <!-- UsageSnippet language="typescript" operationID="createUser" method="post" path="/users" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -43,8 +43,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { usersCreateUser } from "@tirdad-ai/sdk/funcs/users-create-user.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { usersCreateUser } from "@tirdad/sdk/funcs/users-create-user.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -96,7 +96,7 @@ Use to show the logged-in user's profile in the UI or to check permissions and r
 
 <!-- UsageSnippet language="typescript" operationID="getUserInfo" method="get" path="/users/me" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -116,8 +116,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { usersGetUserInfo } from "@tirdad-ai/sdk/funcs/users-get-user-info.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { usersGetUserInfo } from "@tirdad/sdk/funcs/users-get-user-info.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -166,7 +166,7 @@ Update the current authenticated user. Supports name and metadata updates.
 
 <!-- UsageSnippet language="typescript" operationID="updateUser" method="put" path="/users/me" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -186,8 +186,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { usersUpdateUser } from "@tirdad-ai/sdk/funcs/users-update-user.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { usersUpdateUser } from "@tirdad/sdk/funcs/users-update-user.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -237,7 +237,7 @@ Use when listing or searching service accounts in an admin UI, or when auditing 
 
 <!-- UsageSnippet language="typescript" operationID="queryUser" method="post" path="/users/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -257,8 +257,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { usersQueryUser } from "@tirdad-ai/sdk/funcs/users-query-user.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { usersQueryUser } from "@tirdad/sdk/funcs/users-query-user.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -308,7 +308,7 @@ Update a service account by ID (name only).
 
 <!-- UsageSnippet language="typescript" operationID="updateServiceAccount" method="put" path="/users/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -330,8 +330,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { usersUpdateServiceAccount } from "@tirdad-ai/sdk/funcs/users-update-service-account.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { usersUpdateServiceAccount } from "@tirdad/sdk/funcs/users-update-service-account.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -384,7 +384,7 @@ Soft-delete (archive) a service account by ID.
 
 <!-- UsageSnippet language="typescript" operationID="deleteServiceAccount" method="delete" path="/users/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -404,8 +404,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { usersDeleteServiceAccount } from "@tirdad-ai/sdk/funcs/users-delete-service-account.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { usersDeleteServiceAccount } from "@tirdad/sdk/funcs/users-delete-service-account.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -455,7 +455,7 @@ Remove a human user (type=user) from the current tenant. Not supported for servi
 
 <!-- UsageSnippet language="typescript" operationID="removeUser" method="post" path="/users/{id}/remove" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -475,8 +475,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { usersRemoveUser } from "@tirdad-ai/sdk/funcs/users-remove-user.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { usersRemoveUser } from "@tirdad/sdk/funcs/users-remove-user.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -526,7 +526,7 @@ Update the roles of a user account (not service accounts — their roles are fix
 
 <!-- UsageSnippet language="typescript" operationID="updateUserRoles" method="put" path="/users/{id}/roles" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -546,8 +546,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { usersUpdateUserRoles } from "@tirdad-ai/sdk/funcs/users-update-user-roles.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { usersUpdateUserRoles } from "@tirdad/sdk/funcs/users-update-user-roles.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

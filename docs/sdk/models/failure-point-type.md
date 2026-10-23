@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { FailurePointType } from "@tirdad-ai/sdk/sdk/models";
+import { FailurePointType } from "@tirdad/sdk/sdk/models";
 
 let value: FailurePointType = "customer_lookup";
 

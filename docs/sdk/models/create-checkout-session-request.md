@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateCheckoutSessionRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CreateCheckoutSessionRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CreateCheckoutSessionRequest = {
   action: "modify_subscription",

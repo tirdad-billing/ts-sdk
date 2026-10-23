@@ -5,7 +5,7 @@ List of pending schedules for a subscription
 ## Example Usage
 
 ```typescript
-import { GetPendingSchedulesResponse } from "@tirdad-ai/sdk/sdk/models";
+import { GetPendingSchedulesResponse } from "@tirdad/sdk/sdk/models";
 
 let value: GetPendingSchedulesResponse = {};
 ```

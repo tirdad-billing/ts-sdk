@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PauseSubscriptionRequestRequest } from "@tirdad-ai/sdk/sdk/models";
+import { PauseSubscriptionRequestRequest } from "@tirdad/sdk/sdk/models";
 
 let value: PauseSubscriptionRequestRequest = {
   id: "<id>",

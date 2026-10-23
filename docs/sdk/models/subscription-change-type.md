@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubscriptionChangeType } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionChangeType } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionChangeType = "downgrade";
 

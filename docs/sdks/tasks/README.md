@@ -19,7 +19,7 @@ Use when listing or searching async tasks (e.g. admin queue view). Returns list 
 
 <!-- UsageSnippet language="typescript" operationID="listTasks" method="get" path="/tasks" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -39,8 +39,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { tasksListTasks } from "@tirdad-ai/sdk/funcs/tasks-list-tasks.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { tasksListTasks } from "@tirdad/sdk/funcs/tasks-list-tasks.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -90,7 +90,7 @@ Use to submit a CSV of usage events for async ingestion. The CSV must already ha
 
 <!-- UsageSnippet language="typescript" operationID="createTask" method="post" path="/tasks" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -116,8 +116,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { tasksCreateTask } from "@tirdad-ai/sdk/funcs/tasks-create-task.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { tasksCreateTask } from "@tirdad/sdk/funcs/tasks-create-task.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -173,7 +173,7 @@ Use when fetching the outcome of a completed task (e.g. export URL or error mess
 
 <!-- UsageSnippet language="typescript" operationID="getTaskResult" method="get" path="/tasks/result" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -193,8 +193,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { tasksGetTaskResult } from "@tirdad-ai/sdk/funcs/tasks-get-task-result.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { tasksGetTaskResult } from "@tirdad/sdk/funcs/tasks-get-task-result.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -244,7 +244,7 @@ Use when checking task status or progress (e.g. polling after create). Returns t
 
 <!-- UsageSnippet language="typescript" operationID="getTask" method="get" path="/tasks/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -264,8 +264,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { tasksGetTask } from "@tirdad-ai/sdk/funcs/tasks-get-task.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { tasksGetTask } from "@tirdad/sdk/funcs/tasks-get-task.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -315,7 +315,7 @@ Use when letting a user download an exported file (e.g. report or data export). 
 
 <!-- UsageSnippet language="typescript" operationID="downloadTaskExport" method="get" path="/tasks/{id}/download" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -335,8 +335,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { tasksDownloadTaskExport } from "@tirdad-ai/sdk/funcs/tasks-download-task-export.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { tasksDownloadTaskExport } from "@tirdad/sdk/funcs/tasks-download-task-export.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -386,7 +386,7 @@ Use when updating task status (e.g. marking complete or failed from a worker). T
 
 <!-- UsageSnippet language="typescript" operationID="updateTaskStatus" method="put" path="/tasks/{id}/status" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -408,8 +408,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { tasksUpdateTaskStatus } from "@tirdad-ai/sdk/funcs/tasks-update-task-status.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { tasksUpdateTaskStatus } from "@tirdad/sdk/funcs/tasks-update-task-status.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

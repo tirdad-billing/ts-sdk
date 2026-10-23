@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ErrorCode } from "@tirdad-ai/sdk/sdk/models";
+import { ErrorCode } from "@tirdad/sdk/sdk/models";
 
 let value: ErrorCode = "invalid_operation";
 

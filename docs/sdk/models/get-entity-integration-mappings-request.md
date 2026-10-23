@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetEntityIntegrationMappingsRequest } from "@tirdad-ai/sdk/sdk/models";
+import { GetEntityIntegrationMappingsRequest } from "@tirdad/sdk/sdk/models";
 
 let value: GetEntityIntegrationMappingsRequest = {
   entityType: "<value>",

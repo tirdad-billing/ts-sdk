@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubscriptionModificationAction } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionModificationAction } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionModificationAction = "remove";
 ```

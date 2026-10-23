@@ -20,7 +20,7 @@ Use when defining an optional purchasable item (e.g. extra storage or support ti
 
 <!-- UsageSnippet language="typescript" operationID="createAddon" method="post" path="/addons" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -43,8 +43,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { addonsCreateAddon } from "@tirdad-ai/sdk/funcs/addons-create-addon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { addonsCreateAddon } from "@tirdad/sdk/funcs/addons-create-addon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -97,7 +97,7 @@ Use when resolving an addon by external id (e.g. from your product catalog). Ide
 
 <!-- UsageSnippet language="typescript" operationID="getAddonByLookupKey" method="get" path="/addons/lookup/{lookup_key}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -117,8 +117,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { addonsGetAddonByLookupKey } from "@tirdad-ai/sdk/funcs/addons-get-addon-by-lookup-key.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { addonsGetAddonByLookupKey } from "@tirdad/sdk/funcs/addons-get-addon-by-lookup-key.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -168,7 +168,7 @@ Use when listing or searching addons (e.g. catalog or subscription builder). Ret
 
 <!-- UsageSnippet language="typescript" operationID="queryAddon" method="post" path="/addons/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -188,8 +188,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { addonsQueryAddon } from "@tirdad-ai/sdk/funcs/addons-query-addon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { addonsQueryAddon } from "@tirdad/sdk/funcs/addons-query-addon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -239,7 +239,7 @@ Use when you need to load a single addon (e.g. for display or to attach to a sub
 
 <!-- UsageSnippet language="typescript" operationID="getAddon" method="get" path="/addons/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -259,8 +259,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { addonsGetAddon } from "@tirdad-ai/sdk/funcs/addons-get-addon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { addonsGetAddon } from "@tirdad/sdk/funcs/addons-get-addon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -310,7 +310,7 @@ Use when changing addon details (e.g. name, pricing, or metadata).
 
 <!-- UsageSnippet language="typescript" operationID="updateAddon" method="put" path="/addons/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -330,8 +330,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { addonsUpdateAddon } from "@tirdad-ai/sdk/funcs/addons-update-addon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { addonsUpdateAddon } from "@tirdad/sdk/funcs/addons-update-addon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -382,7 +382,7 @@ Use when retiring an addon (e.g. end-of-life). Returns 200 with success message.
 
 <!-- UsageSnippet language="typescript" operationID="deleteAddon" method="delete" path="/addons/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -402,8 +402,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { addonsDeleteAddon } from "@tirdad-ai/sdk/funcs/addons-delete-addon.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { addonsDeleteAddon } from "@tirdad/sdk/funcs/addons-delete-addon.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -453,7 +453,7 @@ Use when you have changed an addon's usage charges and need to push them to all 
 
 <!-- UsageSnippet language="typescript" operationID="syncAddonPrices" method="post" path="/addons/{id}/sync/subscriptions" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -473,8 +473,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { addonsSyncAddonPrices } from "@tirdad-ai/sdk/funcs/addons-sync-addon-prices.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { addonsSyncAddonPrices } from "@tirdad/sdk/funcs/addons-sync-addon-prices.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

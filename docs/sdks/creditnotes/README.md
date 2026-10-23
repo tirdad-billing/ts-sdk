@@ -17,7 +17,7 @@ Use when issuing a refund or adjustment (e.g. customer dispute or proration). Li
 
 <!-- UsageSnippet language="typescript" operationID="createCreditNote" method="post" path="/creditnotes" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -40,8 +40,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditNotesCreateCreditNote } from "@tirdad-ai/sdk/funcs/credit-notes-create-credit-note.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { creditNotesCreateCreditNote } from "@tirdad/sdk/funcs/credit-notes-create-credit-note.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -94,7 +94,7 @@ Use when you need to load a single credit note (e.g. for display or reconciliati
 
 <!-- UsageSnippet language="typescript" operationID="getCreditNote" method="get" path="/creditnotes/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -114,8 +114,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditNotesGetCreditNote } from "@tirdad-ai/sdk/funcs/credit-notes-get-credit-note.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { creditNotesGetCreditNote } from "@tirdad/sdk/funcs/credit-notes-get-credit-note.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -165,7 +165,7 @@ Use when locking a draft credit note and applying the credit (e.g. after approva
 
 <!-- UsageSnippet language="typescript" operationID="processCreditNote" method="post" path="/creditnotes/{id}/finalize" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -185,8 +185,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditNotesProcessCreditNote } from "@tirdad-ai/sdk/funcs/credit-notes-process-credit-note.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { creditNotesProcessCreditNote } from "@tirdad/sdk/funcs/credit-notes-process-credit-note.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -237,7 +237,7 @@ Use when cancelling a draft credit note (e.g. created by mistake). Only draft cr
 
 <!-- UsageSnippet language="typescript" operationID="voidCreditNote" method="post" path="/creditnotes/{id}/void" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -257,8 +257,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditNotesVoidCreditNote } from "@tirdad-ai/sdk/funcs/credit-notes-void-credit-note.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { creditNotesVoidCreditNote } from "@tirdad/sdk/funcs/credit-notes-void-credit-note.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

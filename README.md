@@ -9,15 +9,15 @@ Type-safe TypeScript/JavaScript client for the Tirdad API: billing, metering, an
 ## Installation
 
 ```bash
-npm i @tirdad-ai/sdk
+npm i @tirdad/sdk
 ```
 
 With pnpm, bun, or yarn:
 
 ```bash
-pnpm add @tirdad-ai/sdk
-bun add @tirdad-ai/sdk
-yarn add @tirdad-ai/sdk
+pnpm add @tirdad/sdk
+bun add @tirdad/sdk
+yarn add @tirdad/sdk
 ```
 
 The package supports both CommonJS and ESM.
@@ -25,10 +25,10 @@ The package supports both CommonJS and ESM.
 Then in your code:
 
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 ```
 
-**All generated modules** (shared models, enums, errors, operation types, SDK types) are re-exported from the package root so you can import everything from one place. Run `npm run build` before publishing so both ESM and CommonJS entry points (`dist/esm/index.js` and `dist/commonjs/index.js`) include these re-exports; then `import` and `require("@tirdad-ai/sdk")` both expose types/enums from the root.
+**All generated modules** (shared models, enums, errors, operation types, SDK types) are re-exported from the package root so you can import everything from one place. Run `npm run build` before publishing so both ESM and CommonJS entry points (`dist/esm/index.js` and `dist/commonjs/index.js`) include these re-exports; then `import` and `require("@tirdad/sdk")` both expose types/enums from the root.
 
 ```typescript
 import {
@@ -38,7 +38,7 @@ import {
   TirdadError,
   CreateCustomerRequest,
   createPageIterator,
-} from "@tirdad-ai/sdk";
+} from "@tirdad/sdk";
 // No need for: .../dist/sdk/models/shared, .../errors, .../operations, .../types
 ```
 
@@ -58,7 +58,7 @@ Runnable samples are in the `examples/` directory.
 Initialize the client, then create a customer and ingest an event:
 
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const apiKey = process.env.TIRDAD_API_KEY ?? "YOUR_API_KEY";
 const serverURL =
@@ -106,7 +106,7 @@ Check the [API reference](https://docs.tirdad.io) for the exact request shapes.
 The package ships with TypeScript definitions. Use the client with full type safety:
 
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const serverURL =
   process.env.TIRDAD_API_HOST ?? "https://api.tirdad.ai/v1";
@@ -136,7 +136,7 @@ The SDK supports two credentials. Set one of them, not both.
 **API key (server side).** Set the key via `apiKeyAuth`. Keys created in the dashboard are bound to one environment, so no other option is needed.
 
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({ apiKeyAuth: process.env.TIRDAD_API_KEY! });
 ```
@@ -144,7 +144,7 @@ const tirdad = new Tirdad({ apiKeyAuth: process.env.TIRDAD_API_KEY! });
 **Signed-in user (browser).** Pass the user's JWT via `bearerAuth`, and the active environment via `environmentId`, which is sent as `X-Environment-ID`. Most endpoints are scoped to an environment and return 403 without it.
 
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   serverURL: "https://api.tirdad.ai/v1",
@@ -200,7 +200,7 @@ import {
   webhookDtoPaymentWebhookPayloadFromJSON,
   webhookDtoSubscriptionWebhookPayloadFromJSON,
   webhookDtoInvoiceWebhookPayloadFromJSON,
-} from "@tirdad-ai/sdk";
+} from "@tirdad/sdk";
 
 function handleWebhook(rawBody: string): void {
   const env = JSON.parse(rawBody) as { event_type: string };

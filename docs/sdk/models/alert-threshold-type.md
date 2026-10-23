@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AlertThresholdType } from "@tirdad-ai/sdk/sdk/models";
+import { AlertThresholdType } from "@tirdad/sdk/sdk/models";
 
 let value: AlertThresholdType = "absolute";
 

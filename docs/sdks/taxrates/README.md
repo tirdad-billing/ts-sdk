@@ -18,7 +18,7 @@ Use when listing tax rates (e.g. tax config UI). Returns tax rates with optional
 
 <!-- UsageSnippet language="typescript" operationID="getTaxRates" method="get" path="/taxes/rates" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -38,8 +38,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { taxRatesGetTaxRates } from "@tirdad-ai/sdk/funcs/tax-rates-get-tax-rates.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { taxRatesGetTaxRates } from "@tirdad/sdk/funcs/tax-rates-get-tax-rates.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -89,7 +89,7 @@ Use when defining a new tax rate (e.g. VAT or sales tax) for use in invoices. At
 
 <!-- UsageSnippet language="typescript" operationID="createTaxRate" method="post" path="/taxes/rates" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -112,8 +112,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { taxRatesCreateTaxRate } from "@tirdad-ai/sdk/funcs/tax-rates-create-tax-rate.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { taxRatesCreateTaxRate } from "@tirdad/sdk/funcs/tax-rates-create-tax-rate.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -166,7 +166,7 @@ Use when you need to load a single tax rate (e.g. for display or when creating a
 
 <!-- UsageSnippet language="typescript" operationID="getTaxRate" method="get" path="/taxes/rates/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -186,8 +186,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { taxRatesGetTaxRate } from "@tirdad-ai/sdk/funcs/tax-rates-get-tax-rate.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { taxRatesGetTaxRate } from "@tirdad/sdk/funcs/tax-rates-get-tax-rate.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -237,7 +237,7 @@ Use when changing a tax rate (e.g. rate value or name). Request body contains th
 
 <!-- UsageSnippet language="typescript" operationID="updateTaxRate" method="put" path="/taxes/rates/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -257,8 +257,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { taxRatesUpdateTaxRate } from "@tirdad-ai/sdk/funcs/tax-rates-update-tax-rate.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { taxRatesUpdateTaxRate } from "@tirdad/sdk/funcs/tax-rates-update-tax-rate.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -309,7 +309,7 @@ Use when retiring a tax rate (e.g. no longer applicable). Fails if still referen
 
 <!-- UsageSnippet language="typescript" operationID="deleteTaxRate" method="delete" path="/taxes/rates/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -329,8 +329,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { taxRatesDeleteTaxRate } from "@tirdad-ai/sdk/funcs/tax-rates-delete-tax-rate.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { taxRatesDeleteTaxRate } from "@tirdad/sdk/funcs/tax-rates-delete-tax-rate.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

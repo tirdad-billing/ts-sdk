@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AnalyticsVariable } from "@tirdad-ai/sdk/sdk/models";
+import { AnalyticsVariable } from "@tirdad/sdk/sdk/models";
 
 let value: AnalyticsVariable = {
   type: "enum",

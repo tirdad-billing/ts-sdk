@@ -5,7 +5,7 @@ Response object for listing customers with pagination
 ## Example Usage
 
 ```typescript
-import { ListCustomersResponse } from "@tirdad-ai/sdk/sdk/models";
+import { ListCustomersResponse } from "@tirdad/sdk/sdk/models";
 
 let value: ListCustomersResponse = {};
 ```

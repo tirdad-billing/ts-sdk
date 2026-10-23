@@ -15,7 +15,7 @@ Use when you need the audit trail of changes to billing entities: who changed wh
 
 <!-- UsageSnippet language="typescript" operationID="listActivity" method="post" path="/activity" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -35,8 +35,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { activityListActivity } from "@tirdad-ai/sdk/funcs/activity-list-activity.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { activityListActivity } from "@tirdad/sdk/funcs/activity-list-activity.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -86,7 +86,7 @@ Use when you need one activity entry with the state of the entity right after th
 
 <!-- UsageSnippet language="typescript" operationID="getActivity" method="get" path="/activity/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -106,8 +106,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { activityGetActivity } from "@tirdad-ai/sdk/funcs/activity-get-activity.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { activityGetActivity } from "@tirdad/sdk/funcs/activity-get-activity.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

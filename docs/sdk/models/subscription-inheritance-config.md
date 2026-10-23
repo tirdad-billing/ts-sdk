@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubscriptionInheritanceConfig } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionInheritanceConfig } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionInheritanceConfig = {};
 ```

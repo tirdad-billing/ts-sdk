@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetCustomerByExternalIdRequest } from "@tirdad-ai/sdk/sdk/models";
+import { GetCustomerByExternalIdRequest } from "@tirdad/sdk/sdk/models";
 
 let value: GetCustomerByExternalIdRequest = {
   externalId: "<id>",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { LineItemGrouping } from "@tirdad-ai/sdk/sdk/models";
+import { LineItemGrouping } from "@tirdad/sdk/sdk/models";
 
 let value: LineItemGrouping = "per_charge_period";
 

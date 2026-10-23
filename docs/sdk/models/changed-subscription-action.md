@@ -5,7 +5,7 @@ created | updated
 ## Example Usage
 
 ```typescript
-import { ChangedSubscriptionAction } from "@tirdad-ai/sdk/sdk/models";
+import { ChangedSubscriptionAction } from "@tirdad/sdk/sdk/models";
 
 let value: ChangedSubscriptionAction = "updated";
 

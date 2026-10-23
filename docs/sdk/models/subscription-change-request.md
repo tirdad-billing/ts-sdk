@@ -5,7 +5,7 @@ Request object for changing a subscription plan (upgrade/downgrade)
 ## Example Usage
 
 ```typescript
-import { SubscriptionChangeRequest } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionChangeRequest } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionChangeRequest = {
   billingCadence: "RECURRING",

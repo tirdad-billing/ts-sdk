@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AddAddonToSubscriptionResponse } from "@tirdad-ai/sdk/sdk/models";
+import { AddAddonToSubscriptionResponse } from "@tirdad/sdk/sdk/models";
 
 let value: AddAddonToSubscriptionResponse = {
   invoice: {

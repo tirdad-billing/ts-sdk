@@ -15,7 +15,7 @@ Use when building role pickers or permission UIs. Returns all roles with permiss
 
 <!-- UsageSnippet language="typescript" operationID="listRbacRoles" method="get" path="/rbac/roles" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -35,8 +35,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { rbacListRBACRoles } from "@tirdad-ai/sdk/funcs/rbac-list-rbac-roles.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { rbacListRBACRoles } from "@tirdad/sdk/funcs/rbac-list-rbac-roles.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -86,7 +86,7 @@ Use when you need to show or edit a single role (e.g. role detail page). Include
 
 <!-- UsageSnippet language="typescript" operationID="getRbacRole" method="get" path="/rbac/roles/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -106,8 +106,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { rbacGetRBACRole } from "@tirdad-ai/sdk/funcs/rbac-get-rbac-role.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { rbacGetRBACRole } from "@tirdad/sdk/funcs/rbac-get-rbac-role.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

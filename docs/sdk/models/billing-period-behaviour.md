@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { BillingPeriodBehaviour } from "@tirdad-ai/sdk/sdk/models";
+import { BillingPeriodBehaviour } from "@tirdad/sdk/sdk/models";
 
 let value: BillingPeriodBehaviour = "unchanged";
 

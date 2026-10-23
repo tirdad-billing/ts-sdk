@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TaxRateOverride } from "@tirdad-ai/sdk/sdk/models";
+import { TaxRateOverride } from "@tirdad/sdk/sdk/models";
 
 let value: TaxRateOverride = {
   currency: "Congolese Franc",

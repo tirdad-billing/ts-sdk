@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { InvoiceModifyLineItemAction } from "@tirdad-ai/sdk/sdk/models";
+import { InvoiceModifyLineItemAction } from "@tirdad/sdk/sdk/models";
 
 let value: InvoiceModifyLineItemAction = "update";
 ```

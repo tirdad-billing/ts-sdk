@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EntityType } from "@tirdad-ai/sdk/sdk/models";
+import { EntityType } from "@tirdad/sdk/sdk/models";
 
 let value: EntityType = "EVENTS";
 

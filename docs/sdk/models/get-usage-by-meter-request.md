@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetUsageByMeterRequest } from "@tirdad-ai/sdk/sdk/models";
+import { GetUsageByMeterRequest } from "@tirdad/sdk/sdk/models";
 
 let value: GetUsageByMeterRequest = {
   billingAnchor: new Date("2024-03-05T14:30:45Z"),

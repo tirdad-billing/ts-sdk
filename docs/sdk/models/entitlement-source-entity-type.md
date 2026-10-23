@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EntitlementSourceEntityType } from "@tirdad-ai/sdk/sdk/models";
+import { EntitlementSourceEntityType } from "@tirdad/sdk/sdk/models";
 
 let value: EntitlementSourceEntityType = "addon";
 

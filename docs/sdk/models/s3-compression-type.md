@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { S3CompressionType } from "@tirdad-ai/sdk/sdk/models";
+import { S3CompressionType } from "@tirdad/sdk/sdk/models";
 
 let value: S3CompressionType = "none";
 

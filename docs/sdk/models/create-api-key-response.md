@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateAPIKeyResponse } from "@tirdad-ai/sdk/sdk/models";
+import { CreateAPIKeyResponse } from "@tirdad/sdk/sdk/models";
 
 let value: CreateAPIKeyResponse = {};
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "@tirdad-ai/sdk-examples",
+  "name": "@tirdad/sdk-examples",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -13,6 +13,6 @@
     "tsx": "^4.19.2"
   },
   "dependencies": {
-    "@tirdad-ai/sdk": "file:.."
+    "@tirdad/sdk": "file:.."
   }
 }

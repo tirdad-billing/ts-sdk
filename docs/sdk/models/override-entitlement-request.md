@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OverrideEntitlementRequest } from "@tirdad-ai/sdk/sdk/models";
+import { OverrideEntitlementRequest } from "@tirdad/sdk/sdk/models";
 
 let value: OverrideEntitlementRequest = {
   entitlementId: "<id>",

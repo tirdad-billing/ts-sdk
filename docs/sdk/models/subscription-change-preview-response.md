@@ -5,7 +5,7 @@ Response showing the financial impact of a subscription plan change
 ## Example Usage
 
 ```typescript
-import { SubscriptionChangePreviewResponse } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionChangePreviewResponse } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionChangePreviewResponse = {};
 ```

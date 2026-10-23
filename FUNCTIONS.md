@@ -19,8 +19,8 @@ specific category of applications.
 ## Example
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { activityListActivity } from "@tirdad-ai/sdk/funcs/activity-list-activity.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { activityListActivity } from "@tirdad/sdk/funcs/activity-list-activity.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -5,7 +5,7 @@ created | ended
 ## Example Usage
 
 ```typescript
-import { ChangedAddonAssociationAction } from "@tirdad-ai/sdk/sdk/models";
+import { ChangedAddonAssociationAction } from "@tirdad/sdk/sdk/models";
 
 let value: ChangedAddonAssociationAction = "created";
 

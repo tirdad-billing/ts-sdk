@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AWSMarketplaceSyncConfig } from "@tirdad-ai/sdk/sdk/models";
+import { AWSMarketplaceSyncConfig } from "@tirdad/sdk/sdk/models";
 
 let value: AWSMarketplaceSyncConfig = {};
 ```

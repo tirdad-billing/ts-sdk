@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { BulkIngestEventRequest } from "@tirdad-ai/sdk/sdk/models";
+import { BulkIngestEventRequest } from "@tirdad/sdk/sdk/models";
 
 let value: BulkIngestEventRequest = {
   events: [

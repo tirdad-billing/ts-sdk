@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { LinkIntegrationMappingRequest } from "@tirdad-ai/sdk/sdk/models";
+import { LinkIntegrationMappingRequest } from "@tirdad/sdk/sdk/models";
 
 let value: LinkIntegrationMappingRequest = {
   entityId: "<id>",

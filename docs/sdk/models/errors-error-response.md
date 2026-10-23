@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ErrorsErrorResponse } from "@tirdad-ai/sdk/sdk/models";
+import { ErrorsErrorResponse } from "@tirdad/sdk/sdk/models";
 
 // No examples available for this model
 ```

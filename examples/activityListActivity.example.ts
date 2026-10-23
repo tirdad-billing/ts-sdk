@@ -5,13 +5,13 @@
 import dotenv from "dotenv";
 dotenv.config();
 /**
- * Example usage of the @tirdad-ai/sdk SDK
+ * Example usage of the @tirdad/sdk SDK
  *
  * To run this example from the examples directory:
  * npm run build && npx tsx activityListActivity.example.ts
  */
 
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",

@@ -75,7 +75,7 @@ Fired when payment is confirmed; the subscription is now active and the invoice 
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/checkout.session.completed" method="post" path="/webhook-events/checkout.session.completed" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -95,8 +95,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCheckoutSessionCompleted } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-checkout-session-completed.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsCheckoutSessionCompleted } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-checkout-session-completed.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -143,7 +143,7 @@ Fired when a Checkout Session times out without payment; draft records are clean
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/checkout.session.expired" method="post" path="/webhook-events/checkout.session.expired" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -163,8 +163,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCheckoutSessionExpired } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-checkout-session-expired.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsCheckoutSessionExpired } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-checkout-session-expired.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,7 +211,7 @@ Fired when payment fails or the provider cancels the payment link. Doc-only for 
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/checkout.session.failed" method="post" path="/webhook-events/checkout.session.failed" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -231,8 +231,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCheckoutSessionFailed } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-checkout-session-failed.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsCheckoutSessionFailed } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-checkout-session-failed.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -279,7 +279,7 @@ Fired when a Checkout Session is created and a payment URL is returned to the cu
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/checkout.session.initiated" method="post" path="/webhook-events/checkout.session.initiated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -299,8 +299,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCheckoutSessionInitiated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-checkout-session-initiated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsCheckoutSessionInitiated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-checkout-session-initiated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -347,7 +347,7 @@ Fired when a new credit note is created. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/credit_note.created" method="post" path="/webhook-events/credit_note.created" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -367,8 +367,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCreditNoteCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-credit-note-created.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsCreditNoteCreated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-credit-note-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -415,7 +415,7 @@ Fired when a credit note is updated. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/credit_note.updated" method="post" path="/webhook-events/credit_note.updated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -435,8 +435,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCreditNoteUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-credit-note-updated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsCreditNoteUpdated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-credit-note-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -483,7 +483,7 @@ Fired when a new customer is created. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/customer.created" method="post" path="/webhook-events/customer.created" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -503,8 +503,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCustomerCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-customer-created.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsCustomerCreated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-customer-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -551,7 +551,7 @@ Fired when a customer is deleted. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/customer.deleted" method="post" path="/webhook-events/customer.deleted" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -571,8 +571,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCustomerDeleted } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-customer-deleted.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsCustomerDeleted } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-customer-deleted.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -619,7 +619,7 @@ Fired when a customer is updated. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/customer.updated" method="post" path="/webhook-events/customer.updated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -639,8 +639,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsCustomerUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-customer-updated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsCustomerUpdated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-customer-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -687,7 +687,7 @@ Fired when a new entitlement is created. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/entitlement.created" method="post" path="/webhook-events/entitlement.created" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -707,8 +707,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsEntitlementCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-entitlement-created.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsEntitlementCreated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-entitlement-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -755,7 +755,7 @@ Fired when an entitlement is deleted. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/entitlement.deleted" method="post" path="/webhook-events/entitlement.deleted" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -775,8 +775,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsEntitlementDeleted } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-entitlement-deleted.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsEntitlementDeleted } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-entitlement-deleted.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -823,7 +823,7 @@ Fired when an entitlement is updated. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/entitlement.updated" method="post" path="/webhook-events/entitlement.updated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -843,8 +843,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsEntitlementUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-entitlement-updated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsEntitlementUpdated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-entitlement-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -891,7 +891,7 @@ Fired when an ingested usage event produces no meter usage — either no meter i
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/event.rejected" method="post" path="/webhook-events/event.rejected" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -911,8 +911,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsEventRejected } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-event-rejected.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsEventRejected } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-event-rejected.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -959,7 +959,7 @@ Fired when a new feature is created. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/feature.created" method="post" path="/webhook-events/feature.created" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -979,8 +979,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsFeatureCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-feature-created.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsFeatureCreated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-feature-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1027,7 +1027,7 @@ Fired when a feature is deleted. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/feature.deleted" method="post" path="/webhook-events/feature.deleted" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1047,8 +1047,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsFeatureDeleted } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-feature-deleted.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsFeatureDeleted } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-feature-deleted.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1095,7 +1095,7 @@ Fired when a feature is updated. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/feature.updated" method="post" path="/webhook-events/feature.updated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1115,8 +1115,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsFeatureUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-feature-updated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsFeatureUpdated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-feature-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1163,7 +1163,7 @@ Fired when a feature's associated wallet balance crosses an alert threshold. Doc
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/feature.wallet_balance.alert" method="post" path="/webhook-events/feature.wallet_balance.alert" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1183,8 +1183,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsFeatureWalletBalanceAlert } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-feature-wallet-balance-alert.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsFeatureWalletBalanceAlert } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-feature-wallet-balance-alert.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1231,7 +1231,7 @@ Fired when an invoice communication (e.g. email notification) is triggered. `inv
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/invoice.communication.triggered" method="post" path="/webhook-events/invoice.communication.triggered" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1251,8 +1251,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceCommunicationTriggered } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-communication-triggered.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsInvoiceCommunicationTriggered } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-invoice-communication-triggered.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1299,7 +1299,7 @@ Fired when a new invoice is created in draft state. `invoice.line_items` omits l
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/invoice.create.drafted" method="post" path="/webhook-events/invoice.create.drafted" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1319,8 +1319,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceCreateDrafted } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-create-drafted.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsInvoiceCreateDrafted } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-invoice-create-drafted.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1367,7 +1367,7 @@ Fired when an invoice payment is overdue past the due date. `invoice.line_items`
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/invoice.payment.overdue" method="post" path="/webhook-events/invoice.payment.overdue" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1387,8 +1387,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoicePaymentOverdue } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-payment-overdue.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsInvoicePaymentOverdue } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-invoice-payment-overdue.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1435,7 +1435,7 @@ Fired once per provider when an invoice sync fails after its last retry.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/invoice.sync.failed" method="post" path="/webhook-events/invoice.sync.failed" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1455,8 +1455,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceSyncFailed } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-sync-failed.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsInvoiceSyncFailed } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-invoice-sync-failed.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1503,7 +1503,7 @@ Fired once per provider when an invoice is synced to that provider.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/invoice.sync.success" method="post" path="/webhook-events/invoice.sync.success" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1523,8 +1523,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceSyncSuccess } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-sync-success.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsInvoiceSyncSuccess } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-invoice-sync-success.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1571,7 +1571,7 @@ Fired when an invoice is updated. `invoice.line_items` omits line items with nei
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/invoice.update" method="post" path="/webhook-events/invoice.update" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1591,8 +1591,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceUpdate } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-update.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsInvoiceUpdate } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-invoice-update.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1639,7 +1639,7 @@ Fired when an invoice is finalized and locked for payment. `invoice.line_items` 
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/invoice.update.finalized" method="post" path="/webhook-events/invoice.update.finalized" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1659,8 +1659,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceUpdateFinalized } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-update-finalized.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsInvoiceUpdateFinalized } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-invoice-update-finalized.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1707,7 +1707,7 @@ Fired when an invoice payment status changes. `invoice.line_items` omits line it
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/invoice.update.payment" method="post" path="/webhook-events/invoice.update.payment" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1727,8 +1727,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceUpdatePayment } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-update-payment.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsInvoiceUpdatePayment } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-invoice-update-payment.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1775,7 +1775,7 @@ Fired when an invoice is voided (e.g. order cancelled or duplicate). `invoice.li
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/invoice.update.voided" method="post" path="/webhook-events/invoice.update.voided" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1795,8 +1795,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsInvoiceUpdateVoided } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-invoice-update-voided.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsInvoiceUpdateVoided } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-invoice-update-voided.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1843,7 +1843,7 @@ Fired when a new payment is created. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/payment.created" method="post" path="/webhook-events/payment.created" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1863,8 +1863,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsPaymentCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-payment-created.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsPaymentCreated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-payment-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1911,7 +1911,7 @@ Fired when a payment fails. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/payment.failed" method="post" path="/webhook-events/payment.failed" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1931,8 +1931,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsPaymentFailed } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-payment-failed.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsPaymentFailed } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-payment-failed.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1979,7 +1979,7 @@ Fired when a payment is pending processing. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/payment.pending" method="post" path="/webhook-events/payment.pending" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -1999,8 +1999,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsPaymentPending } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-payment-pending.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsPaymentPending } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-payment-pending.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2047,7 +2047,7 @@ Fired when a payment succeeds. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/payment.success" method="post" path="/webhook-events/payment.success" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2067,8 +2067,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsPaymentSuccess } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-payment-success.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsPaymentSuccess } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-payment-success.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2115,7 +2115,7 @@ Fired when a payment is updated. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/payment.updated" method="post" path="/webhook-events/payment.updated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2135,8 +2135,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsPaymentUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-payment-updated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsPaymentUpdated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-payment-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2183,7 +2183,7 @@ Fired when a refund is planned against an invoice, before the money moves. Doc-o
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/refund.created" method="post" path="/webhook-events/refund.created" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2203,8 +2203,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsRefundCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-refund-created.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsRefundCreated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-refund-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2251,7 +2251,7 @@ Fired when a refund fails. A gateway refund that fails is retried into the custo
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/refund.failed" method="post" path="/webhook-events/refund.failed" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2271,8 +2271,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsRefundFailed } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-refund-failed.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsRefundFailed } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-refund-failed.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2319,7 +2319,7 @@ Fired when a refund settles, to the original payment gateway or to a wallet. Doc
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/refund.succeeded" method="post" path="/webhook-events/refund.succeeded" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2339,8 +2339,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsRefundSucceeded } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-refund-succeeded.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsRefundSucceeded } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-refund-succeeded.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2387,7 +2387,7 @@ Fired when a draft subscription is activated. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.activated" method="post" path="/webhook-events/subscription.activated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2407,8 +2407,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionActivated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-activated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionActivated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-activated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2455,7 +2455,7 @@ Fired when a subscription is cancelled (immediately or end-of-period). Doc-only 
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.cancelled" method="post" path="/webhook-events/subscription.cancelled" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2475,8 +2475,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionCancelled } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-cancelled.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionCancelled } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-cancelled.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2523,7 +2523,7 @@ Fired when a new subscription is created. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.created" method="post" path="/webhook-events/subscription.created" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2543,8 +2543,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-created.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionCreated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2591,7 +2591,7 @@ Fired when a new draft subscription is created (not yet activated). Doc-only for
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.draft.created" method="post" path="/webhook-events/subscription.draft.created" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2611,8 +2611,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionDraftCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-draft-created.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionDraftCreated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-draft-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2659,7 +2659,7 @@ Fired when a feature group's total metered spend on a subscription crosses an al
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.group_spend.threshold_reached" method="post" path="/webhook-events/subscription.group_spend.threshold_reached" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2679,8 +2679,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionGroupSpendThresholdReached } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-group-spend-threshold-reached.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionGroupSpendThresholdReached } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-group-spend-threshold-reached.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2727,7 +2727,7 @@ Fired when a feature group's total metered spend on a subscription falls back be
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.group_spend.threshold_recovered" method="post" path="/webhook-events/subscription.group_spend.threshold_recovered" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2747,8 +2747,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionGroupSpendThresholdRecovered } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-group-spend-threshold-recovered.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionGroupSpendThresholdRecovered } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-group-spend-threshold-recovered.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2795,7 +2795,7 @@ Fired when a subscription line item's metered spend crosses an alert threshold (
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.line_item_spend.threshold_reached" method="post" path="/webhook-events/subscription.line_item_spend.threshold_reached" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2815,8 +2815,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionLineItemSpendThresholdReached } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-line-item-spend-threshold-reached.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionLineItemSpendThresholdReached } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-line-item-spend-threshold-reached.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2863,7 +2863,7 @@ Fired when a subscription line item's metered spend falls back below all configu
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.line_item_spend.threshold_recovered" method="post" path="/webhook-events/subscription.line_item_spend.threshold_recovered" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2883,8 +2883,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionLineItemSpendThresholdRecovered } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-line-item-spend-threshold-recovered.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionLineItemSpendThresholdRecovered } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-line-item-spend-threshold-recovered.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2931,7 +2931,7 @@ Fired when a subscription is paused. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.paused" method="post" path="/webhook-events/subscription.paused" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -2951,8 +2951,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionPaused } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-paused.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionPaused } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-paused.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2999,7 +2999,7 @@ Fired when a new subscription phase is created. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.phase.created" method="post" path="/webhook-events/subscription.phase.created" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3019,8 +3019,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionPhaseCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-phase-created.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionPhaseCreated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-phase-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3067,7 +3067,7 @@ Fired when a subscription phase is deleted. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.phase.deleted" method="post" path="/webhook-events/subscription.phase.deleted" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3087,8 +3087,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionPhaseDeleted } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-phase-deleted.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionPhaseDeleted } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-phase-deleted.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3135,7 +3135,7 @@ Fired when a subscription phase is updated. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.phase.updated" method="post" path="/webhook-events/subscription.phase.updated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3155,8 +3155,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionPhaseUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-phase-updated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionPhaseUpdated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-phase-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3203,7 +3203,7 @@ Fired when a subscription plan changes in place (id/anchor preserved; not cancel
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.plan_changed" method="post" path="/webhook-events/subscription.plan_changed" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3223,8 +3223,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionPlanChanged } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-plan-changed.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionPlanChanged } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-plan-changed.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3271,7 +3271,7 @@ Fired when a subscription renewal is upcoming (cron-driven). Doc-only for parsin
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.renewal.due" method="post" path="/webhook-events/subscription.renewal.due" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3291,8 +3291,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionRenewalDue } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-renewal-due.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionRenewalDue } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-renewal-due.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3339,7 +3339,7 @@ Fired when a paused subscription is resumed. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.resumed" method="post" path="/webhook-events/subscription.resumed" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3359,8 +3359,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionResumed } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-resumed.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionResumed } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-resumed.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3407,7 +3407,7 @@ Fired when a subscription's total metered spend crosses an alert threshold (crit
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.spend.threshold_reached" method="post" path="/webhook-events/subscription.spend.threshold_reached" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3427,8 +3427,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionSpendThresholdReached } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-spend-threshold-reached.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionSpendThresholdReached } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-spend-threshold-reached.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3475,7 +3475,7 @@ Fired when a subscription's total metered spend falls back below all configured 
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.spend.threshold_recovered" method="post" path="/webhook-events/subscription.spend.threshold_recovered" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3495,8 +3495,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionSpendThresholdRecovered } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-spend-threshold-recovered.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionSpendThresholdRecovered } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-spend-threshold-recovered.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3543,7 +3543,7 @@ Fired when a subscription is updated (e.g. quantity, billing anchor, or metadata
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/subscription.updated" method="post" path="/webhook-events/subscription.updated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3563,8 +3563,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsSubscriptionUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-subscription-updated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsSubscriptionUpdated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-subscription-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3611,7 +3611,7 @@ Fired when a new wallet is created. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/wallet.created" method="post" path="/webhook-events/wallet.created" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3631,8 +3631,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-created.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsWalletCreated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-wallet-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3679,7 +3679,7 @@ Fired when a wallet's credit balance drops below an alert threshold. Doc-only fo
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/wallet.credit_balance.dropped" method="post" path="/webhook-events/wallet.credit_balance.dropped" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3699,8 +3699,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletCreditBalanceDropped } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-credit-balance-dropped.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsWalletCreditBalanceDropped } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-wallet-credit-balance-dropped.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3747,7 +3747,7 @@ Fired when a wallet's credit balance recovers above an alert threshold. Doc-only
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/wallet.credit_balance.recovered" method="post" path="/webhook-events/wallet.credit_balance.recovered" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3767,8 +3767,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletCreditBalanceRecovered } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-credit-balance-recovered.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsWalletCreditBalanceRecovered } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-wallet-credit-balance-recovered.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3815,7 +3815,7 @@ Fired when a wallet's ongoing balance drops below an alert threshold. Doc-only f
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/wallet.ongoing_balance.dropped" method="post" path="/webhook-events/wallet.ongoing_balance.dropped" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3835,8 +3835,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletOngoingBalanceDropped } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-ongoing-balance-dropped.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsWalletOngoingBalanceDropped } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-wallet-ongoing-balance-dropped.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3883,7 +3883,7 @@ Fired when a wallet's ongoing balance recovers above an alert threshold. Doc-onl
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/wallet.ongoing_balance.recovered" method="post" path="/webhook-events/wallet.ongoing_balance.recovered" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3903,8 +3903,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletOngoingBalanceRecovered } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-ongoing-balance-recovered.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsWalletOngoingBalanceRecovered } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-wallet-ongoing-balance-recovered.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3951,7 +3951,7 @@ Fired when a wallet's ongoing (real-time) balance changes. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/wallet.ongoing_balance.updated" method="post" path="/webhook-events/wallet.ongoing_balance.updated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -3971,8 +3971,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletOngoingBalanceUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-ongoing-balance-updated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsWalletOngoingBalanceUpdated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-wallet-ongoing-balance-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -4019,7 +4019,7 @@ Fired when a wallet is terminated. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/wallet.terminated" method="post" path="/webhook-events/wallet.terminated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -4039,8 +4039,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletTerminated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-terminated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsWalletTerminated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-wallet-terminated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -4087,7 +4087,7 @@ Fired when a new wallet transaction is created (top-up, deduction, etc.). Doc-on
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/wallet.transaction.created" method="post" path="/webhook-events/wallet.transaction.created" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -4107,8 +4107,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletTransactionCreated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-transaction-created.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsWalletTransactionCreated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-wallet-transaction-created.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -4155,7 +4155,7 @@ Fired when an existing wallet transaction is updated (e.g. pending to completed)
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/wallet.transaction.updated" method="post" path="/webhook-events/wallet.transaction.updated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -4175,8 +4175,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletTransactionUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-transaction-updated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsWalletTransactionUpdated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-wallet-transaction-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -4223,7 +4223,7 @@ Fired when a wallet is updated. Doc-only for parsing.
 
 <!-- UsageSnippet language="typescript" operationID="post_/webhook-events/wallet.updated" method="post" path="/webhook-events/wallet.updated" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -4243,8 +4243,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { webhookEventsPostWebhookEventsWalletUpdated } from "@tirdad-ai/sdk/funcs/webhook-events-post-webhook-events-wallet-updated.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { webhookEventsPostWebhookEventsWalletUpdated } from "@tirdad/sdk/funcs/webhook-events-post-webhook-events-wallet-updated.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

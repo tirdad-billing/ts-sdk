@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SecretType } from "@tirdad-ai/sdk/sdk/models";
+import { SecretType } from "@tirdad/sdk/sdk/models";
 
 let value: SecretType = "private_key";
 

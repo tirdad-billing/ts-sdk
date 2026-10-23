@@ -14,7 +14,7 @@ Registers an AWS Marketplace buyer agreement against an existing Tirdad subscrip
 
 <!-- UsageSnippet language="typescript" operationID="post_/marketplace/agreements" method="post" path="/marketplace/agreements" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -39,8 +39,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { marketplacePostMarketplaceAgreements } from "@tirdad-ai/sdk/funcs/marketplace-post-marketplace-agreements.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { marketplacePostMarketplaceAgreements } from "@tirdad/sdk/funcs/marketplace-post-marketplace-agreements.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

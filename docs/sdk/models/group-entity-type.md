@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GroupEntityType } from "@tirdad-ai/sdk/sdk/models";
+import { GroupEntityType } from "@tirdad/sdk/sdk/models";
 
 let value: GroupEntityType = "price";
 

@@ -5,7 +5,7 @@ Request to cancel a subscription schedule (supports two modes)
 ## Example Usage
 
 ```typescript
-import { CancelScheduleRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CancelScheduleRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CancelScheduleRequest = {};
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EntitlementUsageResetPeriod } from "@tirdad-ai/sdk/sdk/models";
+import { EntitlementUsageResetPeriod } from "@tirdad/sdk/sdk/models";
 
 let value: EntitlementUsageResetPeriod = "WEEKLY";
 

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WorkflowExecutionFilterOrder } from "@tirdad-ai/sdk/sdk/models";
+import { WorkflowExecutionFilterOrder } from "@tirdad/sdk/sdk/models";
 
 let value: WorkflowExecutionFilterOrder = "asc";
 ```

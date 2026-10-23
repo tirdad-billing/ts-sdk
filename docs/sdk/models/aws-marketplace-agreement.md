@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AWSMarketplaceAgreement } from "@tirdad-ai/sdk/sdk/models";
+import { AWSMarketplaceAgreement } from "@tirdad/sdk/sdk/models";
 
 let value: AWSMarketplaceAgreement = {
   customerAwsAccountId: "<id>",

@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ScheduleDraftFinalizationResponse } from "@tirdad-ai/sdk/sdk/models";
+import { ScheduleDraftFinalizationResponse } from "@tirdad/sdk/sdk/models";
 
 let value: ScheduleDraftFinalizationResponse = {};
 ```

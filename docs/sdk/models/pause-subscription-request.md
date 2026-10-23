@@ -5,7 +5,7 @@ Pauses an active subscription now. Usage and arrear fixed charges up to the paus
 ## Example Usage
 
 ```typescript
-import { PauseSubscriptionRequest } from "@tirdad-ai/sdk/sdk/models";
+import { PauseSubscriptionRequest } from "@tirdad/sdk/sdk/models";
 
 let value: PauseSubscriptionRequest = {};
 ```

@@ -19,7 +19,7 @@ Use when listing credits attached to an addon (e.g. included prepaid or promo cr
 
 <!-- UsageSnippet language="typescript" operationID="getAddonCreditGrants" method="get" path="/addons/{id}/creditgrants" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -39,8 +39,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditGrantsGetAddonCreditGrants } from "@tirdad-ai/sdk/funcs/credit-grants-get-addon-credit-grants.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { creditGrantsGetAddonCreditGrants } from "@tirdad/sdk/funcs/credit-grants-get-addon-credit-grants.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -90,7 +90,7 @@ Use when giving a customer or plan credits (e.g. prepaid balance or promotional 
 
 <!-- UsageSnippet language="typescript" operationID="createCreditGrant" method="post" path="/creditgrants" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -115,8 +115,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditGrantsCreateCreditGrant } from "@tirdad-ai/sdk/funcs/credit-grants-create-credit-grant.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { creditGrantsCreateCreditGrant } from "@tirdad/sdk/funcs/credit-grants-create-credit-grant.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -171,7 +171,7 @@ Use when you need to load a single credit grant (e.g. for display or to check ba
 
 <!-- UsageSnippet language="typescript" operationID="getCreditGrant" method="get" path="/creditgrants/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -191,8 +191,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditGrantsGetCreditGrant } from "@tirdad-ai/sdk/funcs/credit-grants-get-credit-grant.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { creditGrantsGetCreditGrant } from "@tirdad/sdk/funcs/credit-grants-get-credit-grant.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -242,7 +242,7 @@ Use when changing a credit grant (e.g. amount or end date). Request body contain
 
 <!-- UsageSnippet language="typescript" operationID="updateCreditGrant" method="put" path="/creditgrants/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -262,8 +262,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditGrantsUpdateCreditGrant } from "@tirdad-ai/sdk/funcs/credit-grants-update-credit-grant.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { creditGrantsUpdateCreditGrant } from "@tirdad/sdk/funcs/credit-grants-update-credit-grant.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -314,7 +314,7 @@ Use when removing or ending a credit grant (e.g. revoke promo or close prepaid).
 
 <!-- UsageSnippet language="typescript" operationID="deleteCreditGrant" method="delete" path="/creditgrants/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -334,8 +334,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditGrantsDeleteCreditGrant } from "@tirdad-ai/sdk/funcs/credit-grants-delete-credit-grant.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { creditGrantsDeleteCreditGrant } from "@tirdad/sdk/funcs/credit-grants-delete-credit-grant.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -386,7 +386,7 @@ Use when listing credits attached to a plan (e.g. included prepaid or promo cred
 
 <!-- UsageSnippet language="typescript" operationID="getPlanCreditGrants" method="get" path="/plans/{id}/creditgrants" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -406,8 +406,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { creditGrantsGetPlanCreditGrants } from "@tirdad-ai/sdk/funcs/credit-grants-get-plan-credit-grants.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { creditGrantsGetPlanCreditGrants } from "@tirdad/sdk/funcs/credit-grants-get-plan-credit-grants.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

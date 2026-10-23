@@ -24,7 +24,7 @@ Use when resolving wallets by external customer id or lookup key (e.g. from your
 
 <!-- UsageSnippet language="typescript" operationID="getCustomerWallets" method="get" path="/customers/wallets" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -44,8 +44,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { walletsGetCustomerWallets } from "@tirdad-ai/sdk/funcs/wallets-get-customer-wallets.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { walletsGetCustomerWallets } from "@tirdad/sdk/funcs/wallets-get-customer-wallets.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -95,7 +95,7 @@ Use when showing a customer's wallets (e.g. balance overview by currency or in a
 
 <!-- UsageSnippet language="typescript" operationID="getWalletsByCustomerId" method="get" path="/customers/{id}/wallets" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -115,8 +115,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { walletsGetWalletsByCustomerId } from "@tirdad-ai/sdk/funcs/wallets-get-wallets-by-customer-id.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { walletsGetWalletsByCustomerId } from "@tirdad/sdk/funcs/wallets-get-wallets-by-customer-id.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -166,7 +166,7 @@ Use when giving a customer a prepaid or credit balance (e.g. prepaid plans or pr
 
 <!-- UsageSnippet language="typescript" operationID="createWallet" method="post" path="/wallets" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -188,8 +188,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { walletsCreateWallet } from "@tirdad-ai/sdk/funcs/wallets-create-wallet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { walletsCreateWallet } from "@tirdad/sdk/funcs/wallets-create-wallet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -241,7 +241,7 @@ Use when listing or searching wallets (e.g. admin view or reporting). Returns a 
 
 <!-- UsageSnippet language="typescript" operationID="queryWallet" method="post" path="/wallets/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -261,8 +261,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { walletsQueryWallet } from "@tirdad-ai/sdk/funcs/wallets-query-wallet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { walletsQueryWallet } from "@tirdad/sdk/funcs/wallets-query-wallet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -312,7 +312,7 @@ Use when searching or reporting on wallet transactions (e.g. cross-wallet histor
 
 <!-- UsageSnippet language="typescript" operationID="queryWalletTransaction" method="post" path="/wallets/transactions/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -332,8 +332,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { walletsQueryWalletTransaction } from "@tirdad-ai/sdk/funcs/wallets-query-wallet-transaction.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { walletsQueryWalletTransaction } from "@tirdad/sdk/funcs/wallets-query-wallet-transaction.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -383,7 +383,7 @@ Use when you need to load a single wallet (e.g. for a balance or settings view).
 
 <!-- UsageSnippet language="typescript" operationID="getWallet" method="get" path="/wallets/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -403,8 +403,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { walletsGetWallet } from "@tirdad-ai/sdk/funcs/wallets-get-wallet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { walletsGetWallet } from "@tirdad/sdk/funcs/wallets-get-wallet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -454,7 +454,7 @@ Use when changing wallet settings (e.g. enabling or updating auto top-up thresho
 
 <!-- UsageSnippet language="typescript" operationID="updateWallet" method="put" path="/wallets/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -474,8 +474,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { walletsUpdateWallet } from "@tirdad-ai/sdk/funcs/wallets-update-wallet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { walletsUpdateWallet } from "@tirdad/sdk/funcs/wallets-update-wallet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -526,7 +526,7 @@ Use when displaying or checking current wallet balance (e.g. before charging or 
 
 <!-- UsageSnippet language="typescript" operationID="getWalletBalance" method="get" path="/wallets/{id}/balance/real-time" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -546,8 +546,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { walletsGetWalletBalance } from "@tirdad-ai/sdk/funcs/wallets-get-wallet-balance.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { walletsGetWalletBalance } from "@tirdad/sdk/funcs/wallets-get-wallet-balance.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -598,7 +598,7 @@ Use when closing a customer wallet (e.g. churn or migration). Closes the wallet 
 
 <!-- UsageSnippet language="typescript" operationID="terminateWallet" method="post" path="/wallets/{id}/terminate" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -618,8 +618,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { walletsTerminateWallet } from "@tirdad-ai/sdk/funcs/wallets-terminate-wallet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { walletsTerminateWallet } from "@tirdad/sdk/funcs/wallets-terminate-wallet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -669,7 +669,7 @@ Use when adding funds to a wallet (e.g. top-up, refund, or manual credit). Suppo
 
 <!-- UsageSnippet language="typescript" operationID="topUpWallet" method="post" path="/wallets/{id}/top-up" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -691,8 +691,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { walletsTopUpWallet } from "@tirdad-ai/sdk/funcs/wallets-top-up-wallet.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { walletsTopUpWallet } from "@tirdad/sdk/funcs/wallets-top-up-wallet.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -745,7 +745,7 @@ Use when showing transaction history for a wallet (e.g. credit/debit log or audi
 
 <!-- UsageSnippet language="typescript" operationID="getWalletTransactions" method="get" path="/wallets/{id}/transactions" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -767,8 +767,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { walletsGetWalletTransactions } from "@tirdad-ai/sdk/funcs/wallets-get-wallet-transactions.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { walletsGetWalletTransactions } from "@tirdad/sdk/funcs/wallets-get-wallet-transactions.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

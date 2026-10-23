@@ -15,7 +15,7 @@ List coupon associations with optional filters. Coupon associations are created 
 
 <!-- UsageSnippet language="typescript" operationID="listCouponAssociations" method="get" path="/coupons/associations" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -35,8 +35,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponAssociationsListCouponAssociations } from "@tirdad-ai/sdk/funcs/coupon-associations-list-coupon-associations.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { couponAssociationsListCouponAssociations } from "@tirdad/sdk/funcs/coupon-associations-list-coupon-associations.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -86,7 +86,7 @@ Get a single coupon association by ID. Coupon associations are created and remov
 
 <!-- UsageSnippet language="typescript" operationID="getCouponAssociation" method="get" path="/coupons/associations/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -106,8 +106,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { couponAssociationsGetCouponAssociation } from "@tirdad-ai/sdk/funcs/coupon-associations-get-coupon-association.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { couponAssociationsGetCouponAssociation } from "@tirdad/sdk/funcs/coupon-associations-get-coupon-association.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

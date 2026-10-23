@@ -4,79 +4,8 @@
 
 ### Available Operations
 
-* [getTenantBillingUsage](#gettenantbillingusage) - Get billing usage for the current tenant
 * [updateTenant](#updatetenant) - Update a tenant
 * [getTenantById](#gettenantbyid) - Get tenant by ID
-
-## getTenantBillingUsage
-
-Use when showing the current tenant's billing usage (e.g. admin billing page or usage caps). Returns subscription and usage for the tenant.
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="getTenantBillingUsage" method="get" path="/tenant/billing" -->
-```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
-
-const tirdad = new Tirdad({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const result = await tirdad.tenants.getTenantBillingUsage();
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { tenantsGetTenantBillingUsage } from "@tirdad-ai/sdk/funcs/tenants-get-tenant-billing-usage.js";
-
-// Use `TirdadCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const tirdad = new TirdadCore({
-  apiKeyAuth: "<YOUR_API_KEY_HERE>",
-});
-
-async function run() {
-  const res = await tenantsGetTenantBillingUsage(tirdad);
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("tenantsGetTenantBillingUsage failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[models.TenantBillingUsage](../../sdk/models/tenant-billing-usage.md)\>**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.ErrorsErrorResponse | 400, 404                   | application/json           |
-| models.ErrorsErrorResponse | 500                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
 ## updateTenant
 
@@ -86,7 +15,7 @@ Use when changing tenant details (e.g. name or billing info). Request body conta
 
 <!-- UsageSnippet language="typescript" operationID="updateTenant" method="put" path="/tenants/update" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -106,8 +35,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { tenantsUpdateTenant } from "@tirdad-ai/sdk/funcs/tenants-update-tenant.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { tenantsUpdateTenant } from "@tirdad/sdk/funcs/tenants-update-tenant.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -157,7 +86,7 @@ Get tenant by ID
 
 <!-- UsageSnippet language="typescript" operationID="getTenantById" method="get" path="/tenants/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -177,8 +106,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { tenantsGetTenantById } from "@tirdad-ai/sdk/funcs/tenants-get-tenant-by-id.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { tenantsGetTenantById } from "@tirdad/sdk/funcs/tenants-get-tenant-by-id.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

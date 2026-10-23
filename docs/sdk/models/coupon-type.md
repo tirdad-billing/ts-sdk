@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CouponType } from "@tirdad-ai/sdk/sdk/models";
+import { CouponType } from "@tirdad/sdk/sdk/models";
 
 let value: CouponType = "percentage";
 

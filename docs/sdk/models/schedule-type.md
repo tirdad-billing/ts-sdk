@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ScheduleType } from "@tirdad-ai/sdk/sdk/models";
+import { ScheduleType } from "@tirdad/sdk/sdk/models";
 
 let value: ScheduleType = "end_of_period";
 ```

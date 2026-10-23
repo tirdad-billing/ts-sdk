@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DelinkIntegrationMappingRequest } from "@tirdad-ai/sdk/sdk/models";
+import { DelinkIntegrationMappingRequest } from "@tirdad/sdk/sdk/models";
 
 let value: DelinkIntegrationMappingRequest = {
   entityId: "<id>",

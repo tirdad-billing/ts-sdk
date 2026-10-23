@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TaskType } from "@tirdad-ai/sdk/sdk/models";
+import { TaskType } from "@tirdad/sdk/sdk/models";
 
 let value: TaskType = "EXPORT";
 

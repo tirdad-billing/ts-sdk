@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { VariableType } from "@tirdad-ai/sdk/sdk/models";
+import { VariableType } from "@tirdad/sdk/sdk/models";
 
 let value: VariableType = "number";
 

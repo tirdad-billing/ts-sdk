@@ -20,7 +20,7 @@ Use when defining a new pricing plan (e.g. Free, Pro, Enterprise). Attach prices
 
 <!-- UsageSnippet language="typescript" operationID="createPlan" method="post" path="/plans" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { plansCreatePlan } from "@tirdad-ai/sdk/funcs/plans-create-plan.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { plansCreatePlan } from "@tirdad/sdk/funcs/plans-create-plan.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -95,7 +95,7 @@ Use when listing or searching plans (e.g. plan picker or admin catalog). Returns
 
 <!-- UsageSnippet language="typescript" operationID="queryPlan" method="post" path="/plans/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -115,8 +115,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { plansQueryPlan } from "@tirdad-ai/sdk/funcs/plans-query-plan.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { plansQueryPlan } from "@tirdad/sdk/funcs/plans-query-plan.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -166,7 +166,7 @@ Use when you need to load a single plan (e.g. for display or to create a subscri
 
 <!-- UsageSnippet language="typescript" operationID="getPlan" method="get" path="/plans/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -186,8 +186,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { plansGetPlan } from "@tirdad-ai/sdk/funcs/plans-get-plan.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { plansGetPlan } from "@tirdad/sdk/funcs/plans-get-plan.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -237,7 +237,7 @@ Use when changing plan details (e.g. name, interval, or metadata). Partial updat
 
 <!-- UsageSnippet language="typescript" operationID="updatePlan" method="put" path="/plans/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -257,8 +257,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { plansUpdatePlan } from "@tirdad-ai/sdk/funcs/plans-update-plan.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { plansUpdatePlan } from "@tirdad/sdk/funcs/plans-update-plan.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -309,7 +309,7 @@ Use when retiring a plan (e.g. end-of-life). Existing subscriptions may be affec
 
 <!-- UsageSnippet language="typescript" operationID="deletePlan" method="delete" path="/plans/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -329,8 +329,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { plansDeletePlan } from "@tirdad-ai/sdk/funcs/plans-delete-plan.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { plansDeletePlan } from "@tirdad/sdk/funcs/plans-delete-plan.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -380,7 +380,7 @@ Clone an existing plan, copying its active prices, published entitlements, and p
 
 <!-- UsageSnippet language="typescript" operationID="clonePlan" method="post" path="/plans/{id}/clone" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -400,8 +400,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { plansClonePlan } from "@tirdad-ai/sdk/funcs/plans-clone-plan.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { plansClonePlan } from "@tirdad/sdk/funcs/plans-clone-plan.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -452,7 +452,7 @@ Use when you have changed plan prices and need to push them to all active subscr
 
 <!-- UsageSnippet language="typescript" operationID="syncPlanPrices" method="post" path="/plans/{id}/sync/subscriptions" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -472,8 +472,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { plansSyncPlanPrices } from "@tirdad-ai/sdk/funcs/plans-sync-plan-prices.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { plansSyncPlanPrices } from "@tirdad/sdk/funcs/plans-sync-plan-prices.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

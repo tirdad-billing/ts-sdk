@@ -18,7 +18,7 @@ Configure a fixed exchange rate at tenant, customer or subscription scope. Overr
 
 <!-- UsageSnippet language="typescript" operationID="createFXRate" method="post" path="/forex" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { fxRatesCreateFXRate } from "@tirdad-ai/sdk/funcs/fx-rates-create-fx-rate.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { fxRatesCreateFXRate } from "@tirdad/sdk/funcs/fx-rates-create-fx-rate.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -97,7 +97,7 @@ Filter FX rates via a request body (POST used for a complex query, but read-only
 
 <!-- UsageSnippet language="typescript" operationID="queryFXRates" method="post" path="/forex/query" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -117,8 +117,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { fxRatesQueryFXRates } from "@tirdad-ai/sdk/funcs/fx-rates-query-fx-rates.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { fxRatesQueryFXRates } from "@tirdad/sdk/funcs/fx-rates-query-fx-rates.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -168,7 +168,7 @@ Load a single FX rate by ID.
 
 <!-- UsageSnippet language="typescript" operationID="getFXRate" method="get" path="/forex/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -188,8 +188,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { fxRatesGetFXRate } from "@tirdad-ai/sdk/funcs/fx-rates-get-fx-rate.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { fxRatesGetFXRate } from "@tirdad/sdk/funcs/fx-rates-get-fx-rate.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -239,7 +239,7 @@ Update a rate's value, validity window (overrides only) or metadata. Scope, scop
 
 <!-- UsageSnippet language="typescript" operationID="updateFXRate" method="put" path="/forex/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -259,8 +259,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { fxRatesUpdateFXRate } from "@tirdad-ai/sdk/funcs/fx-rates-update-fx-rate.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { fxRatesUpdateFXRate } from "@tirdad/sdk/funcs/fx-rates-update-fx-rate.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -311,7 +311,7 @@ Archive a customer or subscription override. Tenant rates cannot be deleted.
 
 <!-- UsageSnippet language="typescript" operationID="deleteFXRate" method="delete" path="/forex/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -331,8 +331,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { fxRatesDeleteFXRate } from "@tirdad-ai/sdk/funcs/fx-rates-delete-fx-rate.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { fxRatesDeleteFXRate } from "@tirdad/sdk/funcs/fx-rates-delete-fx-rate.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubModifyLineItemChangeRequest } from "@tirdad-ai/sdk/sdk/models";
+import { SubModifyLineItemChangeRequest } from "@tirdad/sdk/sdk/models";
 
 let value: SubModifyLineItemChangeRequest = {
   lineItems: [

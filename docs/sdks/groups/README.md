@@ -17,7 +17,7 @@ Use when organizing entities into a group (e.g. for filtering prices or plans by
 
 <!-- UsageSnippet language="typescript" operationID="createGroup" method="post" path="/groups" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { groupsCreateGroup } from "@tirdad-ai/sdk/funcs/groups-create-group.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { groupsCreateGroup } from "@tirdad/sdk/funcs/groups-create-group.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -96,7 +96,7 @@ Use when listing or searching groups (e.g. admin catalog). Returns a paginated l
 
 <!-- UsageSnippet language="typescript" operationID="queryGroup" method="post" path="/groups/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -116,8 +116,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { groupsQueryGroup } from "@tirdad-ai/sdk/funcs/groups-query-group.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { groupsQueryGroup } from "@tirdad/sdk/funcs/groups-query-group.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -167,7 +167,7 @@ Use when you need to load a single group (e.g. for display or to assign entities
 
 <!-- UsageSnippet language="typescript" operationID="getGroup" method="get" path="/groups/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -187,8 +187,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { groupsGetGroup } from "@tirdad-ai/sdk/funcs/groups-get-group.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { groupsGetGroup } from "@tirdad/sdk/funcs/groups-get-group.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -238,7 +238,7 @@ Use when removing a group and clearing its entity associations (e.g. retiring a 
 
 <!-- UsageSnippet language="typescript" operationID="deleteGroup" method="delete" path="/groups/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -258,8 +258,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { groupsDeleteGroup } from "@tirdad-ai/sdk/funcs/groups-delete-group.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { groupsDeleteGroup } from "@tirdad/sdk/funcs/groups-delete-group.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

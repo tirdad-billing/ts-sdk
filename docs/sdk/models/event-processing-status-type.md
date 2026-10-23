@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EventProcessingStatusType } from "@tirdad-ai/sdk/sdk/models";
+import { EventProcessingStatusType } from "@tirdad/sdk/sdk/models";
 
 let value: EventProcessingStatusType = "processing";
 

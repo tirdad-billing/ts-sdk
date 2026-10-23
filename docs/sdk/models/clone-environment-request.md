@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CloneEnvironmentRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CloneEnvironmentRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CloneEnvironmentRequest = {};
 ```

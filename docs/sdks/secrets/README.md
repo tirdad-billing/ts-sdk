@@ -16,7 +16,7 @@ Use when listing API keys (e.g. admin view or rotating keys). Returns a paginate
 
 <!-- UsageSnippet language="typescript" operationID="listApiKeys" method="get" path="/secrets/api/keys" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -36,8 +36,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { secretsListApiKeys } from "@tirdad-ai/sdk/funcs/secrets-list-api-keys.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { secretsListApiKeys } from "@tirdad/sdk/funcs/secrets-list-api-keys.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -89,7 +89,7 @@ Use when issuing a new API key (e.g. for a service account or for the current us
 
 <!-- UsageSnippet language="typescript" operationID="createApiKey" method="post" path="/secrets/api/keys" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -112,8 +112,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { secretsCreateApiKey } from "@tirdad-ai/sdk/funcs/secrets-create-api-key.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { secretsCreateApiKey } from "@tirdad/sdk/funcs/secrets-create-api-key.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -166,7 +166,7 @@ Use when revoking an API key (e.g. rotation or compromise). Permanently invalida
 
 <!-- UsageSnippet language="typescript" operationID="deleteApiKey" method="delete" path="/secrets/api/keys/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -186,8 +186,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { secretsDeleteApiKey } from "@tirdad-ai/sdk/funcs/secrets-delete-api-key.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { secretsDeleteApiKey } from "@tirdad/sdk/funcs/secrets-delete-api-key.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

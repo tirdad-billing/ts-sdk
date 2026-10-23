@@ -5,7 +5,7 @@ Full details of a subscription schedule
 ## Example Usage
 
 ```typescript
-import { SubscriptionScheduleResponse } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionScheduleResponse } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionScheduleResponse = {};
 ```

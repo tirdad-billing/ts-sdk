@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OnPendingSchedulePolicy } from "@tirdad-ai/sdk/sdk/models";
+import { OnPendingSchedulePolicy } from "@tirdad/sdk/sdk/models";
 
 let value: OnPendingSchedulePolicy = "reject";
 ```

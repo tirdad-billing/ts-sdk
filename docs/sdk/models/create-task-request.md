@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateTaskRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CreateTaskRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CreateTaskRequest = {
   entityType: "PRICES",

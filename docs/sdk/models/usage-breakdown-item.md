@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { UsageBreakdownItem } from "@tirdad-ai/sdk/sdk/models";
+import { UsageBreakdownItem } from "@tirdad/sdk/sdk/models";
 
 let value: UsageBreakdownItem = {};
 ```

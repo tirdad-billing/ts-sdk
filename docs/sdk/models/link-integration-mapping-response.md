@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { LinkIntegrationMappingResponse } from "@tirdad-ai/sdk/sdk/models";
+import { LinkIntegrationMappingResponse } from "@tirdad/sdk/sdk/models";
 
 let value: LinkIntegrationMappingResponse = {};
 ```

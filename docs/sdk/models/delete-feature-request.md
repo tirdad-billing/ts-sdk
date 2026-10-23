@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DeleteFeatureRequest } from "@tirdad-ai/sdk/sdk/models";
+import { DeleteFeatureRequest } from "@tirdad/sdk/sdk/models";
 
 let value: DeleteFeatureRequest = {
   id: "<id>",

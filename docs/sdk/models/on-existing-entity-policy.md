@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OnExistingEntityPolicy } from "@tirdad-ai/sdk/sdk/models";
+import { OnExistingEntityPolicy } from "@tirdad/sdk/sdk/models";
 
 let value: OnExistingEntityPolicy = "reject";
 ```

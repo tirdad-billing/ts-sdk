@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TriggerForceRunRequest } from "@tirdad-ai/sdk/sdk/models";
+import { TriggerForceRunRequest } from "@tirdad/sdk/sdk/models";
 
 let value: TriggerForceRunRequest = {};
 ```

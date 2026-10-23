@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PaymentMethodStatus } from "@tirdad-ai/sdk/sdk/models";
+import { PaymentMethodStatus } from "@tirdad/sdk/sdk/models";
 
 let value: PaymentMethodStatus = "ACTIVE";
 

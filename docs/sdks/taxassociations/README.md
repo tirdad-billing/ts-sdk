@@ -18,7 +18,7 @@ Use when listing tax associations (e.g. tax config or audit). Returns list with 
 
 <!-- UsageSnippet language="typescript" operationID="listTaxAssociations" method="get" path="/taxes/associations" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -38,8 +38,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { taxAssociationsListTaxAssociations } from "@tirdad-ai/sdk/funcs/tax-associations-list-tax-associations.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { taxAssociationsListTaxAssociations } from "@tirdad/sdk/funcs/tax-associations-list-tax-associations.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -92,7 +92,7 @@ Use when linking a tax rate to an entity (e.g. customer, product, or region) so 
 
 <!-- UsageSnippet language="typescript" operationID="createTaxAssociation" method="post" path="/taxes/associations" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -114,8 +114,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { taxAssociationsCreateTaxAssociation } from "@tirdad-ai/sdk/funcs/tax-associations-create-tax-association.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { taxAssociationsCreateTaxAssociation } from "@tirdad/sdk/funcs/tax-associations-create-tax-association.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -167,7 +167,7 @@ Use when you need to load a single tax association (e.g. for display or editing)
 
 <!-- UsageSnippet language="typescript" operationID="getTaxAssociation" method="get" path="/taxes/associations/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -187,8 +187,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { taxAssociationsGetTaxAssociation } from "@tirdad-ai/sdk/funcs/tax-associations-get-tax-association.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { taxAssociationsGetTaxAssociation } from "@tirdad/sdk/funcs/tax-associations-get-tax-association.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -238,7 +238,7 @@ Use when changing a tax association (e.g. switch rate or entity). Request body c
 
 <!-- UsageSnippet language="typescript" operationID="updateTaxAssociation" method="put" path="/taxes/associations/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -258,8 +258,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { taxAssociationsUpdateTaxAssociation } from "@tirdad-ai/sdk/funcs/tax-associations-update-tax-association.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { taxAssociationsUpdateTaxAssociation } from "@tirdad/sdk/funcs/tax-associations-update-tax-association.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -310,7 +310,7 @@ Use when removing a tax association (e.g. entity no longer subject to that rate)
 
 <!-- UsageSnippet language="typescript" operationID="deleteTaxAssociation" method="delete" path="/taxes/associations/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -330,8 +330,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { taxAssociationsDeleteTaxAssociation } from "@tirdad-ai/sdk/funcs/tax-associations-delete-tax-association.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { taxAssociationsDeleteTaxAssociation } from "@tirdad/sdk/funcs/tax-associations-delete-tax-association.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

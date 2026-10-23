@@ -21,7 +21,7 @@ Use when listing or managing scheduled tasks in an admin UI. Returns a list; sup
 
 <!-- UsageSnippet language="typescript" operationID="listScheduledTasks" method="get" path="/tasks/scheduled" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { scheduledTasksListScheduledTasks } from "@tirdad-ai/sdk/funcs/scheduled-tasks-list-scheduled-tasks.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { scheduledTasksListScheduledTasks } from "@tirdad/sdk/funcs/scheduled-tasks-list-scheduled-tasks.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -92,7 +92,7 @@ Use when setting up recurring data exports or other scheduled jobs. Ideal for re
 
 <!-- UsageSnippet language="typescript" operationID="createScheduledTask" method="post" path="/tasks/scheduled" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -117,8 +117,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { scheduledTasksCreateScheduledTask } from "@tirdad-ai/sdk/funcs/scheduled-tasks-create-scheduled-task.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { scheduledTasksCreateScheduledTask } from "@tirdad/sdk/funcs/scheduled-tasks-create-scheduled-task.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -173,7 +173,7 @@ Triggers the draft invoice finalization workflow that scans computed draft invoi
 
 <!-- UsageSnippet language="typescript" operationID="scheduleDraftFinalization" method="post" path="/tasks/scheduled/schedule-draft-finalization" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -193,8 +193,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { scheduledTasksScheduleDraftFinalization } from "@tirdad-ai/sdk/funcs/scheduled-tasks-schedule-draft-finalization.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { scheduledTasksScheduleDraftFinalization } from "@tirdad/sdk/funcs/scheduled-tasks-schedule-draft-finalization.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -243,7 +243,7 @@ Use when you need to trigger a billing-period update workflow (e.g. to recalcula
 
 <!-- UsageSnippet language="typescript" operationID="scheduleUpdateBillingPeriod" method="post" path="/tasks/scheduled/schedule-update-billing-period" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -263,8 +263,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { scheduledTasksScheduleUpdateBillingPeriod } from "@tirdad-ai/sdk/funcs/scheduled-tasks-schedule-update-billing-period.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { scheduledTasksScheduleUpdateBillingPeriod } from "@tirdad/sdk/funcs/scheduled-tasks-schedule-update-billing-period.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -314,7 +314,7 @@ Use when you need to load a single scheduled task (e.g. to show details in a UI 
 
 <!-- UsageSnippet language="typescript" operationID="getScheduledTask" method="get" path="/tasks/scheduled/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -334,8 +334,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { scheduledTasksGetScheduledTask } from "@tirdad-ai/sdk/funcs/scheduled-tasks-get-scheduled-task.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { scheduledTasksGetScheduledTask } from "@tirdad/sdk/funcs/scheduled-tasks-get-scheduled-task.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -385,7 +385,7 @@ Use when pausing or resuming a scheduled task. Only the enabled field can be cha
 
 <!-- UsageSnippet language="typescript" operationID="updateScheduledTask" method="put" path="/tasks/scheduled/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -407,8 +407,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { scheduledTasksUpdateScheduledTask } from "@tirdad-ai/sdk/funcs/scheduled-tasks-update-scheduled-task.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { scheduledTasksUpdateScheduledTask } from "@tirdad/sdk/funcs/scheduled-tasks-update-scheduled-task.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -461,7 +461,7 @@ Use when removing a scheduled task from the active roster. Archives the task and
 
 <!-- UsageSnippet language="typescript" operationID="deleteScheduledTask" method="delete" path="/tasks/scheduled/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -481,8 +481,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { scheduledTasksDeleteScheduledTask } from "@tirdad-ai/sdk/funcs/scheduled-tasks-delete-scheduled-task.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { scheduledTasksDeleteScheduledTask } from "@tirdad/sdk/funcs/scheduled-tasks-delete-scheduled-task.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -532,7 +532,7 @@ Use when you need to run a scheduled export immediately (e.g. on-demand report o
 
 <!-- UsageSnippet language="typescript" operationID="triggerScheduledTaskRun" method="post" path="/tasks/scheduled/{id}/run" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -552,8 +552,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { scheduledTasksTriggerScheduledTaskRun } from "@tirdad-ai/sdk/funcs/scheduled-tasks-trigger-scheduled-task-run.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { scheduledTasksTriggerScheduledTaskRun } from "@tirdad/sdk/funcs/scheduled-tasks-trigger-scheduled-task-run.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

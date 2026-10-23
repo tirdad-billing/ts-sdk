@@ -18,7 +18,7 @@ Use when defining a new feature or capability to gate or meter (e.g. feature fla
 
 <!-- UsageSnippet language="typescript" operationID="createFeature" method="post" path="/features" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -47,8 +47,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { featuresCreateFeature } from "@tirdad-ai/sdk/funcs/features-create-feature.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { featuresCreateFeature } from "@tirdad/sdk/funcs/features-create-feature.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -107,7 +107,7 @@ Use when listing or searching features (e.g. catalog or entitlement setup). Retu
 
 <!-- UsageSnippet language="typescript" operationID="queryFeature" method="post" path="/features/search" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -127,8 +127,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { featuresQueryFeature } from "@tirdad-ai/sdk/funcs/features-query-feature.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { featuresQueryFeature } from "@tirdad/sdk/funcs/features-query-feature.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -178,7 +178,7 @@ Use when changing feature definition (e.g. name, type, or meter). Request body c
 
 <!-- UsageSnippet language="typescript" operationID="updateFeature" method="put" path="/features/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -198,8 +198,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { featuresUpdateFeature } from "@tirdad-ai/sdk/funcs/features-update-feature.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { featuresUpdateFeature } from "@tirdad/sdk/funcs/features-update-feature.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -250,7 +250,7 @@ Use when retiring a feature (e.g. deprecated capability). Returns 200 with succe
 
 <!-- UsageSnippet language="typescript" operationID="deleteFeature" method="delete" path="/features/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -270,8 +270,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { featuresDeleteFeature } from "@tirdad-ai/sdk/funcs/features-delete-feature.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { featuresDeleteFeature } from "@tirdad/sdk/funcs/features-delete-feature.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -321,7 +321,7 @@ Clone an existing feature
 
 <!-- UsageSnippet language="typescript" operationID="cloneFeature" method="post" path="/features/{id}/clone" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -341,8 +341,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { featuresCloneFeature } from "@tirdad-ai/sdk/funcs/features-clone-feature.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { featuresCloneFeature } from "@tirdad/sdk/funcs/features-clone-feature.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

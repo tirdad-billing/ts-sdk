@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubModifyInheritanceRequest } from "@tirdad-ai/sdk/sdk/models";
+import { SubModifyInheritanceRequest } from "@tirdad/sdk/sdk/models";
 
 let value: SubModifyInheritanceRequest = {};
 ```

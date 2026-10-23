@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WindowSize } from "@tirdad-ai/sdk/sdk/models";
+import { WindowSize } from "@tirdad/sdk/sdk/models";
 
 let value: WindowSize = "12HOUR";
 

@@ -16,7 +16,7 @@ Use to see where refunded money actually went and whether it has settled. Filter
 
 <!-- UsageSnippet language="typescript" operationID="listRefunds" method="get" path="/refunds" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -36,8 +36,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { refundsListRefunds } from "@tirdad-ai/sdk/funcs/refunds-list-refunds.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { refundsListRefunds } from "@tirdad/sdk/funcs/refunds-list-refunds.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -87,7 +87,7 @@ Use to inspect a single refund: its destination, settled amount and failure reas
 
 <!-- UsageSnippet language="typescript" operationID="getRefund" method="get" path="/refunds/{id}" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -107,8 +107,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { refundsGetRefund } from "@tirdad-ai/sdk/funcs/refunds-get-refund.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { refundsGetRefund } from "@tirdad/sdk/funcs/refunds-get-refund.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -158,7 +158,7 @@ Use when a refund failed or is stuck pending. A failed gateway refund is retried
 
 <!-- UsageSnippet language="typescript" operationID="retryRefund" method="post" path="/refunds/{id}/retry" -->
 ```typescript
-import { Tirdad } from "@tirdad-ai/sdk";
+import { Tirdad } from "@tirdad/sdk";
 
 const tirdad = new Tirdad({
   apiKeyAuth: "<YOUR_API_KEY_HERE>",
@@ -178,8 +178,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { TirdadCore } from "@tirdad-ai/sdk/core.js";
-import { refundsRetryRefund } from "@tirdad-ai/sdk/funcs/refunds-retry-refund.js";
+import { TirdadCore } from "@tirdad/sdk/core.js";
+import { refundsRetryRefund } from "@tirdad/sdk/funcs/refunds-retry-refund.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

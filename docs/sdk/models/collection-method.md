@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CollectionMethod } from "@tirdad-ai/sdk/sdk/models";
+import { CollectionMethod } from "@tirdad/sdk/sdk/models";
 
 let value: CollectionMethod = "send_invoice";
 ```

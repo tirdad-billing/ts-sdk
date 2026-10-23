@@ -5,7 +5,7 @@ Resumes a paused subscription now. The billing anchor is kept, so the first peri
 ## Example Usage
 
 ```typescript
-import { ResumeSubscriptionRequest } from "@tirdad-ai/sdk/sdk/models";
+import { ResumeSubscriptionRequest } from "@tirdad/sdk/sdk/models";
 
 let value: ResumeSubscriptionRequest = {};
 ```

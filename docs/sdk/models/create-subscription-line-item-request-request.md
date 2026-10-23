@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateSubscriptionLineItemRequestRequest } from "@tirdad-ai/sdk/sdk/models";
+import { CreateSubscriptionLineItemRequestRequest } from "@tirdad/sdk/sdk/models";
 
 let value: CreateSubscriptionLineItemRequestRequest = {
   id: "<id>",

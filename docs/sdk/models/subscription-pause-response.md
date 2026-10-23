@@ -5,7 +5,7 @@ Response object containing subscription pause information
 ## Example Usage
 
 ```typescript
-import { SubscriptionPauseResponse } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionPauseResponse } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionPauseResponse = {};
 ```

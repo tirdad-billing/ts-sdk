@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TransactionReason } from "@tirdad-ai/sdk/sdk/models";
+import { TransactionReason } from "@tirdad/sdk/sdk/models";
 
 let value: TransactionReason = "SUBSCRIPTION_CREDIT_GRANT";
 

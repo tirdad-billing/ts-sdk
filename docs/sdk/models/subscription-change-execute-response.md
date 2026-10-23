@@ -5,7 +5,7 @@ Response after successfully executing a subscription plan change
 ## Example Usage
 
 ```typescript
-import { SubscriptionChangeExecuteResponse } from "@tirdad-ai/sdk/sdk/models";
+import { SubscriptionChangeExecuteResponse } from "@tirdad/sdk/sdk/models";
 
 let value: SubscriptionChangeExecuteResponse = {
   invoice: {
