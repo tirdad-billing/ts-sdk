@@ -7,7 +7,7 @@ const tirdad = new Tirdad({
 });
 
 async function run() {
-  const result = await tirdad.activity.listActivity({});
+  const result = await tirdad.accountingPeriods.queryAccountingPeriod({});
 
   console.log(result);
 }

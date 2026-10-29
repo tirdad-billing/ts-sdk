@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { TirdadCore } from "@tirdad/sdk/core.js";
-import { activityListActivity } from "@tirdad/sdk/funcs/activity-list-activity.js";
+import { accountingPeriodsQueryAccountingPeriod } from "@tirdad/sdk/funcs/accounting-periods-query-accounting-period.js";
 
 // Use `TirdadCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -29,12 +29,12 @@ const tirdad = new TirdadCore({
 });
 
 async function run() {
-  const res = await activityListActivity(tirdad, {});
+  const res = await accountingPeriodsQueryAccountingPeriod(tirdad, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("activityListActivity failed:", res.error);
+    console.log("accountingPeriodsQueryAccountingPeriod failed:", res.error);
   }
 }
 

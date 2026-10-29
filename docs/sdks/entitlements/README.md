@@ -99,10 +99,7 @@ const tirdad = new Tirdad({
 });
 
 async function run() {
-  const result = await tirdad.entitlements.createEntitlement({
-    featureId: "<id>",
-    featureType: "metered",
-  });
+  const result = await tirdad.entitlements.createEntitlement({});
 
   console.log(result);
 }
@@ -125,10 +122,7 @@ const tirdad = new TirdadCore({
 });
 
 async function run() {
-  const res = await entitlementsCreateEntitlement(tirdad, {
-    featureId: "<id>",
-    featureType: "metered",
-  });
+  const res = await entitlementsCreateEntitlement(tirdad, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
@@ -178,10 +172,7 @@ const tirdad = new Tirdad({
 async function run() {
   const result = await tirdad.entitlements.createEntitlementsBulk({
     items: [
-      {
-        featureId: "<id>",
-        featureType: "config",
-      },
+      {},
     ],
   });
 
@@ -208,10 +199,7 @@ const tirdad = new TirdadCore({
 async function run() {
   const res = await entitlementsCreateEntitlementsBulk(tirdad, {
     items: [
-      {
-        featureId: "<id>",
-        featureType: "config",
-      },
+      {},
     ],
   });
   if (res.ok) {

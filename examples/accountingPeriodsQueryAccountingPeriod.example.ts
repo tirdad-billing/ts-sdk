@@ -8,7 +8,7 @@ dotenv.config();
  * Example usage of the @tirdad/sdk SDK
  *
  * To run this example from the examples directory:
- * npm run build && npx tsx activityListActivity.example.ts
+ * npm run build && npx tsx accountingPeriodsQueryAccountingPeriod.example.ts
  */
 
 import { Tirdad } from "@tirdad/sdk";
@@ -18,7 +18,7 @@ const tirdad = new Tirdad({
 });
 
 async function main() {
-  const result = await tirdad.activity.listActivity({});
+  const result = await tirdad.accountingPeriods.queryAccountingPeriod({});
 
   console.log(result);
 }
