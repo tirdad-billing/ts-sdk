@@ -1,17 +1,17 @@
 lockVersion: 2.0.0
-id: 2e55c315-82ff-4c17-b37b-0e5ec39a1ff2
+id: 50dc5db7-fa52-4a20-9d8a-ae4b41e4866e
 management:
-  docChecksum: a72b86372248009e2458379cd9eff984
+  docChecksum: 68e016337fe02bacc60ca1b4c0b1e21e
   docVersion: "1.0"
   speakeasyVersion: 1.802.0
   generationVersion: 2.948.4
-  releaseVersion: 2.1.45
-  configChecksum: 756f9ae17bdf05bcc6dafbf89ac1bf58
+  releaseVersion: 2.1.46
+  configChecksum: 01ac66e8ed33ff748384887dee5caf02
   published: true
 persistentEdits:
-  generation_id: 0618491b-a981-4797-9372-f0d37aafa299
-  pristine_commit_hash: 4888c6054c9f255937e40a4087a715769f71d692
-  pristine_tree_hash: be8bc8e0da0bb1eedffbb53353eecb8d8539fa50
+  generation_id: bcce84b0-fadb-4278-af55-3061c8108144
+  pristine_commit_hash: 1ed4be71b431d27ea2b81c2e3f762428ca4daf68
+  pristine_tree_hash: 82b1a5e87b1409ec0eb3c05a51371fa9edcb0535
 features:
   typescript:
     additionalDependencies: 0.1.0
@@ -552,8 +552,8 @@ trackedFiles:
     pristine_git_object: c4df85ca677256c61db93f03948320829828f561
   docs/sdk/models/commitment-response.md:
     id: b20a10e7897a
-    last_write_checksum: sha1:fb19d0b21481ff00c24d1a2540545a76480aaf29
-    pristine_git_object: e912996a9788869ff701ca9f68aaddf068e263f0
+    last_write_checksum: sha1:6122b9a0cd224bae819ca9229676f56f5df1a746
+    pristine_git_object: 6d8db244561e180d84c7f1ff0121227bcae0a427
   docs/sdk/models/commitment-scope-input.md:
     id: d511a8f45914
     last_write_checksum: sha1:f1d701d7707b4f9039aae40fa3fbdadbfb5f341e
@@ -696,8 +696,8 @@ trackedFiles:
     pristine_git_object: 7968606fcea10705a060be7eceaa0750126bec2c
   docs/sdk/models/create-commitment-request.md:
     id: 0b4f5fd41337
-    last_write_checksum: sha1:d9cbabcd77f7a08c984fac19322ebb4adfdba02d
-    pristine_git_object: 54de3763a3ed255c207334544fc75816c1a100dc
+    last_write_checksum: sha1:f79a79b14a952d01ca223d5f3572c2be2151a349
+    pristine_git_object: 4dc6f1fa175a9c49da3c4581f714359cc02409b5
   docs/sdk/models/create-costsheet-request.md:
     id: b44b51ff777b
     last_write_checksum: sha1:63dd73636833ef834b8e3c0d8f68dd2d1949ee4f
@@ -3876,8 +3876,8 @@ trackedFiles:
     pristine_git_object: c26d0ac8185f37d39d5466ab39ff3694248d86e8
   docs/sdks/commitments/README.md:
     id: b2feef677029
-    last_write_checksum: sha1:81268eb85fdd4c2e73c03c663a91e963e79e929a
-    pristine_git_object: 77a9c59b3b04f03e21e39f46f5300c32edfff5b1
+    last_write_checksum: sha1:8c92bf7b6b39910333576c9358e4b4b48639ebb3
+    pristine_git_object: 72ab15275d936762343aa9069507965ae1a9e8f6
   docs/sdks/contracts/README.md:
     id: da897d096992
     last_write_checksum: sha1:ddc52f21c6242cc7a422f6a0ca24cd5a548c6597
@@ -4052,12 +4052,12 @@ trackedFiles:
     pristine_git_object: 307159ebbc95af0096641fc158e98338912a0f56
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:e9ee0d9cb96aa33cec6aa956c80ad73079e02ec2
-    pristine_git_object: 785963b6f512aa62eb33f73d322199269800dd7c
+    last_write_checksum: sha1:84d668e20f11b2b77036bbaa0bcb1c0293be6bfa
+    pristine_git_object: ccbcdedd63c819149b9dcf42bf407390eab63d60
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:5f60083cfa6b0c1c1dafb8568d04e7c774cb54a7
-    pristine_git_object: a821fe50ece4d0f716d4aebca7558c2f517315aa
+    last_write_checksum: sha1:887437ac91461ad2aa58b2cb2db807c5b3f71f71
+    pristine_git_object: 301590cbe80c8f7ff420fc65a5bed683a7a2ddb4
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:fb25a91b06ec26c1245d17f7e5903578aef39362
@@ -5372,8 +5372,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:cd09c4c6fe3c8cc637235bf1229ed306dd121a72
-    pristine_git_object: 0231e7f1e4155aa586fbf145449085374b366d0a
+    last_write_checksum: sha1:87e13376e682f5991657f2e6f57cdd559c8c569d
+    pristine_git_object: 6977e8f7ac570505cb953bc9c40b847eaf533bfb
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -5984,8 +5984,8 @@ trackedFiles:
     pristine_git_object: 23b29da529119f3940351334053e6ca4b1df3366
   src/sdk/models/commitment-response.ts:
     id: 1b2de4de4b30
-    last_write_checksum: sha1:a9e0df93f1bd0fad529161f8a2814b23e8ea5d86
-    pristine_git_object: 569afaa24db5233d5ae67abed61ec99f75860b7d
+    last_write_checksum: sha1:71f5b2211be57527ce94f6e3a927814d339471ac
+    pristine_git_object: 132aaa62554bb695f34ee842fb73b5c3882f3b53
   src/sdk/models/commitment-scope-input.ts:
     id: 64dbe7e50697
     last_write_checksum: sha1:19521c3314213b8d7430c0e8c8b605f63d201bbb
@@ -6116,8 +6116,8 @@ trackedFiles:
     pristine_git_object: 40fcf0b91f61c5a1e5cd9801f9f82d59bfe8ca34
   src/sdk/models/create-commitment-request.ts:
     id: 5c408a778cfb
-    last_write_checksum: sha1:b7cc217537113c109b4a685eecd329611ccdb4b3
-    pristine_git_object: 458d7e4aa1c86d6d3d8508b2e9498962738ec968
+    last_write_checksum: sha1:af3deee8990e6c08775ac0d745082284b3f6b7f4
+    pristine_git_object: 001580770854d8a9baf916d0a3c5b0aad0ca17d0
   src/sdk/models/create-costsheet-request.ts:
     id: a5e9e5a1e93b
     last_write_checksum: sha1:37ea8278f640ed27801c4730d0cce53e72238efc
@@ -9753,7 +9753,7 @@ examples:
   createCommitment:
     speakeasy-default-create-commitment:
       requestBody:
-        application/json: {"end_date": "2024-12-01T13:56:43.281Z", "measurement": "billing_period", "name": "<value>", "scope": {"entity_type": "group"}, "start_date": "2026-08-30T15:34:29.816Z", "type": "amount"}
+        application/json: {"measurement": "billing_period", "name": "<value>", "scope": {"entity_type": "group"}, "start_date": "2025-03-05T22:53:12.661Z", "type": "quantity"}
       responses:
         "201":
           application/json: {}
@@ -9764,7 +9764,7 @@ examples:
   previewCommitment:
     speakeasy-default-preview-commitment:
       requestBody:
-        application/json: {"end_date": "2025-03-29T18:57:47.888Z", "measurement": "window", "name": "<value>", "scope": {"entity_type": "group"}, "start_date": "2024-09-25T08:18:25.213Z", "type": "amount"}
+        application/json: {"measurement": "billing_period", "name": "<value>", "scope": {"entity_type": "meter"}, "start_date": "2024-11-23T11:41:25.905Z", "type": "amount"}
       responses:
         "200":
           application/json: {}
